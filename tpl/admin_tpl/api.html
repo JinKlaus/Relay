@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>后台系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- styles -->
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  	<div class="header">
+	     <div class="container">
+	        <div class="row">
+	           <div class="col-md-5">
+	              <!-- Logo -->
+	              <div class="logo">
+	                 <h1><a >后台系统</a></h1>
+	              </div>
+	           </div>
+	           <div class="col-md-5">
+	              <div class="row">
+	                <div class="col-lg-12">
+	                  <!--<div class="input-group form" >-->
+	                       <!--<input type="text" class="form-control" placeholder="Search...">-->
+	                       <!--<span class="input-group-btn">-->
+	                         <!--<button class="btn btn-primary" type="button">Search</button>-->
+	                       <!--</span>-->
+	                  <!--</div>-->
+	                </div>
+	              </div>
+	           </div>
+	           <div class="col-md-2">
+	              <div class="navbar navbar-inverse" role="banner">
+	                  <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+	                    <!--<ul class="nav navbar-nav">-->
+	                      <!--<li class="dropdown">-->
+	                        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>-->
+	                        <!--<ul class="dropdown-menu animated fadeInUp">-->
+	                          <!--<li><a href="profile.html">Profile</a></li>-->
+	                          <!--<li><a href="login.html">Logout</a></li>-->
+	                        <!--</ul>-->
+	                      <!--</li>-->
+	                    <!--</ul>-->
+	                  </nav>
+	              </div>
+	           </div>
+	        </div>
+	     </div>
+	</div>
+
+    <div class="page-content">
+    	<div class="row">
+			<include file="admin_tpl/left.html"/>
+			<div class="col-md-6">
+				<div class="content-box-large">
+					<div class="panel-heading">
+						<div class="panel-title">接口修改</div>
+
+						<div class="panel-options">
+							<a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
+							<a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
+						</div>
+					</div>
+					<div class="panel-body">
+						<form class="form-horizontal" role="form" action="{:U('do_api')}" method="post">
+							<div class="form-group">
+								<label  class="col-sm-2 control-label">电视直播</label>
+								<div class="col-sm-10">
+									<input type="text" name="url" value="{$api[0][url]}" class="form-control" id="pre" placeholder="">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label  class="col-sm-2 control-label">游戏直播</label>
+								<div class="col-sm-10">
+									<input type="text" name="url2" value="{$api[1][url]}" class="form-control" id="pre" placeholder="">
+								</div>
+							</div>
+
+
+
+
+
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-sm-10">
+									<button id="sub" type="submit" onclick="subs()"  class="btn btn-primary">修改</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+
+    <footer>
+         <div class="container">
+         
+            <!--<div class="copy text-center">-->
+               <!--Copyright 2014 <a href='#'>Website</a>-->
+            <!--</div>-->
+            
+         </div>
+      </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+
+  <script>
+	  (function(w){
+          var as = document.getElementsByName('a');
+          for(i=0;i<as.length;i++){
+              var is_app = as[i].getAttribute('a') || false;
+              if(is_app){
+                  var vid = as[i].getAttribute("data-vid");
+                  var url ='http://m.le.com/vplay_'+vid+'.html';
+                  as[i].onclick=function(){window.location.href=url}
+              }
+          }
+	  })(window)
+
+
+	  function subs(){
+
+
+
+	  }
+
+
+
+	  $(function(){
+
+	  })
+
+
+  </script>
+
+  </body>
+</html>

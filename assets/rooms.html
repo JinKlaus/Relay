@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>直播间</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/icons-extra.css" />
+    <!--App自定义的css-->
+    <!--<link rel="stylesheet" type="text/css" href="../css/app.css"/>-->
+    <script src="js/jquery.js"></script>
+    <script src="js/lib.js?2"></script>
+</head>
+
+<body>
+<style type="text/css">
+    .mui-slider .mui-slider-group .mui-slider-item img{ height: 180px}
+    .a{ width: 100%; margin-top: 15px; background-color: #fff;
+        float: left;}
+    .a h3{ font-size: 14px; margin: 0px; padding: 0px; font-weight: normal; line-height: 30px; color: #999; padding-left: 10px}
+    .a ul {margin: 0px; padding: 0px}
+
+    .a ul li{ margin:0px; padding: 0px; text-align: center;
+        height:60vw;border-top: 1px solid #eee; width: 50%; border-left: 1px solid #eee;float: left; list-style: none}
+    .a ul .nol{
+        border-left:none;}
+    .a ul li img{ width: 95%;
+        height:45vw; margin-top: 10px}
+    .a ul li h5{
+        font-weight:normal; color: #666}
+    .notice{ line-height: 30px; padding: 5px; background-color: #8f8f94; color: #ffffff; position: relative}
+    marquee{ margin-left: 30px}
+    em { font-style: normal; background-color: palevioletred; color: #fff; padding: 3px 5px; border-radius: 3px; margin-left: 20px}
+    .template{
+        display: none;}
+    .lis{ min-height: 500px; background-color: #fff}
+</style>
+
+
+<div class="ad" style="width: 100%; height: 30vw; background-color: #fff">
+    <div style="float:left;margin-left: 5vw; margin-top: 5vw">
+        <img src="" style="width: 20vw; height: 20vw; display: none;" id="sthumb">
+    </div>
+
+    <div style="float: left; margin-left: 5vw; margin-top: 5vw">
+        <h3 id="sname"></h3>
+        <h4 id="scount" style="margin-top: 3vw; font-weight:normal;"></h4>
+
+    </div>
+
+
+</div>
+<div class="a">
+
+
+
+    <a class="template le"><li class="nol" data-attr="func:push_url:tokey" onclick="go($(this))">
+        <img src="" data-attr="img:thumb" onerror="errimg($(this))">
+        <h5 data-attr="text:name"></h5>
+    </li>
+    </a>
+    <ul class="lis">
+       
+      
+    
+
+    </ul>
+</div>
+</body>
+<script src="js/mui.min.js"></script>
+<script src="js/lib.js?2"></script>
+<script>
+
+    function errimg(t) {
+        t.attr("src","/default_thumb.jpg")
+    }
+
+    function tokey(a, b, c) {
+        a.attr("data-url",b)
+        if(b=="-1"){
+            a.attr("data-uid",c['uid'])
+            a.attr("channel",c['channel'])
+        }
+
+    }
+
+    function go(t){
+        var url = t.attr("data-url")
+        $.get_token(function (res) {
+          if(url=="-1"){
+                $.loading("正在进入房间");
+              $.getdata("v1/index/get_push",{"uid":t.attr("data-uid"),"channel":t.attr("channel")},function (push_url) {
+                  $.unloading();
+                  if(push_url=="" || push_url==null) $.toast("该主播已下线")
+                    $.play(push_url)
+              },function (res) {
+                  $.unloading();
+                  $.tost("该主播已经停播")
+              });
+          }else{
+              $.play(url)
+          }
+        })
+
+    }
+
+    $(function(){
+
+        var info = $.get_url();
+        var key = info['key']
+        $.loading("加载中");
+        $.getdata("v1/index/get_room",{"key":key},function (res) {
+            $.unloading();
+            var lis = res['list'];
+            $.tolist($(".lis"),$(".le"),lis);
+            $("#count").html("共"+res.length+"个")
+            var info = res['info']
+            $("#sthumb").attr("src",info['thumb']).show()
+            $("#sname").html(info['name'])
+            $("#scount").html("共"+lis.length+"个直播")
+        },function (res) {
+            $.toast(res)
+            $.close();
+        })
+
+
+    })
+
+    mui.init({
+        swipeBack:true //启用右滑关闭功能
+    });
+    var slider = mui("#slider");
+    slider.slider({
+        interval: 5000
+    });
+</script>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>账号信息</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/icons-extra.css" />
+    <!--App自定义的css-->
+    <!--<link rel="stylesheet" type="text/css" href="../css/app.css"/>-->
+</head>
+
+<body>
+<style type="text/css">
+  .a{ width: 100%; height:120px; line-height: 180px; text-align: center; background-color: #478ac2}
+    .b{ width: 100%; height: 70px; text-align: center; background-color: #fff}
+    .b img{ width: 60px; height: 60px; border-radius: 40px; margin-top: -30px;}
+    .b h3{ text-align: center;
+        font-weight:normal; font-size: 16px}
+    input{ color: #999}
+  .mui-input-row label{ width: 40%}
+  .mui-input-row label~input, .mui-input-row label~select, .mui-input-row label~textarea{ width: 60%}
+
+</style>
+<form class="mui-input-group">
+    <div class="mui-input-row">
+        <label>手机号：</label>
+        <input type="text" id="phone" readonly="true" value="">
+    </div>
+
+    <div class="mui-input-row">
+        <label>到期时间：</label>
+        <input type="text" id="vip_info" readonly="true" value="">
+    </div>
+
+
+
+
+
+</form>
+
+
+</body>
+<script src="js/mui.min.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/lib.js"></script>
+<script>
+
+    function timestampToTime(timestamp) {
+        var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+        Y = date.getFullYear() + '-';
+        M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+        D = date.getDate() + ' ';
+        h = date.getHours() + ':';
+        m = date.getMinutes() + ':';
+        s = date.getSeconds();
+        return Y+M+D+h+m+s;
+    }
+
+    $(function () {
+        $.getdata("v1/index/get_my",{},function (res) {
+            $("#vip_info").val(timestampToTime(res['vip_time']))
+            $("#phone").val(res['phone'])
+        })
+    })
+
+    mui.init({
+        swipeBack:true //启用右滑关闭功能
+    });
+    var slider = mui("#slider");
+    slider.slider({
+        interval: 5000
+    });
+</script>
+</html>

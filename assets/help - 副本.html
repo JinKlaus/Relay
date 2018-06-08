@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>帮助</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/icons-extra.css" />
+    <!--App自定义的css-->
+    <!--<link rel="stylesheet" type="text/css" href="../css/app.css"/>-->
+    <script src="js/jquery.js"></script>
+    <script src="js/lib.js?2"></script>
+</head>
+
+<body>
+<style type="text/css">
+    .a{ padding: 20px; font-size: 16px; background: #ffffff; margin-top: 20px;}
+    button{ width: 80%; margin: 25px auto 15px; color: #fff; border: none; background-color: #478ac2; height: 40px;
+        line-height: 40px; text-align: center; font-size: 16px; padding: 0px}
+</style>
+<div class="a">
+    <h4> 推广给好友</h4>
+    <span id="content" style="user-select: text!important;-webkit-user-select: text!important;"></span>
+
+</div>
+<!--<button  class="btn" onclick="copy()" style="margin-left: 10%">复制内容</button>-->
+
+</body>
+<script src="js/mui.min.js"></script>
+<script>
+    var s;
+    $(function () {
+        $.getdata("v1/index/invite",{},function (res) {
+            s = res['tg_text']+"<br>"+"下载地址："+res['apk_url']+"<br>"+"邀请码:"+res['code']
+            $("#content").html(s)
+        })
+    })
+
+
+
+</script>
+</html>

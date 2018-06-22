@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="UTF-8">
+<link rel="stylesheet" href="/css/jquery-ui.css">
+<link rel="stylesheet" href="/css/easyui.css">
+<script type="text/javascript" src="/js/jquery-2.2.2.js"></script>
+<script type="text/javascript" src="/js/jquery-ui.js"></script>
+<script type="text/javascript">
+/**
+ * 初始化
+ */
+ var isBrowser;
+$(function(){
+	//按钮样式
+    $("#takePhoto").button()
+      .click(function( event ) {
+        event.preventDefault();
+      });
+	//判断浏览器
+	isBrowser = doVerificationBrowser();
+	//根据浏览器不同使用不同方法调用摄像头
+	if(isBrowser){
+		$("#FalshDiv").show();
+	}else{
+		//判断浏览器是否 支持HTML5
+		if(checkHtml5()){
+			$("#HTML5Div").show();
+			doHtml5();
+		}
+	}
+});
+/**
+ * 检查摄像头是否存在
+ */
+function checkCamera(){
+}
+
+/**
+ *  判断浏览器是否为IE或者其他浏览器
+ */
+function doVerificationBrowser(){
+	var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+	//判断浏览是否为IE
+	 if (!!window.ActiveXObject || "ActiveXObject" in window || userAgent.indexOf("trident")>-1) {
+		 return true;
+	 } else{
+		 return false;
+	 }
+}
+/**
+ * 拍照
+ */
+function photo(){
+	//IE
+	if(isBrowser){
+
+		doFlash();
+	}else{
+		//非IE
+		tabkePhotoForHtml5();
+	}
+}
+/**
+ * 使用FLASH调用摄像头拍照(适用于IE浏览器)
+ */
+function doFlash(){
+	var MyCan= thisMovie("My_Cam");
+	var base64Data = MyCan.GetBase64Code();
+	$.post("/v1/student/receiveData",{"face":base64Data},function (face) {
+        var obj = JSON.parse(face);
+       alert(obj);
+    });
+
+
+}
+
+/**
+ * 获取Flash对象 
+ */
+function thisMovie(movieName) {
+    if (navigator.appName.indexOf("Microsoft") != -1) {
+        return document[movieName];
+    }
+    else {
+        return document[movieName];
+    }
+}
+
+/**
+ * 获取url请求参数
+ */
+function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]); return null;
+}
+
+/**
+ * 指静脉控件script
+ */
+
+</script>
+</head>
+<body>
+<!-- FLASH调用 -->
+<div id="FalshDiv"  style="text-align:center;display:none;">
+	<object style="z-index: 100" id="My_Cam" align="middle" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+                codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0"
+                height="400" viewastext="在线拍照" width="500">
+                <param name="allowScriptAccess" value="sameDomain" />
+                <param name="movie" value="../js/MyCamera.swf" />
+                <param name="quality" value="high" />
+                <param name="bgcolor" value="#ffffff" />
+                <param name="wmode" value="transparent" />
+                <embed style="z-index: 100" align="middle" allowscriptaccess="sameDomain" bgcolor="#ffffff" height="400"
+                    name="My_Cam" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high"  wmode="transparent"
+                    src="/js/MyCamera.swf" type="application/x-shockwave-flash" width="500"></embed>
+   	</object>
+</div>
+<!-- 执行按钮 -->
+<div align="center" id="secondPageBT">
+	<input id="takePhoto" type="button" value="拍照" onclick="photo()">
+</div>
+</body>
+</html>

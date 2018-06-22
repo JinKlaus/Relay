@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>后台系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- styles -->
+    <link href="/css/styles.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  	<div class="header">
+	     <div class="container">
+	        <div class="row">
+	           <div class="col-md-5">
+	              <!-- Logo -->
+	              <div class="logo">
+	                 <h1><a >后台系统</a></h1>
+	              </div>
+	           </div>
+	           <div class="col-md-5">
+	              <div class="row">
+	                <div class="col-lg-12">
+	                  <!--<div class="input-group form" >-->
+	                       <!--<input type="text" class="form-control" placeholder="Search...">-->
+	                       <!--<span class="input-group-btn">-->
+	                         <!--<button class="btn btn-primary" type="button">Search</button>-->
+	                       <!--</span>-->
+	                  <!--</div>-->
+	                </div>
+	              </div>
+	           </div>
+	           <div class="col-md-2">
+	              <div class="navbar navbar-inverse" role="banner">
+	                  <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+	                    <!--<ul class="nav navbar-nav">-->
+	                      <!--<li class="dropdown">-->
+	                        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>-->
+	                        <!--<ul class="dropdown-menu animated fadeInUp">-->
+	                          <!--<li><a href="profile.html">Profile</a></li>-->
+	                          <!--<li><a href="login.html">Logout</a></li>-->
+	                        <!--</ul>-->
+	                      <!--</li>-->
+	                    <!--</ul>-->
+	                  </nav>
+	              </div>
+	           </div>
+	        </div>
+	     </div>
+	</div>
+
+    <div class="page-content">
+    	<div class="row">
+			<%include("left.html"){}%>
+			<div class="col-md-6">
+				<div class="content-box-large">
+					<div class="panel-heading">
+						<div class="panel-title"><a href="list" style="margin-right: 15px">返回班级列表</a></div>
+					</div>
+					<style type="text/css">
+						.panel-body .pic{ width: 300px; height: 150px; margin-bottom: 20px}
+					</style>
+					<div class="panel-body form-horizontal" >
+
+							<!--<div class="form-group">-->
+								<!--<label  class="col-sm-2 control-label">图片</label>-->
+								<!--<div class="col-sm-10">-->
+									<!--<input type="file" name="img" class="form-control" id="img" placeholder="">-->
+								<!--</div>-->
+							<!--</div>-->
+							<div class="form-group">
+								<label  class="col-sm-2 control-label">班级</label>
+								<div class="col-sm-4">
+									<input value="" type="text" class="form-control" id="clazz" name="clazz" placeholder="">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label  class="col-sm-2 control-label">开始日期</label>
+								<div class="col-sm-2">
+									<select class="form-control" id="start_year">
+										<option value="2018">2018年</option>
+										<option value="2019">2019年</option>
+										<option value="2020">2020年</option>
+										<option value="2021">2021年</option>
+										<option value="2022">2022年</option>
+										<option value="2023">2023年</option>
+										<option value="2024">2024年</option>
+										<option value="2025">2025年</option>
+										<option value="2026">2026年</option>
+										<option value="2027">2027年</option>
+										<option value="2028">2028年</option>
+
+									</select>
+									<select class="form-control" id="start_month">
+										<option value="01">1月</option>
+										<option value="02">2月</option>
+										<option value="03">3月</option>
+										<option value="04">4月</option>
+										<option value="05">5月</option>
+										<option value="06">6月</option>
+										<option value="07">7月</option>
+										<option value="08">8月</option>
+										<option value="09" selected>9月</option>
+										<option value="10">10月</option>
+										<option value="11">11月</option>
+										<option value="12">12月</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label  class="col-sm-2 control-label">结束日期</label>
+								<div class="col-sm-2">
+									<select class="form-control" id="end_year">
+										<option value="2018">2018年</option>
+										<option value="2019">2019年</option>
+										<option value="2020">2020年</option>
+										<option value="2021">2021年</option>
+										<option value="2022">2022年</option>
+										<option value="2023">2023年</option>
+										<option value="2024">2024年</option>
+										<option value="2025">2025年</option>
+										<option value="2026">2026年</option>
+										<option value="2027">2027年</option>
+										<option value="2028">2028年</option>
+									</select>
+									<select class="form-control" id="end_month">
+										<option value="01">1月</option>
+										<option value="02">2月</option>
+										<option value="03">3月</option>
+										<option value="04">4月</option>
+										<option value="05">5月</option>
+										<option value="06" selected>6月</option>
+										<option value="07">7月</option>
+										<option value="08">8月</option>
+										<option value="09">9月</option>
+										<option value="10">10月</option>
+										<option value="11">11月</option>
+										<option value="12">12月</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-sm-10">
+									<button id="sub" type="submit"  class="btn btn-primary">提交</button>
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+
+    <footer>
+         <div class="container">
+
+            <!--<div class="copy text-center">-->
+               <!--Copyright 2014 <a href='#'>Website</a>-->
+            <!--</div>-->
+
+         </div>
+      </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/js/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/custom.js"></script>
+
+  <script>
+
+	  	var data={};
+		$(function () {
+            var clazz =${clazz};
+			if(clazz) {
+                $("#clazz").val(clazz.name);
+                $("#start_year").val(clazz.start_year);
+                $("#start_month").val(clazz.start_month);
+                $("#end_year").val(clazz.end_year);
+                $("#end_month").val(clazz.end_month);
+            }
+
+            $("#sub").on("click", function () {
+                data['name'] = $("#clazz").val();
+                data['start_Date'] = $("#start_year option:selected").val() + "-" + $("#start_month option:selected").val();
+                data['end_Date'] = $("#end_year option:selected").val() + "-" + $("#end_month option:selected").val();
+                if (!data['name'] || data['name'] == " ") {
+                    alert("班级栏不能为空，请输入正确的班级信息");
+                    return;
+                } else if ($("#start_year option:selected").val() > $("#end_year option:selected").val()) {
+                    alert("开始年份不得大于结束年份请重新选择");
+                    return;
+                }
+
+				var post_url = clazz?'/v1/clazz/do_edit':'/v1/clazz/do_add';
+                if(clazz) data['id'] = clazz.id;
+                $.post(post_url, data, function (res) {
+                    var ret = JSON.parse(res)
+                    if (ret.code == "success") {
+							if(clazz){
+							    alert("修改成功");
+								window.location.href("list");
+								return;
+							}
+						   if(window.confirm("添加成功，是否继续添加")){
+							   window.location.reload()
+						   }else {
+							   window.location.href("list");
+						   }
+                    } else {
+                        alert(ret.msg);
+                    }
+                })
+            })
+        })
+
+
+
+
+
+  </script>
+
+  </body>
+</html>

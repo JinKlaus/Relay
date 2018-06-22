@@ -7,20 +7,14 @@ import java.util.Map;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import org.apache.http.cookie.CookieSpec;
-import org.apache.poi.hssf.dev.EFBiffViewer;
 import org.eclipse.jetty.server.Request;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 
-import config.Config;
-import config.Entrance;
 
 import exception.ParamsErrorException;
-import exception.RouteErrorException;
 import model.Model;
 import util.FilterUtil;
 import util.FilterUtil.FilterHandler;
@@ -163,7 +157,7 @@ public class Controller {
 		String[] rs = res.split("\\.");
 		
 		if(rs.length==1){
-			if(context.POST.containsKey(res)) return filterParam(context.POST.get(res));
+			if(context.POST.containsKey(res)) return filterParam(context.POST.get(res).toString());
 			else if(context.GET.containsKey(res)) return filterParam(context.GET.get(res));
 			else return null;
 		}else{
@@ -172,7 +166,7 @@ public class Controller {
 					 return filterParam(context.POST);
 				}
 				else if(context.POST.containsKey(rs[1])) 
-					return filterParam(context.POST.get(rs[1]));
+					return filterParam(context.POST.get(rs[1]).toString());
 				else return null;
 			}
 			else if(rs[0].equals("get")) {
@@ -228,6 +222,10 @@ public class Controller {
 		makeHttp(JSON.toJSONString(res,SerializerFeature.WriteMapNullValue));
 	}
 	
+	
+	protected void out(Object data) {
+		makeHttp(JSON.toJSONString(data,SerializerFeature.WriteMapNullValue));	
+	}
 
 	public void redirect(String url) {
 		try {

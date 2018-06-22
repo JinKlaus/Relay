@@ -11,7 +11,7 @@ public class BaseController extends Controller {
 	public BaseController(ControllerContext ctx) {
 		super(ctx);
 		String g = ctx.GET.get("token");// ctx.request.getHeader("token")
-		String p=ctx.POST.get("token");
+		String p=ctx.POST.get("token").toString();
 		String t=g==null?p:g;
 		if (t != null) {
 			String token = t;

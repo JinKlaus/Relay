@@ -3,6 +3,7 @@ package server;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.URLDecoder;
 import java.util.Enumeration;
 import java.util.HashMap;
 
@@ -14,8 +15,6 @@ import org.eclipse.jetty.server.Request;
 
 import com.alibaba.fastjson.JSON;
 
-import config.Entrance;
-import exception.AssetsException;
 import exception.RouteErrorException;
 import util.CommonUtil;
 import util.LogUtil;
@@ -34,7 +33,7 @@ public class ControllerContext {
 	public String ACTION;
 	
 	public HashMap<String, String> GET;
-	public HashMap<String, String> POST;
+	public HashMap<String, Object> POST;
 	String target;
 	Request baseRequest;
 	
@@ -86,16 +85,9 @@ public class ControllerContext {
 	
 	//鑾峰彇post鍙傛暟
 	void initPost(){
-		POST = new HashMap<>();
-		Enumeration<String> names = request.getParameterNames();
+		setJsonPost();
 		
-		while (names.hasMoreElements()) {
-			String str = (String) names.nextElement();
-			POST.put(str, request.getParameter(str));
-		}
-		if(POST.size()==0) setJsonPost();
 		
-		LogUtil.log("post:"+POST.toString());
 		
 	}
 	
@@ -111,11 +103,30 @@ public class ControllerContext {
 			br.close();
 			String params = sb.toString();
 			if(!CommonUtil.isEmpty(params)){
-				POST = JSON.parseObject(params,new HashMap<String,String>().getClass());
-			}
-		} catch (IOException e) {
+				try {
+					POST = JSON.parseObject(params,new HashMap<String,Object>().getClass());
+					LogUtil.log("post:"+POST.toString());
+					
+				} catch (Exception e) {
+					POST = new HashMap<>();
+					String[] t1 = params.split("&");
+					for(int i=0;i<t1.length;i++) {
+						String t2[] = t1[i].split("=");
+						POST.put(t2[0],URLDecoder.decode(t2[1], "UTF-8"));
+						
+					}
+					
+					
+					LogUtil.log("post:"+POST.toString());
+				}
 			
-			e.printStackTrace();
+			}else {
+				POST = new HashMap<>();
+			}
+			
+		} catch (Exception e) {
+			
+			
 		}
 		
 	}

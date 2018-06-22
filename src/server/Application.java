@@ -11,14 +11,15 @@ public class Application {
 	}
 	
 	public void startMysql(){
-		//启动mysql驱动
+	
 			try {
 				
 				new com.mysql.jdbc.Driver();
+				System.out.println("mysql driver success!");
 			} catch (SQLException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
-				System.out.println("mysql driver success!");
+			
 			}
 				
 			

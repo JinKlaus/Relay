@@ -96,6 +96,7 @@ public class ParentController extends Controller{
 		}
 	}
 	
+
 	@action
 	public void remove() {
 		String id=I("get.id").toString();
@@ -137,12 +138,13 @@ public class ParentController extends Controller{
 	
 	@action
 	public void do_edit_info() {
-		String  stu_id,par_name,address,tel,uid; 
+		String  stu_id,par_name,address,tel,clazz_id,uid; 
 		try {
 			stu_id=I("post.stu_id").toString();
 			par_name=I("post.par_name").toString();
 			address=I("post.address").toString();
 			tel=I("post.tel").toString();
+			clazz_id=I("post.clazz_id").toString();
 			uid=I("post.uid").toString();
 		} catch (Exception e) {
 			error("0");
@@ -153,6 +155,7 @@ public class ParentController extends Controller{
 		par.put("par_name",par_name);
 		par.put("address", address);
 		par.put("tel",tel);
+		par.put("stu_id", stu_id);
 		user.put("name",par_name);
 		user.put("state", "2");
 		user.put("update_time",TimeUtil.getLongTimeStamp()+"");

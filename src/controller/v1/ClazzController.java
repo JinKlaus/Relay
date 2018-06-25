@@ -75,7 +75,22 @@ public class ClazzController extends Controller{
 	}
 	
 	@action
-	public void remove() {
+	public void remove(){
+		int num=0;
+		String id=I("get.id").toString();
+		try {
+			num=M("student").where("clazz_id="+id).count();
+		} catch (Exception e) {
+			error("1");
+		}
+		
+		HashMap<String, Object> res=new HashMap<>();
+		res.put("clazz_stu", num);
+		success(res);
+	}
+	
+	@action
+	public void do_remove() {
 		String id=I("get.id").toString();
 		M("clazz").where("id="+id).delete();
 		success(1);

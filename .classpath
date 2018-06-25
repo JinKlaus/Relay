@@ -37,7 +37,6 @@
 	<classpathentry kind="lib" path="lib/c3p0-0.8.4.5.jar"/>
 	<classpathentry kind="lib" path="lib/jedis.jar"/>
 	<classpathentry kind="lib" path="lib/commons-pool-1.6.jar"/>
-	<classpathentry kind="lib" path="lib/poi-3.8-20120326.jar"/>
 	<classpathentry kind="lib" path="lib/poi-examples-3.8-20120326.jar"/>
 	<classpathentry kind="lib" path="lib/poi-excelant-3.8-20120326.jar"/>
 	<classpathentry kind="lib" path="lib/poi-ooxml-3.8-20120326.jar"/>
@@ -64,6 +63,12 @@
 	<classpathentry kind="lib" path="lib/slf4j-api-1.7.13.jar"/>
 	<classpathentry kind="lib" path="lib/selenium-java-3.2.0.jar"/>
 	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.46-bin.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang3-3.6.jar"/>
+	<classpathentry kind="lib" path="lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-beanutils-1.8.3.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/poi-3.17.jar"/>
+	<classpathentry kind="lib" path="lib/poi-ooxml-3.17.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

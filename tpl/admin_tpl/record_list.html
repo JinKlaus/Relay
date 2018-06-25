@@ -62,10 +62,10 @@
 		  <div class="col-md-10">
 			  <div class="content-box-large">
 				  <div class="panel-heading">
-					  <div class="panel-title">学生管理</div>
+					  <div class="panel-title">进出记录</div>
 					  <div class="btn-group">
-						  <button id="out" type="button" class="btn btn-primary" onclick="add()">
-							  添加学生
+						  <button id="out" type="button" class="btn btn-primary" onclick="toExcel()">
+							  导出进出记录
 						  </button>
 
 					  </div>
@@ -76,10 +76,12 @@
 						  <thead>
 						  <tr>
 							  <th>id</th>
-							  <th>班级名称</th>
 							  <th>姓名</th>
-							  <th>学号</th>
-							  <th>操作</th>
+							  <th>卡号</th>
+							  <th>卡类型</th>
+							  <th>人员类型</th>
+							  <th>刷卡时间</th>
+							  <th>进出类型</th>
 						  </tr>
 						  </thead>
 						  <tbody id="tlist">
@@ -117,8 +119,8 @@
   <script>
 	  var current_page=0;
 
-		function add(){
-		    window.location.href="add"
+		function toExcel(){
+		    window.location.href="do_excel"
 		}
 
 	  $(function(){
@@ -143,21 +145,6 @@
 	  function topage(s){
 	      current_page = s;
 	      tohtml();
-	  }
-
-		function change(id) {
-           window.location.href="edit?id="+id;
-        }
-
-      function del(id){
-	      $.getJSON("remove?id="+id,{},function(res){
-	          if(res.code=="success"){
-	              alert("删除成功");
-	              $("#tr_"+id).remove();
-			  }else{
-	              alert(res.msg);
-			  }
-		  })
 	  }
 
 
@@ -196,10 +183,12 @@
                   for(i=0;i<data.length;i++){
                       s+=' <tr class="odd gradeX" id="tr_'+data[i]['id']+'">\n' +
                           '\t\t\t\t\t\t\t  <td>'+data[i]['id']+'</td>\n' +
-                          '\t\t\t\t\t\t\t  <td>'+data[i]['clazz_name']+'</td>\n' +
                           '\t\t\t\t\t\t\t  <td>'+data[i]['name']+'</td>\n' +
-                          '\t\t\t\t\t\t\t  <td> '+data[i]['sid']+'</td>\n' +
-                          '\t\t\t\t\t\t\t  <td class="center"> <button onclick="change('+data[i]['id']+')">修改</button><button onclick="del('+data[i]['id']+')">删除</button></td>' +
+                          '\t\t\t\t\t\t\t  <td>'+data[i]['cardNo']+'</td>\n' +
+                          '\t\t\t\t\t\t\t  <td> '+data[i]['cardType']+'</td>\n' +
+                          '\t\t\t\t\t\t\t  <td> '+data[i]['personType']+'</td>\n' +
+                          '\t\t\t\t\t\t\t  <td> '+data[i]['dateTime']+'</td>\n' +
+                          '\t\t\t\t\t\t\t  <td>'+data[i]['inoutType']+'</td>\n' +
                           '\t\t\t\t\t\t  </tr>'
                   }
                   $("#tlist").html(s);

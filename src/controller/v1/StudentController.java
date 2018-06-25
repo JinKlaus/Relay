@@ -19,12 +19,6 @@ public class StudentController extends Controller{
 		super(context);
 	}
 	
-	@action
-	public void test() {
-		String aString = I("s").toString();
-		success(aString);
-		
-	}
 
 	@action
 	public void list() {

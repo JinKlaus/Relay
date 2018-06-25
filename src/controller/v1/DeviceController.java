@@ -13,6 +13,7 @@ import server.ControllerContext;
 
 import util.TimeUtil;
 
+
 public class DeviceController extends Controller {
 
 	
@@ -31,7 +32,7 @@ public class DeviceController extends Controller {
 		int pages = 5;
 		HashMap<String, Object> res = new HashMap<>();
 		try {
-			versionNo=I("get.versionNo").toString();
+			versionNo=I("post.versionNo").toString();
 		    ArrayList<HashMap<String, String>> list = 
 		    		M("user").where("update_time>"+versionNo)
 		    		.field("id,uuid,cardNo,startDate,endDate,create_time,update_time,name,personType,veinData1,veinData2,veinData3,state,passType")
@@ -56,6 +57,7 @@ public class DeviceController extends Controller {
 		    
 		   
 		} catch (Exception e) {
+			e.printStackTrace();
 			res.put("result", 0);
 			res.put("errorCode",Dictionary.GETWHITEERROR);
 			out(res);
@@ -74,17 +76,15 @@ public class DeviceController extends Controller {
 			
 			List<HashMap<String,String>> list = 
 					(List<HashMap<String, String>>) JSON.parseArray(cardInfoRecordArry,new HashMap<String,String>().getClass());
+			
 			for(int i=0;i<list.size();i++) {
 				HashMap<String, String> data = list.get(i);
 				data.put("dateTime",TimeUtil.dateToStamp(data.get("dateTime"), "yyyy-MM-dd HH:mm:ss"));
 				M("reportrecord").add(data);
-				
-			}
+			}				
 			res.put("result", 1);
-		
 			out(res);
 			return;
-		
 		} catch (Exception e) {
 			e.printStackTrace();
 			res.put("result", 0);

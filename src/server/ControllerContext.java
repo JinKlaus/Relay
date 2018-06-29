@@ -76,8 +76,8 @@ public class ControllerContext {
 			for(int i=0;i<pStrings.length;i++){
 				if(pStrings[i].indexOf("=")==-1) throw new RouteErrorException("params error");
 				String[] lStrings = pStrings[i].split("=");
-				if(lStrings.length!=2) throw new RouteErrorException("params error");
-				GET.put(lStrings[0], lStrings[1]);
+				if(lStrings.length!=2)  GET.put(lStrings[0], "");
+				else GET.put(lStrings[0], lStrings[1]);
 			}
 		}
 		LogUtil.log("get:"+GET.toString());
@@ -112,8 +112,9 @@ public class ControllerContext {
 					String[] t1 = params.split("&");
 					for(int i=0;i<t1.length;i++) {
 						String t2[] = t1[i].split("=");
+						if(t2.length==2)
 						POST.put(t2[0],URLDecoder.decode(t2[1], "UTF-8"));
-						
+						else POST.put(t2[0],"");
 					}
 					
 					
@@ -125,7 +126,7 @@ public class ControllerContext {
 			}
 			
 		} catch (Exception e) {
-			
+			e.printStackTrace();
 			
 		}
 		

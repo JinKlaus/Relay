@@ -62,31 +62,37 @@
 		  <div class="col-md-10">
 			  <div class="content-box-large">
 				  <div class="panel-heading">
-					  <div class="panel-title">学生管理</div>
-					  <div>
+					  <div class="panel-title">教师管理</div>
+					  <div class="btn-group">
 						  <button id="out" type="button" class="btn btn-primary" onclick="add()">
-							  添加学生
+							  教师录入
 						  </button>
-						  <button id="search" type="button" class="btn btn-primary" onclick="search()">
-							  按学生姓名查询
-						  </button>
-						  <br><br>
-						  <div class="col-sm-6">
-							  <input value="" type="text" class="form-control" id="byname" name="byname" placeholder="">
+						  <br><br><br>
+						  <div>
+							  <button id="searchbytel" type="button" class="btn btn-primary" onclick="searchbytel()">
+								  按教师手机号查询
+							  </button>
+							  <button id="searchbyname" type="button" class="btn btn-primary" onclick="searchbyname()">
+								  按班级名称查询
+							  </button>
+						  </div>
+						  <br>
+						  <div class="col-sm-12">
+						  	<input value="" type="text" class="form-control" id="search" name="search" placeholder="">
 						  </div>
 					  </div>
 				  </div>
-
-
 
 				  <div class="panel-body">
 					  <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
 						  <thead>
 						  <tr>
 							  <th>id</th>
-							  <th>班级名称</th>
-							  <th>姓名</th>
-							  <th>学号</th>
+							  <th>学生所在班级</th>
+							  <th>学生姓名</th>
+							  <th>家长姓名</th>
+							  <th>家庭住址</th>
+							  <th>联系方式</th>
 							  <th>操作</th>
 						  </tr>
 						  </thead>
@@ -126,7 +132,7 @@
 	  var current_page=0;
 
 		function add(){
-		    window.location.href="add"
+		    window.location.href="add";
 		}
 
 	  $(function(){
@@ -138,6 +144,7 @@
 	      tohtml();
 	  }
 
+
 	  function nextpage(){
 	      current_page++;
 	      tohtml();
@@ -148,9 +155,12 @@
 	      tohtml();
 	  }
 
-		function change(id) {
-           window.location.href="edit?id="+id;
-        }
+	  function change_info(id) {
+           window.location.href="edit_info?id="+id;
+	  }
+      function change_vena(id) {
+          window.location.href="edit_vena?id="+id;
+      }
 
       function del(id){
 	      $.getJSON("remove?id="+id,{},function(res){
@@ -164,11 +174,18 @@
 	  }
 
       var key;
-      function search() {
-          current_page = 0;
-		  key=$("#byname").val();
+      function searchbytel(){
+          current_page=0;
+          key=$("#search").val();
           tohtml();
       }
+
+      function searchbyname(){
+          current_page=0;
+          key=$("#search").val();
+          tohtml();
+      }
+
 
 
 	  function tohtml(){
@@ -176,9 +193,8 @@
 	      var d = {"page":current_page}
 
           if(key){
-	          d['key']=key;
-		  }
-
+              d['key']=key;
+          }
 
           $.getJSON("getList",d,function(res){
               if(res.code=="success"){
@@ -210,9 +226,13 @@
                       s+=' <tr class="odd gradeX" id="tr_'+data[i]['id']+'">\n' +
                           '\t\t\t\t\t\t\t  <td>'+data[i]['id']+'</td>\n' +
                           '\t\t\t\t\t\t\t  <td>'+data[i]['clazz_name']+'</td>\n' +
-                          '\t\t\t\t\t\t\t  <td>'+data[i]['name']+'</td>\n' +
-                          '\t\t\t\t\t\t\t  <td> '+data[i]['sid']+'</td>\n' +
-                          '\t\t\t\t\t\t\t  <td class="center"> <button onclick="change('+data[i]['id']+')">修改</button><button onclick="del('+data[i]['id']+')">删除</button></td>' +
+                          '\t\t\t\t\t\t\t  <td>'+data[i]['stu_name']+'</td>\n' +
+                          '\t\t\t\t\t\t\t  <td> '+data[i]['par_name']+'</td>' +
+                          '\t\t\t\t\t\t\t  <td> '+data[i]['address']+'</td>' +
+                          '\t\t\t\t\t\t\t  <td> '+data[i]['tel']+'</td>' +
+                          '\t\t\t\t\t\t\t  <td class="center"> <button onclick="change_info('+data[i]['id']+')">修改个人资料</button>' +
+						  '									<button onclick="change_vena('+data[i]['id']+')">修改指静脉</button>' +
+						  '									<button onclick="del('+data[i]['id']+')">删除</button></td>' +
                           '\t\t\t\t\t\t  </tr>'
                   }
                   $("#tlist").html(s);

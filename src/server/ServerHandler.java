@@ -29,7 +29,7 @@ public class ServerHandler extends AbstractHandler {
 			init(context);
 			
 		} catch (RouteErrorException e) {
-			
+			e.printStackTrace();
 		}
 		
 		

@@ -1,7 +1,10 @@
 package controller.v1;
 
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import org.eclipse.jetty.util.UrlEncoded;
 
 import com.alibaba.fastjson.JSON;
 
@@ -11,6 +14,7 @@ import server.Controller;
 import server.ControllerContext;
 import util.Md5Util;
 import util.RandomUtil;
+import util.StringUtil;
 import util.TimeUtil;
 
 public class ParentController extends Controller{
@@ -30,12 +34,39 @@ public class ParentController extends Controller{
 		String page=I("get.page").toString();
 		String limit = Integer.parseInt(page)*10+",10";
 		HashMap<String, Object> res = new HashMap<>();
-		int num = M("parent").count();
-		String sql = "select a.*,c.name as stu_name,b.name as clazz_name from parent a left join student c on a.stu_id=c.id LEFT JOIN clazz b on c.clazz_id=b.id limit "+limit;
-		ArrayList<HashMap<String, String>> list = M("parent").query(sql);
-		res.put("num", num);
-		res.put("list",list);
-		success(res);	
+		try {
+			@SuppressWarnings("deprecation")
+			String key=URLDecoder.decode(I("get.key").toString());
+			if(StringUtil.isNumeric(key)) {
+				String sql1 ="SELECT count(*) FROM parent where tel  like '%"+key+"%'";
+				String sql ="select a.*,c.name as stu_name,b.name as clazz_name from parent a left join student c on a.stu_id=c.id left join clazz b on c.clazz_id=b.id where tel like '%"+key+"%' limit "+limit;
+				ArrayList<HashMap<String, String>> list1=M("parent").query(sql1);
+				String num=list1.get(0).get("count(*)");
+				ArrayList<HashMap<String, String>> list = M("parent").query(sql);
+				res.put("num", num);
+				res.put("list",list);
+				success(res);
+			}else {
+				String sql1 ="select count(*),a.*,c.name as stu_name from parent a left join student c on a.stu_id=c.id  where c.name like '%"+key+"%'";
+				String sql ="select a.*,c.name as stu_name,b.name as clazz_name from parent a left join student c on a.stu_id=c.id left join clazz b on c.clazz_id=b.id where c.name like '%"+key+"%' limit "+limit;
+				ArrayList<HashMap<String, String>> list1=M("parent").query(sql1);
+				String num=list1.get(0).get("count(*)");
+				ArrayList<HashMap<String, String>> list = M("parent").query(sql);
+				res.put("num", num);
+				res.put("list",list);
+				success(res);
+			}
+			return;
+		} catch (Exception e) {
+			int num = M("parent").count();
+			String sql = "select a.*,c.name as stu_name,b.name as clazz_name from parent a left join student c on a.stu_id=c.id LEFT JOIN clazz b on c.clazz_id=b.id limit "+limit;
+			ArrayList<HashMap<String, String>> list = M("parent").query(sql);
+			res.put("num", num);
+			res.put("list",list);
+			success(res);
+			return;
+		}
+			
 	}
 	
 	@action
@@ -51,7 +82,7 @@ public class ParentController extends Controller{
 			veinData2 = I("post.image2").toString();
 			veinData3 = I("post.image3").toString();
 			stu_id=I("post.stu_id").toString();
-			par_photo=I("post.par_photo").toString();
+//			par_photo=I("post.par_photo").toString();
 			par_name=I("post.par_name").toString();
 			address=I("post.address").toString();
 			tel=I("post.tel").toString();
@@ -76,18 +107,15 @@ public class ParentController extends Controller{
 		user.put("create_time",TimeUtil.getShortTimeStamp()+"");
 		user.put("update_time",TimeUtil.getLongTimeStamp()+"");
 		user.put("state",Dictionary.STATE_ADD+"");
-		user.put("scenePhoto",par_photo);
+//		user.put("scenePhoto",par_photo);
 		user.put("passType","6");
 		par.put("stu_id",stu_id);
 		par.put("par_name",par_name);
-		par.put("par_photo",par_photo);
+//		par.put("par_photo",par_photo);
 		par.put("address",address);
 		par.put("tel", tel);
 		try {
 			long id = M("user").add(user);
-			HashMap<String, Object> sHashMap = new HashMap<>();
-			sHashMap.put("uuid", Md5Util.MD5(id+RandomUtil.getRandomString(10)));
-			M("user").where("id="+id).save(sHashMap);
 			par.put("uid", id+"");
 			M("parent").add(par);
 			success("数据库更新成功");
@@ -196,7 +224,7 @@ public class ParentController extends Controller{
 	} 
 	
 	@action
-	public void getClazzInfo() {
+	public  void getClazzInfo() {
 		String sql="select id,name from clazz";
 		ArrayList<HashMap<String, String>> list = M("clazz").query(sql);
 		success(list);

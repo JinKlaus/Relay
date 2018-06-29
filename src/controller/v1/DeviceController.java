@@ -35,17 +35,14 @@ public class DeviceController extends Controller {
 			versionNo=I("post.versionNo").toString();
 		    ArrayList<HashMap<String, String>> list = 
 		    		M("user").where("update_time>"+versionNo)
-		    		.field("id,uuid,cardNo,startDate,endDate,create_time,update_time,name,personType,veinData1,veinData2,veinData3,state,passType")
+		    		.field("id,cardNo,startDate,endDate,create_time,update_time,name,personType,veinData1,veinData2,veinData3,state,passType")
 		    		.order("update_time asc").limit(pages+"").select();
-		    System.out.println(list.size());
 		    for(int i = 0 ; i < list.size() ; i++) {
-		    	  list.get(i).put("id",list.get(i).get("uuid"));
 		    	  list.get(i).put("startDate", TimeUtil.stampToMysqlDate(list.get(i).get("startDate").toString()));
 		    	  list.get(i).put("endDate", TimeUtil.stampToMysqlDate(list.get(i).get("endDate").toString()));
 		    	  list.get(i).put("create_time", TimeUtil.stampToMysqlDate(list.get(i).get("create_time").toString()));
 		    	  list.get(i).put("versionNo", list.get(i).get("update_time"));
 		    	  list.get(i).remove("update_time");
-		    	  list.get(i).remove("uuid");
 		    	  list.get(i).remove("create_time");
 		    }
 		    if(list.size()>=5)
@@ -53,9 +50,6 @@ public class DeviceController extends Controller {
 		    else res.put("result",1);
 		    res.put("whiteDataArry",list);
 		    out(res);
-	
-		    
-		   
 		} catch (Exception e) {
 			e.printStackTrace();
 			res.put("result", 0);

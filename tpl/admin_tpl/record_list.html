@@ -1,200 +1,271 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-  <head>
-    <title>后台系统</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- styles -->
-    <link href="/css/styles.css" rel="stylesheet">
+<head>
+	<title>后台系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap -->
+	<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<!-- styles -->
+	<link href="/css/styles.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/cxcalendar.css">
+	<style>
+		h1,h2,h3{font:bold 36px/1 "\5fae\8f6f\96c5\9ed1";}
+		h2{font-size:20px;}
+		h3{font-size:16px;}
+		fieldset{margin:1em 0;}
+		fieldset legend{font:bold 14px/2 "\5fae\8f6f\96c5\9ed1";}
+		a{color:#06f;text-decoration:none;}
+		a:hover{color:#00f;}
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-  	<div class="header">
-	     <div class="container">
-	        <div class="row">
-	           <div class="col-md-5">
-	              <!-- Logo -->
-	              <div class="logo">
-	                 <h1><a >后台系统</a></h1>
-	              </div>
-	           </div>
-	           <div class="col-md-5">
-	              <div class="row">
-	                <div class="col-lg-12">
-	                  <!--<div class="input-group form" >-->
-	                       <!--<input type="text" class="form-control" placeholder="Search...">-->
-	                       <!--<span class="input-group-btn">-->
-	                         <!--<button class="btn btn-primary" type="button">Search</button>-->
-	                       <!--</span>-->
-	                  <!--</div>-->
-	                </div>
-	              </div>
-	           </div>
-	           <div class="col-md-2">
-	              <div class="navbar navbar-inverse" role="banner">
-	                  <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
-	                    <!--<ul class="nav navbar-nav">-->
-	                      <!--<li class="dropdown">-->
-	                        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>-->
-	                        <!--<ul class="dropdown-menu animated fadeInUp">-->
-	                          <!--<li><a href="profile.html">Profile</a></li>-->
-	                          <!--<li><a href="login.html">Logout</a></li>-->
-	                        <!--</ul>-->
-	                      <!--</li>-->
-	                    <!--</ul>-->
-	                  </nav>
-	              </div>
-	           </div>
-	        </div>
-	     </div>
-	</div>
+		.wrap{width:600px;margin:0 auto;padding:20px 40px;border:2px solid #999;border-radius:8px;background:#fff;box-shadow:0 0 10px rgba(0,0,0,0.5);}
+	</style>
 
-    <div class="page-content">
-    	<div class="row">
-			<%include("left.html"){}%>
-		  <div class="col-md-10">
-			  <div class="content-box-large">
-				  <div class="panel-heading">
-					  <div class="panel-title">进出记录</div>
-					  <div class="btn-group">
-						  <button id="out" type="button" class="btn btn-primary" onclick="toExcel()">
-							  导出进出记录
-						  </button>
 
-					  </div>
-				  </div>
+	<script src="/js/jquery-1.9.1.js"></script>
+	<script src="/js/jquery-calendar.js" charset="GBK"></script>
 
-				  <div class="panel-body">
-					  <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
-						  <thead>
-						  <tr>
-							  <th>id</th>
-							  <th>姓名</th>
-							  <th>卡号</th>
-							  <th>卡类型</th>
-							  <th>人员类型</th>
-							  <th>刷卡时间</th>
-							  <th>进出类型</th>
-						  </tr>
-						  </thead>
-						  <tbody id="tlist">
-
-						  </tbody>
-					  </table>
-				  </div>
-
-				  <div class="row"><div class="col-xs-6">
-					  <div class="dataTables_info" id="example_info"></div>
-				  </div><div class="col-xs-6"><div class="dataTables_paginate paging_bootstrap">
-					  <ul class="pagination">
-						 </ul></div></div></div>
-			  </div>
-		  </div>
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+<div class="header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5">
+				<!-- Logo -->
+				<div class="logo">
+					<h1><a >后台系统</a></h1>
+				</div>
+			</div>
+			<div class="col-md-5">
+				<div class="row">
+					<div class="col-lg-12">
+						<!--<div class="input-group form" >-->
+						<!--<input type="text" class="form-control" placeholder="Search...">-->
+						<!--<span class="input-group-btn">-->
+						<!--<button class="btn btn-primary" type="button">Search</button>-->
+						<!--</span>-->
+						<!--</div>-->
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<div class="navbar navbar-inverse" role="banner">
+					<nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+						<!--<ul class="nav navbar-nav">-->
+						<!--<li class="dropdown">-->
+						<!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>-->
+						<!--<ul class="dropdown-menu animated fadeInUp">-->
+						<!--<li><a href="profile.html">Profile</a></li>-->
+						<!--<li><a href="login.html">Logout</a></li>-->
+						<!--</ul>-->
+						<!--</li>-->
+						<!--</ul>-->
+					</nav>
+				</div>
+			</div>
 		</div>
-    </div>
+	</div>
+</div>
 
-    <footer>
-         <div class="container">
-         
-            <!--<div class="copy text-center">-->
-               <!--Copyright 2014 <a href='#'>Website</a>-->
-            <!--</div>-->
-            
-         </div>
-      </footer>
+<div class="page-content">
+	<div class="row">
+		<%include("left.html"){}%>
+		<div class="col-md-10">
+			<div class="content-box-large">
+				<div class="panel-heading">
+					<div class="panel-title">进出记录
+						<button id="out" type="submit" class="btn btn-primary"  style="align-items: right">
+							导出进出记录
+						</button>
+						<button id="search" type="button" class="btn btn-primary" onclick="search()">
+							查询
+						</button>
+					</div>
+					<div class="btn-group">
+						<p>开始时间</p>
+						<input name="mydate" type="text" class="input_cxcalendar" id="startdate" style="width: 200px;height: 30px;">
+						<p>结束时间</p>
+						<input name="mydate2" type="text" class="input_cxcalendar" id="enddate" style="width: 200px;height: 30px;">
+						<p>学生姓名</p>
+						<input value="" type="text" class="form-control" id="bystuname" name="bystuname" style="width: 200px;height: 30px;">
+						<p>手机号</p>
+						<input value="" type="text" class="form-control" id="bytel" name="bytel" style="width: 200px;height: 30px;">
+					</div>
+				</div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/js/custom.js"></script>
+				<div class="panel-body">
+					<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+						<thead>
+						<tr>
+							<th>id</th>
+							<th>姓名</th>
+							<th>学生姓名</th>
+							<th>卡号</th>
+							<th>卡类型</th>
+							<th>人员类型</th>
+							<th>刷卡时间</th>
+							<th>进出类型</th>
+							<th>联系方式</th>
+						</tr>
+						</thead>
+						<tbody id="tlist">
 
-  <script>
-	  var current_page=0;
+						</tbody>
+					</table>
+				</div>
 
-		function toExcel(){
-		    window.location.href="do_excel"
-		}
+				<div class="row"><div class="col-xs-6">
+					<div class="dataTables_info" id="example_info"></div>
+				</div><div class="col-xs-6"><div class="dataTables_paginate paging_bootstrap">
+					<ul class="pagination">
+					</ul></div></div></div>
+			</div>
+		</div>
+	</div>
+</div>
 
-	  $(function(){
-	     tohtml();
-	  })
+<footer>
+	<div class="container">
 
-	  function lastpage(){
-	      current_page--;
-	      tohtml();
-	  }
+		<!--<div class="copy text-center">-->
+		<!--Copyright 2014 <a href='#'>Website</a>-->
+		<!--</div>-->
 
-      function search(){
-          current_page=0;
-          tohtml();
-      }
+	</div>
+</footer>
 
-	  function nextpage(){
-	      current_page++;
-	      tohtml();
-	  }
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/custom.js"></script>
 
-	  function topage(s){
-	      current_page = s;
-	      tohtml();
-	  }
+<script>
+    var current_page=0;
+
+    $(function(){
+        tohtml();
+    })
+
+    $('.input_cxcalendar').each(function(){
+        var a = new Calendar({
+            targetCls: $(this),
+            type: 'yyyy-MM-dd HH:mm:ss',
+            wday:2
+        },function(val){
+            console.log(val);
+        });
+    });
+
+    function lastpage(){
+        current_page--;
+        tohtml();
+    }
+
+
+    function nextpage(){
+        current_page++;
+        tohtml();
+    }
+
+    function topage(s){
+        current_page = s;
+        tohtml();
+    }
+
+    var startdate,enddate,stu_name,tel;
+    function search() {
+        current_page =0;
+        startdate=$("#startdate").val();
+        enddate=$("#enddate").val();
+        stu_name=$("#bystuname").val();
+        tel=$("#bytel").val();
+        tohtml();
+    }
+
+    var excel_data = {};
+    $("#out").on("click",function () {
+        alert(JSON.stringify(excel_data));
+        $.post("do_excel",excel_data, function (res) {
+            var ret = JSON.parse(res)
+            if (ret.code == "success") {
+                if(window.confirm("进出记录导出成功，是否打开记录表"))
+              		window.open(ret.data);
+            } else {
+                alert(ret.msg);
+            }
+        })
+    })
+
+        function tohtml() {
+            var url;
+            var d = {"page": current_page};
+            if (startdate || enddate || stu_name || tel) {
+                d['startdate'] = startdate;
+                d['enddate'] = enddate;
+                d['stu_name'] = stu_name;
+                d['tel'] = tel;
+                url = "getSearchList";
+            } else {
+                url = "getList";
+            }
+
+			excel_data = d;
+            $.getJSON(url, d, function (res) {
+                if (res.code == "success") {
+                    var da = res.data, s = '', data = da['list'], num = da['num'], pi = "";
+                    $("#example_info").html("共" + num + "条记录");
+                    if (current_page == 0) pi += ' <li class="prev disabled"> <a href="#">上一页</a></li>';
+                    else pi += '<li class="prev"> <a href="#" onclick="lastpage()">上一页</a></li>'
+                    var max = num / 10 > 5 ? 5 : Math.ceil(num / 10)
+                    for (var i = current_page; i < max; i++) {
+                        var p = i + 1;
+                        if (i == 0) {
+                            pi += '<li class="active"><a href="#">' + p + '</a></li>'
+                        }
+
+                        else {
+                            pi += '<li><a href="#"  onclick="topage(' + (p - 1) + ')">' + p + '</a></li>';
+                        }
+
+                    }
+                    if (current_page + 1 >= num / 10) {
+                        pi += '  <li class="next disabled"><a href="#" >下一页</a></li>'
+                    } else {
+                        pi += '  <li class="next"><a href="#" onclick="nextpage()">下一页</a></li>'
+                    }
+
+                    $(".pagination").html(pi)
+
+                    for (i = 0; i < data.length; i++) {
+                        s += ' <tr class="odd gradeX" id="tr_' + data[i]['id'] + '">\n' +
+                            '\t\t\t\t\t\t\t  <td>' + data[i]['id'] + '</td>\n' +
+                            '\t\t\t\t\t\t\t  <td>' + data[i]['name'] + '</td>\n' +
+                            '\t\t\t\t\t\t\t  <td>' + data[i]['stu_name'] + '</td>\n' +
+                            '\t\t\t\t\t\t\t  <td>' + data[i]['cardNo'] + '</td>\n' +
+                            '\t\t\t\t\t\t\t  <td> ' + data[i]['cardType'] + '</td>\n' +
+                            '\t\t\t\t\t\t\t  <td> ' + data[i]['personType'] + '</td>\n' +
+                            '\t\t\t\t\t\t\t  <td> ' + data[i]['dateTime'] + '</td>\n' +
+                            '\t\t\t\t\t\t\t  <td>' + data[i]['inoutType'] + '</td>\n' +
+                            '\t\t\t\t\t\t\t  <td>' + data[i]['tel'] + '</td>\n' +
+                            '\t\t\t\t\t\t  </tr>'
+                    }
+                    $("#tlist").html(s);
+                } else {
+                    alert(res.msg);
+                }
+            })
+        }
 
 
 
-	  function tohtml(){
-
-	      var d = {"page":current_page}
 
 
-          $.getJSON("getList",d,function(res){
-              if(res.code=="success"){
-                  var da=res.data,s='',data=da['list'],num=da['num'],pi="";
-                  $("#example_info").html("共"+num+"条记录");
-                  if(current_page==0)  pi+=' <li class="prev disabled"> <a href="#">上一页</a></li>';
-                  else pi+='<li class="prev"> <a href="#" onclick="lastpage()">上一页</a></li>'
-				  var max = num/10>5?5:Math.ceil(num/10)
-                  for(var i=current_page;i<max;i++){
-                      var p = i+1;
-                      if(i==0){
-                          pi+= '<li class="active"><a href="#">'+p+'</a></li>'
-					  }
-
-					  else{
-                          pi+= '<li><a href="#"  onclick="topage('+(p-1)+')">'+p+'</a></li>';
-					  }
-
-				  }
-					if(current_page+1>=num/10){
-                        pi+= '  <li class="next disabled"><a href="#" >下一页</a></li>'
-					}else{
-                        pi+= '  <li class="next"><a href="#" onclick="nextpage()">下一页</a></li>'
-					}
-
-					$(".pagination").html(pi)
-
-                  for(i=0;i<data.length;i++){
-                      s+=' <tr class="odd gradeX" id="tr_'+data[i]['id']+'">\n' +
-                          '\t\t\t\t\t\t\t  <td>'+data[i]['id']+'</td>\n' +
-                          '\t\t\t\t\t\t\t  <td>'+data[i]['name']+'</td>\n' +
-                          '\t\t\t\t\t\t\t  <td>'+data[i]['cardNo']+'</td>\n' +
-                          '\t\t\t\t\t\t\t  <td> '+data[i]['cardType']+'</td>\n' +
-                          '\t\t\t\t\t\t\t  <td> '+data[i]['personType']+'</td>\n' +
-                          '\t\t\t\t\t\t\t  <td> '+data[i]['dateTime']+'</td>\n' +
-                          '\t\t\t\t\t\t\t  <td>'+data[i]['inoutType']+'</td>\n' +
-                          '\t\t\t\t\t\t  </tr>'
-                  }
-                  $("#tlist").html(s);
-              }
-          })
-	  }
-  </script>
-  </body>
+</script>
+</body>
 </html>

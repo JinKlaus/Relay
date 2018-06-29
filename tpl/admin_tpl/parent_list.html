@@ -63,11 +63,20 @@
 			  <div class="content-box-large">
 				  <div class="panel-heading">
 					  <div class="panel-title">家长管理</div>
-					  <div class="btn-group">
+					  <div>
 						  <button id="out" type="button" class="btn btn-primary" onclick="add()">
 							  家长录入
 						  </button>
-
+						  <button id="searchbytel" type="button" class="btn btn-primary" onclick="searchbytel()">
+							  按家长手机号查询
+						  </button>
+						  <button id="searchbyname" type="button" class="btn btn-primary" onclick="searchbyname()">
+							  按学生姓名查询
+						  </button>
+						  <br>
+						  <div class="col-sm-6">
+						  	<input value="" type="text" class="form-control" id="search" name="search" placeholder="">
+						  </div>
 					  </div>
 				  </div>
 
@@ -132,10 +141,6 @@
 	      tohtml();
 	  }
 
-      function search(){
-          current_page=0;
-          tohtml();
-      }
 
 	  function nextpage(){
 	      current_page++;
@@ -165,12 +170,28 @@
 		  })
 	  }
 
+      var key;
+      function searchbytel(){
+          current_page=0;
+          key=$("#search").val();
+          tohtml();
+      }
+
+      function searchbyname(){
+          current_page=0;
+          key=$("#search").val();
+          tohtml();
+      }
+
 
 
 	  function tohtml(){
 
 	      var d = {"page":current_page}
 
+          if(key){
+              d['key']=key;
+          }
 
           $.getJSON("getList",d,function(res){
               if(res.code=="success"){

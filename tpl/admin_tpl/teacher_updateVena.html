@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+	  <meta charset="utf-8"></meta>
+	  <meta http-equiv="X-UA-Compatible" content="IE=9" />
+	  <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+    <title>后台系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- styles -->
+    <link href="/css/styles.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  	<div class="header">
+	     <div class="container">
+	        <div class="row">
+	           <div class="col-md-5">
+	              <!-- Logo -->
+	              <div class="logo">
+	                 <h1><a >后台系统</a></h1>
+	              </div>
+	           </div>
+	           <div class="col-md-2">
+	              <div class="navbar navbar-inverse" role="banner">
+	                  <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+	                    <!--<ul class="nav navbar-nav">-->
+	                      <!--<li class="dropdown">-->
+	                        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>-->
+	                        <!--<ul class="dropdown-menu animated fadeInUp">-->
+	                          <!--<li><a href="profile.html">Profile</a></li>-->
+	                          <!--<li><a href="login.html">Logout</a></li>-->
+	                        <!--</ul>-->
+	                      <!--</li>-->
+	                    <!--</ul>-->
+	                  </nav>
+	              </div>
+	           </div>
+	        </div>
+	     </div>
+	</div>
+
+    <div class="page-content">
+    	<div class="row">
+			<%include("left.html"){}%>
+			<div class="col-md-6">
+				<div class="content-box-large">
+					<div class="panel-heading">
+						<div class="panel-title"><a href="list" style="margin-right: 15px">返回教师列表</a></div>
+					</div>
+					<style type="text/css">
+						.panel-body .pic{ width: 300px; height: 150px; margin-bottom: 20px}
+					</style>
+					<div class="panel-body form-horizontal" >
+							<input type="hidden" value="{$api[id]}" name="id">
+							<div class="form-group">
+								<label  class="col-sm-2 control-label">指静脉</label>
+								<div class="col-sm-10">
+									<object id='aeyeFingerVeinOCX' align="left"classid='CLSID:DC26F2AB-C4EC-441B-BB40-FCC592066E3A' width='400' height="400"></object>
+								</div>
+								<p id="fingerVeinmsg" style="text-align:center;color:#FF0000;font-size:20px;">请准备将手指放到指静脉识别器上</p>
+							</div>
+
+
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-sm-10">
+									<button id="sub" type="submit"  class="btn btn-primary">提交</button>
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+
+    <footer>
+         <div class="container">
+         
+            <!--<div class="copy text-center">-->
+               <!--Copyright 2014 <a href='#'>Website</a>-->
+            <!--</div>-->
+            
+         </div>
+      </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/js/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/custom.js"></script>
+
+  <script>
+      var ie11 = navigator.userAgent.toLowerCase().search(/(msie\s|trident.*rv:)([\w.]+)/);
+      var isFirefox;
+      var isIe;
+      var imageVisJSON="";
+      var imageNirJSON="";
+      var modelVisJSON="";
+      var modelNirJSON="";
+      var featureVisJSON="";
+      var featureNirJSON="";
+      var imageLiveJSON="";
+
+      var fingerVeinfeatures="";
+      var fvPara='{"TimesPerFinger":2, "FingerNum":3,"Fingers":"124000","Thresh":0.570,"ModelTimeout":60,"RecogTimeout":60}';
+
+      var overTime = false; //指静脉或认证超时
+      var fingerStr = "";	  //采集手指顺序
+      var fingerLen = 0 ;	  //采集手指长度
+      var cFinger = 0;	  //当前手指
+
+      var  fingerVeinControl=null;
+
+      if(isIe=navigator.userAgent.indexOf("MSIE")>0) {
+          fingerVeinControl=aeyeFingerVeinOCX;
+          $("#pluginId").css("height", "0");
+          $("#pluginId").css("width", "0");
+      }
+      if(isFirefox=navigator.userAgent.indexOf("Firefox")>0){
+          fingerVeinControl=document.getElementById("pluginId");
+          $("#aeyeFingerVeinOCX").css("height", "0");
+          $("#aeyeFingerVeinOCX").css("width", "0");
+      }
+
+      //建模
+      function createModel(){
+          //单个手指采集次数1/2   采集手指数			手指序列1-左手食指 2-左手中指 3-左手无名指 4-右手食指 5-右手中指 6右手无名指
+          var res = fingerVeinControl.AEYE_Init_Vein(fvPara); //版本号
+          if(0 ==res ) {
+              //algorithmVersion = fingerVeinControl.AEYE_GetAlgorithmVersion_Vein();
+              var t= fingerVeinControl.AEYE_StartModel_Vein();
+          }else{
+              alert("指静脉设备初始化失败");
+          }
+      }
+      function bindCallBack() {
+          fingerVeinControl.attachEvent("OnTakePicture",OnTakePictureCallBack);
+          fingerVeinControl.attachEvent("OnVeinModelStart",OnVeinModelStartCallBack);
+          fingerVeinControl.attachEvent("OnVeinModelStateChange",OnVeinModelStateChangeCallBack);
+          fingerVeinControl.attachEvent("OnVeinModelStep",OnVeinModelStepCallBack);
+          fingerVeinControl.attachEvent("OnVeinModelStop",OnVeinModelStopCallBack);
+
+          fingerVeinControl.attachEvent("OnVeinRecogStart",OnVeinRecogStartCallBack);
+          fingerVeinControl.attachEvent("OnVeinRecogStateChange",OnVeinRecogStateChangeCallBack);
+          fingerVeinControl.attachEvent("OnVeinRecogStep",OnVeinRecogStepCallBack);
+          fingerVeinControl.attachEvent("OnVeinRecogStop",OnVeinRecogStopCallBack);
+      }
+
+      function OnVeinModelStartCallBack(obj) {callbackfunction(0,obj);}
+      function OnVeinModelStateChangeCallBack(obj) {callbackfunction(1,obj);}
+      function OnVeinModelStepCallBack(obj) {callbackfunction(2,obj);}
+      function OnVeinModelStopCallBack(obj) {callbackfunction(3,obj);}
+
+      function OnVeinRecogStartCallBack(obj) {callbackfunction(10,obj);}
+      function OnVeinRecogStateChangeCallBack(obj) {callbackfunction(11,obj);}
+      function OnVeinRecogStepCallBack(obj) {callbackfunction(12,obj);}
+      function OnVeinRecogStopCallBack(obj) {callbackfunction(13,obj);}
+      function OnTakePictureCallBack(obj){callbackfunction(14,obj);}
+
+      //控件回调函数
+      function callbackfunction(param,param2){
+          var tmpString="";
+          var btString="Start collecting";
+          switch(param){
+              case 0:
+                  var json = jQuery.parseJSON(param2);
+                  tmpString = json.RETURNDESC;
+                  break;
+              case 1:
+                  var json = jQuery.parseJSON(param2);
+                  tmpString = json.RETURNDESC;
+                  if(json.RETURNID==-100){//确认超时
+                      overTime = true;
+                  }
+                  if(json.RETURNID==40){//第一次确定
+                      if(!overTime){
+                          show_confirm(tmpString);
+                      }
+                  }
+                  if(json.RETURNID==41){//第二次确定
+                      if(!overTime){
+                          //show_confirm(tmpString);
+                      }
+                  }
+                  if(json.RETURNID==30){//取消手指
+                      if(!overTime){
+                          fingerStr = fingerStr.substr(1);
+                      }
+                  }
+                  break;
+              case 2:
+                  var json = jQuery.parseJSON(param2);
+                  tmpString = json.RETURNDESC;
+
+                  cFinger = parseInt(fingerStr.substr(0,1));
+                  fingerStr = fingerStr.substr(1);
+                  break;;
+              case 3:
+                  cFinger = 0;
+
+                  var json = jQuery.parseJSON(param2);
+                  tmpString = json.RETURNDESC;
+
+                  if(json.RETURNID==0){
+                      featureVisJSON = json.FEATURE;
+                      imageVisJSON = json.IMAGE;
+                      modelVisJSON = json.IMAGE;
+
+
+                      var objfeatureVis=jQuery.parseJSON(featureVisJSON);
+                      var feature = objfeatureVis.feature;
+
+
+
+                      var image0=feature['0'];
+                      var image1=feature['1'];
+                      var image2=feature['2'];
+
+                      data['image1']=image0;
+                      data['image2']=image1;
+                      data['image3']=image2;
+                      $('#fingerVeinmsg').text("successful").show();
+                      closeOCX();
+                  }else if(json.RETURNID==-1){
+                      tmpString="您本次建模或认证超时，3秒后页面重新开始操作···";
+                      setTimeout("refulsh()",300);
+                  }else if(json.RETURNID==-4){
+                      tmpString="指静脉设备断开。重新连接后，刷新页面重新建模或认证。";
+                  }
+                  break;
+              case 11:
+                  var json = jQuery.parseJSON(param2);
+                  tmpString = json.RETURNDESC;
+                  if(json.RETURNID==-100){
+                      overTime = true;
+                  }
+                  if(json.RETURNID==40){
+                      if(!overTime){
+                          show_confirm_Recog(tmpString);
+                      }
+                  }
+                  if(json.RETURNID==41){
+                      if(!overTime){
+                          show_confirm_Recog(tmpString);
+                      }
+                  }
+                  break;
+              case 13:
+                  var json = jQuery.parseJSON(param2);
+                  tmpString = json.RETURNDESC;
+                  if(json.RETURNID==0){
+                      reCount = 0;
+                      //featureVisJSON = json.FEATURE;
+                      imageVisJSON = json.IMAGE;
+                      modelVisJSON = json.IMAGE;
+
+                      score=json.RETURNVALUE;
+                      result = 1;
+
+                      $('#fingerVeinmsg').text("Certification Successful").show();
+
+                      //uploadIdentify();
+                  }else if(json.RETURNID==-1){
+                      tmpString = "您取消了此次建模或认证！";
+                  }else if(json.RETURNID==1){
+
+                      $('#fingerVeinmsg').text("Certification failure").show();
+                  }else if(json.RETURNID==-4){
+                      tmpString="指静脉设备断开。重新连接后，刷新页面重新建模或认证。";
+                  }
+                  break;
+
+              case 14:
+                  var json = jQuery.parseJSON(param2);
+                  tmpString = json.RETURNDESC;
+                  break;
+
+              default:
+                  var tmpJson = jQuery.parseJSON(param2);
+                  tmpString = tmpJson.RETURNDESC;
+                  break;
+
+          }
+          $('#fingerVeinmsg').text(tmpString).show();
+          $("#consoles").append(param2);
+      }
+
+      var isContinue = true;
+      //确认提示框
+      function show_confirm(msg){
+          var r=confirm(msg);
+          if (r==true){
+              fingerVeinControl.AEYE_SetVeinModelStatus(1);
+          }
+          else{
+              fingerVeinControl.AEYE_SetVeinModelStatus(-1);
+              isContinue = false;
+          }
+      }
+
+      function show_confirm_Recog(msg){
+          var r=confirm(msg);
+          if (r==true){
+              fingerVeinControl.AEYE_SetVeinRecogStatus(1);
+          }
+          else{
+              fingerVeinControl.AEYE_SetVeinRecogStatus(-1);
+              isContinue = false;
+          }
+      }
+
+
+
+
+
+      //打开控件
+      function openOCX(){
+          var f = fingerVeinControl.AEYE_OpenVeinDev();
+          if (f == 0)
+          {//检测正常
+              $('#fingerVeinmsg').text("设备打开成功！");
+          } else
+          { //f != 0表示未连接设备
+              $('#fingerVeinmsg').text("未连接设备！");
+          }
+      }
+
+
+
+      //关闭控件
+      function closeOCX(){
+
+          var f = fingerVeinControl.AEYE_CloseVeinDev();
+          if(f == 1)
+          {
+              $('#fingerVeinmsg').text("设备正常关闭");
+          }
+          else{
+              $('#fingerVeinmsg').text("未打开设备,设备关闭！");
+          }
+
+      }
+
+      var isContinue = true;
+      //确认提示框
+      function show_confirm(msg){
+          var r=confirm(msg);
+          if (r==true){
+              fingerVeinControl.AEYE_SetVeinModelStatus(1);
+          }
+          else{
+              fingerVeinControl.AEYE_SetVeinModelStatus(-1);
+              isContinue = false;
+          }
+      }
+
+      function show_confirm_Recog(msg){
+          var r=confirm(msg);
+          if (r==true){
+              fingerVeinControl.AEYE_SetVeinRecogStatus(1);
+          }
+          else{
+              fingerVeinControl.AEYE_SetVeinRecogStatus(-1);
+              isContinue = false;
+          }
+      }
+
+
+      var data={};
+		$(function () {
+            if(isIe)
+            bindCallBack();
+
+            openOCX();
+
+            createModel();
+
+            var info=${info};
+            data['uid']=info.uid;
+		    $("#sub").on("click",function () {
+                $.post('/v1/teacher/do_edit_vena',data,function (res) {
+                    var ret = JSON.parse(res)
+                    if(ret.code=="success"){
+                        alert("修改成功");
+                        window.location.href("list");
+                        return;
+                    }else{
+                        alert(ret.msg)
+                    }
+                })
+            })
+		})
+
+
+
+  </script>
+
+  </body>
+</html>

@@ -51,55 +51,69 @@
 			<div class="col-md-6">
 				<div class="content-box-large">
 					<div class="panel-heading">
-						<div class="panel-title"><a href="list" style="margin-right: 15px">返回家长列表</a></div>
+						<div class="panel-title"><a href="list" style="margin-right: 15px">返回教师列表</a></div>
 					</div>
 					<style type="text/css">
 						.panel-body .pic{ width: 300px; height: 150px; margin-bottom: 20px}
 					</style>
 					<div class="panel-body form-horizontal" >
-							<input type="hidden" value="{$api[id]}" name="id">
-
-							<div class="form-group">
-								<label  class="col-sm-2 control-label">所在班级</label>
-								<div class="col-sm-4">
-									<select id="clazzInfo" class="form-control"></select>
-								</div>
+						<div class="form-group">
+							<label  class="col-sm-2 control-label">所属班级</label>
+							<div class="col-sm-4">
+								<select id="clazzInfo" class="form-control"></select>
 							</div>
+						</div>
 
-							<div class="form-group">
-								<label  class="col-sm-2 control-label">学生姓名</label>
-								<div class="col-sm-4">
-									<select id="studentInfo" class="form-control"></select>
-								</div>
+						<div class="form-group">
+							<label  class="col-sm-2 control-label">姓名</label>
+							<div class="col-sm-4">
+								<input value="" type="text" class="form-control" id="tea_name" name="tea_name" placeholder="">
 							</div>
+						</div>
 
-							<div class="form-group">
-								<label  class="col-sm-2 control-label">家长姓名</label>
-								<div class="col-sm-4">
-									<input value="" type="text" class="form-control" id="par_name" name="par_name" placeholder="">
-								</div>
+						<div class="form-group">
+							<label  class="col-sm-2 control-label">职工编号</label>
+							<div class="col-sm-4">
+								<input value="" type="text" class="form-control" id="tid" name="tid" placeholder="">
 							</div>
+						</div>
 
-							<div class="form-group">
-								<label  class="col-sm-2 control-label">住址</label>
-								<div class="col-sm-8">
-									<input value="" type="text" class="form-control" id="address" name="address" placeholder="">
-								</div>
+						<div class="form-group">
+							<label  class="col-sm-2 control-label">住址</label>
+							<div class="col-sm-8">
+								<input value="" type="text" class="form-control" id="address" name="address" placeholder="">
 							</div>
+						</div>
 
-							<div class="form-group">
-								<label  class="col-sm-2 control-label">手机</label>
-								<div class="col-sm-8">
-									<input value="" type="text" class="form-control" id="tel" name="tel" placeholder="">
-								</div>
+						<div class="form-group">
+							<label  class="col-sm-2 control-label">手机</label>
+							<div class="col-sm-8">
+								<input value="" type="text" class="form-control" id="tel" name="tel" placeholder="">
 							</div>
+						</div>
 
-
-							<div class="form-group">
-								<div class="col-sm-offset-2 col-sm-10">
-									<button id="sub" type="submit"  class="btn btn-primary">提交</button>
-								</div>
+						<div class="form-group">
+							<label  class="col-sm-2 control-label">初始密码</label>
+							<div class="col-sm-8">
+								<input value="" type="text" class="form-control" id="original_pwd" name="original_pwd" placeholder="">
 							</div>
+						</div>
+
+						<div>
+							<label  class="col-sm-2 control-label">教工权限</label>
+							<div>
+								<input value="0" type="radio" name="isadmin" id="normalstaff" checked="checked">普通教工</input>
+								<input value="1" type="radio" name="isadmin" id="dutystaff" >值班教工</input>
+								<input value="2" type="radio" name="isadmin" id="adminstaff" >审核教工</input>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button id="sub" type="submit"  class="btn btn-primary">提交</button>
+							</div>
+						</div>
+
 					</div>
 				</div>
 			</div>
@@ -126,9 +140,17 @@
 	  	var data={};
 		$(function () {
 			var info=${info};
-			$("#par_name").val(info.par_name);
+			$("#tea_name").val(info.name);
 			$("#address").val(info.address);
 			$("#tel").val(info.tel);
+			$("#tid").val(info.tid);
+            if(info.isadmin =="0") {
+                $("#normalstaff").attr("checked", "checked");
+            }else if(info.isadmin =="1"){
+                $("#dutystaff").attr("checked", "checked");
+			}else if(info.isadmin =="2"){
+            $("#adminstaff").attr("checked", "checked");
+			}
             $.getJSON("getClazzInfo", {}, function (res) {
                 if (res.code == "success")
                     var da = res.data, s = '';
@@ -138,55 +160,38 @@
                 $("#clazzInfo").html(s);
 
 
-
-				$("#clazzInfo").on("change", function () {
-                        var v = $(this).val();
-                        $.getJSON("getStudentInfo", {"clazz_id": v}, function (res) {
-                            if (res.code == "success")
-                                var da = res.data, s = '';
-                            for (var i = 0; i < da.length; i++) {
-                                s += '<option value="' + da[i].id + '">' + da[i].name + '</option>'
-                            }
-                            $("#studentInfo").html(s);
-
-                        })
-                })
                 $("#clazzInfo").val(info.clazz_id);
-                $.getJSON("getStudentInfo", {"clazz_id": info.clazz_id}, function (res) {
-                    if (res.code == "success")
-                        var da = res.data, s = '';
-                    for (var i = 0; i < da.length; i++) {
-                        s += '<option value="' + da[i].id + '">' + da[i].name + '</option>'
-                    }
-                    $("#studentInfo").html(s);
-                    $("#studentInfo").val(info.stu_id);
 
-                })
             })
 
 
 
 		    $("#sub").on("click",function () {
-                data['stu_id']=$("#studentInfo").val();
-                data['par_name']=$("#par_name").val();
+                data['tid']=$("#tid").val();
+                data['tea_name']=$("#tea_name").val();
                 data['address']=$("#address").val();
                 data['tel']=$("#tel").val();
                 data['clazz_id']=$("#clazzInfo").val();
                 data['uid']=info.uid;
-                data['original_pwd']=info.original_pwd;
-                    if(!data['par_name'] || data['par_name']==" ") {
-                        alert("家长姓名不能为空，请输入正确的家长姓名");
-                        return;
-                    }
-                    else  if(!data['address'] || data['address']==" ") {
-                        alert("住址栏不能为空，请输入正确的家庭住址");
-                        return;
-                    }else  if(!data['tel'] || data['tel']==" ") {
-                        alert("手机栏不能为空，请输入正确的联系方式");
-                        return;
-                    }
+                data['id']=info.id;
+                data['orioginal_pwd']=info.original_pwd;
+                data['isadmin']=$("input[type='radio']:checked").val();
+                if(!data['tea_name'] || data['tea_name']==" ") {
+                    alert("教师姓名不能为空，请输入正确的教师姓名");
+                    return;
+                }
+                else  if(!data['address'] || data['address']==" ") {
+                    alert("住址栏不能为空，请输入正确的家庭住址");
+                    return;
+                }else  if(!data['tel'] || data['tel']==" ") {
+                    alert("手机栏不能为空，请输入正确的联系方式");
+                    return;
+                }else  if(!data['original_pwd'] || data['original_pwd']==" ") {
+                  alert("初始密码不能为空，请输入正确的密码");
+                return;
+           		 }
 
-                $.post('/v1/parent/do_edit_info',data,function (res) {
+                $.post('/v1/teacher/do_edit_info',data,function (res) {
                     var ret = JSON.parse(res)
                     if(ret.code=="success"){
                         alert("修改成功");

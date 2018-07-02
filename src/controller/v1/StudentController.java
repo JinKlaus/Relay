@@ -11,8 +11,6 @@ import annotation.action;
 import config.Dictionary;
 import server.Controller;
 import server.ControllerContext;
-import util.Md5Util;
-import util.RandomUtil;
 import util.TimeUtil;
 
 public class StudentController extends Controller{
@@ -27,6 +25,7 @@ public class StudentController extends Controller{
 		toHtml("admin_tpl/student_list");
 	}
 	
+	@SuppressWarnings("deprecation")
 	@action
 	public void getList() {
 		String page=I("get.page").toString();
@@ -52,9 +51,6 @@ public class StudentController extends Controller{
 			success(res);
 			return;
 		}
-		
-	          
-	
 	}
 	
 	@action
@@ -93,7 +89,8 @@ public class StudentController extends Controller{
 		data.put("name", name);
 		data.put("sid",sid);
 		data.put("clazz_id", clazz_id);
-		user.put("cardNo","1");
+		data.put("create_time",TimeUtil.getShortTimeStamp()+"");
+		user.put("cardNo",sid);
 		user.put("startDate",startDate);
 		user.put("endDate",endDate);
 		user.put("name",name);
@@ -109,9 +106,9 @@ public class StudentController extends Controller{
 			long id=M("user").add(user);
 			data.put("uid", id+"");
 			M("student").add(data);
-			success("数据库更新成功");
+			success("1");
 		} catch (Exception e) {
-			error("数据加载到数据库失败");
+			error("0");
 		}
 	}
 		

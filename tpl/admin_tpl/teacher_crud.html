@@ -53,58 +53,41 @@
 			<div class="col-md-6">
 				<div class="content-box-large">
 					<div class="panel-heading">
-						<div class="panel-title"><a href="list" style="margin-right: 15px">返回家长列表</a></div>
+						<div class="panel-title"><a href="list" style="margin-right: 15px">返回教师列表</a></div>
 					</div>
 					<style type="text/css">
 						.panel-body .pic{ width: 300px; height: 150px; margin-bottom: 20px}
 					</style>
 					<div class="panel-body form-horizontal" >
-							<input type="hidden" value="{$api[id]}" name="id">
-
 							<div class="form-group">
-								<label  class="col-sm-2 control-label">所在班级</label>
+								<label  class="col-sm-2 control-label">所属班级</label>
 								<div class="col-sm-4">
 									<select id="clazzInfo" class="form-control"></select>
 								</div>
 							</div>
 
 							<div class="form-group">
-								<label  class="col-sm-2 control-label">学生姓名</label>
+								<label  class="col-sm-2 control-label">姓名</label>
 								<div class="col-sm-4">
-									<select id="studentInfo" class="form-control"></select>
+									<input value="" type="text" class="form-control" id="tea_name" name="tea_name" placeholder="">
 								</div>
 							</div>
 
 							<div class="form-group">
-								<label  class="col-sm-2 control-label">家长姓名</label>
+								<label  class="col-sm-2 control-label">职工编号</label>
 								<div class="col-sm-4">
-									<input value="" type="text" class="form-control" id="par_name" name="par_name" placeholder="">
+									<input value="" type="text" class="form-control" id="tid" name="tid" placeholder="">
 								</div>
 							</div>
 
-							<div class="form-group">
+
+						<div class="form-group">
 								<label  class="col-sm-2 control-label">指静脉</label>
 								<div class="col-sm-10">
 									<object id='aeyeFingerVeinOCX' align="left"classid='CLSID:DC26F2AB-C4EC-441B-BB40-FCC592066E3A' width='400' height="400"></object>
 								</div>
 								<p id="fingerVeinmsg" style="text-align:center;color:#FF0000;font-size:20px;">请准备将手指放到指静脉识别器上</p>
 								<div  id="show" style="display:none;"><textarea style="width:600px;height:200px" id="consoles"></textarea></div>
-								<label  class="col-sm-2 control-label">家长照片</label>
-								<div class="col-sm-10">
-									<object  id="My_Cam" align="middle" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
-											 codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0"
-											 height="400" viewastext="在线拍照" width="400">
-										<param name="allowScriptAccess" value="sameDomain" />
-										<param name="movie" value="/js/MyCamera.swf" />
-										<param name="quality" value="high" />
-										<param name="bgcolor" value="#ffffff" />
-										<param name="wmode" value="transparent" />
-										<embed  align="middle" allowscriptaccess="sameDomain" bgcolor="#ffffff" height="400"
-												name="My_Cam" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high"  wmode="transparent"
-												src="/js/MyCamera.swf" type="application/x-shockwave-flash" width="400"></embed>
-									</object>
-									<div align="center"><button id="takePhoto" type="submit" value="拍照" onclick="doFlash()" class="btn btn-primary">拍照</button>  </div>
-								</div>
 							</div>
 
 							<div class="form-group">
@@ -121,12 +104,29 @@
 								</div>
 							</div>
 
+							<div class="form-group">
+								<label  class="col-sm-2 control-label">初始密码</label>
+								<div class="col-sm-8">
+									<input value="" type="text" class="form-control" id="original_pwd" name="original_pwd" placeholder="">
+								</div>
+							</div>
+
+							<div>
+								<label  class="col-sm-2 control-label">教工权限</label>
+								<div>
+									<input value="1" type="radio" name="isadmin"checked="checked">普通教工</input>
+									<input value="0" type="radio" name="isadmin">值班教工</input>
+									<input value="2" type="radio" name="isadmin">审核教工</input>
+								</div>
+							</div>
 
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-10">
 									<button id="sub" type="submit"  class="btn btn-primary">提交</button>
 								</div>
 							</div>
+
+
 					</div>
 				</div>
 			</div>
@@ -266,15 +266,16 @@
                       imageVisJSON = json.IMAGE;
                       modelVisJSON = json.IMAGE;
 
-                      var objmodelVis=jQuery.parseJSON(modelVisJSON);
+                      var objfeatureVis=jQuery.parseJSON(featureVisJSON);
+                      var feature = objfeatureVis.feature;
 
-                      var image0=objmodelVis.images[0];
-                      var image1=objmodelVis.images[1];
-                      var image2=objmodelVis.images[2];
+                      var image0=feature['0'];
+                      var image1=feature['1'];
+                      var image2=feature['2'];
+
                       data['image1']=image0;
                       data['image2']=image1;
                       data['image3']=image2;
-
                       $('#fingerVeinmsg').text("successful").show();
                       closeOCX();
                   }else if(json.RETURNID==-1){
@@ -453,60 +454,6 @@
       }
 
 
-      /**
-       * 初始化
-       */
-      var isBrowser;
-      $(function(){
-          //按钮样式
-          $("#takePhoto").button()
-              .click(function( event ) {
-                  event.preventDefault();
-              });
-      });
-
-
-      /**
-       * 检查摄像头是否存在
-       */
-      function checkCamera(){
-      }
-
-
-      /**
-       * 使用FLASH调用摄像头拍照(适用于IE浏览器)
-       */
-      function doFlash(){
-          var MyCan= thisMovie("My_Cam");
-          var base64Data = MyCan.GetBase64Code();
-          data['par_photo']=base64Data;
-          alert("拍照成功");
-      }
-
-
-
-      /**
-       * 获取Flash对象
-       */
-      function thisMovie(movieName) {
-          if (navigator.appName.indexOf("Microsoft") != -1) {
-              return document[movieName];
-          }
-          else {
-              return document[movieName];
-          }
-      }
-
-
-      /**
-       * 获取url请求参数
-       */
-      function getQueryString(name) {
-          var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-          var r = window.location.search.substr(1).match(reg);
-          if (r != null) return unescape(r[2]); return null;
-      }
-
 
       var data={};
 		$(function () {
@@ -525,40 +472,20 @@
                     s += '<option value="' + da[i].id + '">' + da[i].name + '</option>'
                 }
                 $("#clazzInfo").html(s);
-
-                $.getJSON("getStudentInfo", {"clazz_id": da[0].id}, function (res) {
-                    if (res.code == "success")
-                        var da = res.data, s = '';
-                    for (var i = 0; i < da.length; i++) {
-                        s += '<option value="' + da[i].id + '">' + da[i].name + '</option>'
-                    }
-                    $("#studentInfo").html(s);
-                })
-
-				$("#clazzInfo").on("change", function () {
-                        var v = $(this).val();
-                        $.getJSON("getStudentInfo", {"clazz_id": v}, function (res) {
-                            if (res.code == "success")
-                                var da = res.data, s = '';
-                            for (var i = 0; i < da.length; i++) {
-                                s += '<option value="' + da[i].id + '">' + da[i].name + '</option>'
-                            }
-                            $("#studentInfo").html(s);
-
-                        })
-                })
             })
 
 
 
 		    $("#sub").on("click",function () {
-                data['stu_id']=$("#studentInfo").val();
-                data['par_name']=$("#par_name").val();
+                data['clazz_id']=$("#clazzInfo").val();
+                data['tea_name']=$("#tea_name").val();
+                data['tid']=$("#tid").val();
                 data['address']=$("#address").val();
                 data['tel']=$("#tel").val();
-                data['clazz_id']=$("#clazzInfo").val();
-                    if(!data['par_name'] || data['par_name']==" ") {
-                        alert("家长姓名不能为空，请输入正确的家长姓名");
+                data['original_pwd']=$("#original_pwd").val();
+                data['isadmin']=$("input[type='radio']:checked").val();
+                    if(!data['tea_name'] || data['tea_name']==" ") {
+                        alert("教师姓名不能为空，请输入正确的教师姓名");
                         return;
                     }
                     else  if(!data['address'] || data['address']==" ") {
@@ -567,15 +494,18 @@
                     }else  if(!data['tel'] || data['tel']==" ") {
                         alert("手机栏不能为空，请输入正确的联系方式");
                         return;
+                    }else  if(!data['original_pwd'] || data['original_pwd']==" ") {
+                        alert("初始密码不能为空，请输入正确的密码");
+                        return;
                     }
 
-                $.post('/v1/parent/do_add',data,function (res) {
+                $.post('/v1/teacher/do_add',data,function (res) {
                     var ret = JSON.parse(res)
                     if(ret.code=="success"){
 						if(window.confirm("录入成功，是否继续录入")){
                             window.location.reload()
                         }else {
-                            window.location.href("/v1/parent/list");
+                            window.location.href("/v1/teacher/list");
                         }
                     }else{
                         alert(ret.msg)

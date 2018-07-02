@@ -69,11 +69,8 @@
 						  </button>
 						  <br><br><br>
 						  <div>
-							  <button id="searchbytel" type="button" class="btn btn-primary" onclick="searchbytel()">
-								  按教师手机号查询
-							  </button>
 							  <button id="searchbyname" type="button" class="btn btn-primary" onclick="searchbyname()">
-								  按班级名称查询
+								  按教师姓名查询
 							  </button>
 						  </div>
 						  <br>
@@ -88,11 +85,12 @@
 						  <thead>
 						  <tr>
 							  <th>id</th>
-							  <th>学生所在班级</th>
-							  <th>学生姓名</th>
-							  <th>家长姓名</th>
+							  <th>所属班级</th>
+							  <th>教师姓名</th>
+							  <th>职工编号</th>
 							  <th>家庭住址</th>
 							  <th>联系方式</th>
+							  <th>教工权限</th>
 							  <th>操作</th>
 						  </tr>
 						  </thead>
@@ -174,12 +172,6 @@
 	  }
 
       var key;
-      function searchbytel(){
-          current_page=0;
-          key=$("#search").val();
-          tohtml();
-      }
-
       function searchbyname(){
           current_page=0;
           key=$("#search").val();
@@ -226,13 +218,14 @@
                       s+=' <tr class="odd gradeX" id="tr_'+data[i]['id']+'">\n' +
                           '\t\t\t\t\t\t\t  <td>'+data[i]['id']+'</td>\n' +
                           '\t\t\t\t\t\t\t  <td>'+data[i]['clazz_name']+'</td>\n' +
-                          '\t\t\t\t\t\t\t  <td>'+data[i]['stu_name']+'</td>\n' +
-                          '\t\t\t\t\t\t\t  <td> '+data[i]['par_name']+'</td>' +
-                          '\t\t\t\t\t\t\t  <td> '+data[i]['address']+'</td>' +
-                          '\t\t\t\t\t\t\t  <td> '+data[i]['tel']+'</td>' +
+                          '\t\t\t\t\t\t\t  <td>'+data[i]['name']+'</td>\n' +
+                          '\t\t\t\t\t\t\t  <td> '+data[i]['tid']+'</td>\n' +
+                          '\t\t\t\t\t\t\t  <td> '+data[i]['address']+'</td>\n' +
+                          '\t\t\t\t\t\t\t  <td> '+data[i]['tel']+'</td>\n' +
+                          '\t\t\t\t\t\t\t  <td> '+data[i]['isadmin']+'</td>\n' +
                           '\t\t\t\t\t\t\t  <td class="center"> <button onclick="change_info('+data[i]['id']+')">修改个人资料</button>' +
-						  '									<button onclick="change_vena('+data[i]['id']+')">修改指静脉</button>' +
-						  '									<button onclick="del('+data[i]['id']+')">删除</button></td>' +
+						  '<button onclick="change_vena('+data[i]['id']+')">修改指静脉</button>' +
+						  '<button onclick="del('+data[i]['id']+')">删除</button></td>' +
                           '\t\t\t\t\t\t  </tr>'
                   }
                   $("#tlist").html(s);

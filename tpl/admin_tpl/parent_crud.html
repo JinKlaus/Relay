@@ -121,6 +121,13 @@
 								</div>
 							</div>
 
+							<div class="form-group">
+								<label  class="col-sm-2 control-label">初始密码</label>
+								<div class="col-sm-8">
+									<input value="" type="text" class="form-control" id="original_pwd" name="original_pwd" placeholder="">
+								</div>
+							</div>
+
 
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-10">
@@ -456,60 +463,59 @@
           }
       }
 
-
-      /**
-       * 初始化
-       */
-      var isBrowser;
-      $(function(){
-          //按钮样式
-          $("#takePhoto").button()
-              .click(function( event ) {
-                  event.preventDefault();
-              });
-      });
-
-
-      /**
-       * 检查摄像头是否存在
-       */
-      function checkCamera(){
-      }
-
-
-      /**
-       * 使用FLASH调用摄像头拍照(适用于IE浏览器)
-       */
-      function doFlash(){
-          var MyCan= thisMovie("My_Cam");
-          var base64Data = MyCan.GetBase64Code();
-          data['par_photo']=base64Data;
-          alert("拍照成功");
-      }
-
-
-
-      /**
-       * 获取Flash对象
-       */
-      function thisMovie(movieName) {
-          if (navigator.appName.indexOf("Microsoft") != -1) {
-              return document[movieName];
-          }
-          else {
-              return document[movieName];
-          }
-      }
-
-
-      /**
-       * 获取url请求参数
-       */
-      function getQueryString(name) {
-          var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-          var r = window.location.search.substr(1).match(reg);
-          if (r != null) return unescape(r[2]); return null;
-      }
+      // /**
+      //  * 初始化
+      //  */
+      // var isBrowser;
+      // $(function(){
+      //     //按钮样式
+      //     $("#takePhoto").button()
+      //         .click(function( event ) {
+      //             event.preventDefault();
+      //         });
+      // });
+      //
+      //
+      // /**
+      //  * 检查摄像头是否存在
+      //  */
+      // function checkCamera(){
+      // }
+      //
+      //
+      // /**
+      //  * 使用FLASH调用摄像头拍照(适用于IE浏览器)
+      //  */
+      // function doFlash(){
+      //     var MyCan= thisMovie("My_Cam");
+      //     var base64Data = MyCan.GetBase64Code();
+      //     data['par_photo']=base64Data;
+      //     alert("拍照成功");
+      // }
+      //
+      //
+      //
+      // /**
+      //  * 获取Flash对象
+      //  */
+      // function thisMovie(movieName) {
+      //     if (navigator.appName.indexOf("Microsoft") != -1) {
+      //         return document[movieName];
+      //     }
+      //     else {
+      //         return document[movieName];
+      //     }
+      // }
+      //
+      //
+      // /**
+      //  * 获取url请求参数
+      //  */
+      // function getQueryString(name) {
+      //     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+      //     var r = window.location.search.substr(1).match(reg);
+      //     if (r != null) return unescape(r[2]); return null;
+      // }
 
 
       var data={};
@@ -561,6 +567,7 @@
                 data['address']=$("#address").val();
                 data['tel']=$("#tel").val();
                 data['clazz_id']=$("#clazzInfo").val();
+                data['original_pwd']=$("#original_pwd").val();
                     if(!data['par_name'] || data['par_name']==" ") {
                         alert("家长姓名不能为空，请输入正确的家长姓名");
                         return;
@@ -570,6 +577,9 @@
                         return;
                     }else  if(!data['tel'] || data['tel']==" ") {
                         alert("手机栏不能为空，请输入正确的联系方式");
+                        return;
+                    }else  if(! data['original_pwd'] || data['original_pwd']==" ") {
+                        alert("初始密码不能为空，请输入正确的初始密码");
                         return;
                     }
 

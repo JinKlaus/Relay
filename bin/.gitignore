@@ -1,8 +1,4 @@
-/annotation/
-/config/
-/controller/
-/error/
-/exception/
-/model/
-/server/
 /util/
+/controller/
+/server/
+/exception/

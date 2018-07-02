@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.jms.Session;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 
@@ -19,6 +20,7 @@ import model.Model;
 import util.FilterUtil;
 import util.FilterUtil.FilterHandler;
 import util.StringUtil;
+import util.TimeUtil;
 import util.TplUtil;
 
 public class Controller {
@@ -28,16 +30,40 @@ public class Controller {
 	
 	public ControllerContext context;
 	public String sessionID;
+	protected boolean pri= true;
 	
 	public Controller(ControllerContext context){
 		this.context = context;
 		assigns = new HashMap<>();
+		sessionID=context.request.getSession().getId();
+	}
+	
+	protected void session(Object object) throws Exception {
+		HashMap<String, String> res = new HashMap<>();
+		HashMap<String, String> map = M("session").where("sessionid="+sessionID).find();
+		if(map == null) {
+			res.put("sessionid",sessionID );
+			res.put("object",JSON.toJSONString(object));
+			res.put("create_time", TimeUtil.getShortTimeStamp()+"");
+			M("session").add(res);
+		}else {
+			res.put("sessionid",sessionID );
+			M("session").save_string(res);
+		}
+		
+	}
+	
+	public<T> T getSession(Class<T> t) {
+		HashMap<String, String> res = M("session").where("sessionid='"+sessionID+"'").find();
+		return (T)res;
 		
 	}
 	
 	public boolean checkPri(){
 		
-		return true;}
+		return pri;
+		
+	}
 	
 	void destruct(){
 	}
@@ -45,10 +71,6 @@ public class Controller {
 	public void seo(String title){
 		seo_title=title+"-"+seo_title;
 	}
-	
-
-	
-
 	
 	public void makeHttp(String s){
 		HttpServletResponse response = context.response;

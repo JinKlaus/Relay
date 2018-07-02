@@ -2,29 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cefd692-e790-4471-a934-d3d8888b132d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../assets/css/jquery-ui.css" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/css/jquery-ui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin_tpl/staff_login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin_tpl/teacher_updateInfo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin_tpl/teacher_updateVena.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/../.classpath" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../bin/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bin/server/ControllerContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/server/ControllerContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/server/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/server/Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../bin/server/ServerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/server/ServerHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/controller/v1/ClazzController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/controller/v1/ClazzController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/controller/v1/DeviceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/controller/v1/DeviceController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/controller/v1/IorecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/controller/v1/IorecordController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/controller/v1/ParentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/controller/v1/ParentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/controller/v1/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/controller/v1/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/controller/v1/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/controller/v1/TeacherController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/resourses/test.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/server/ControllerContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/server/ControllerContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/server/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/server/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/server/ServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/server/ServerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/util/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/util/StringUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../test.xls" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_tpl/left.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/left.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_tpl/parent_crud.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/parent_crud.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_tpl/parent_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/parent_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_tpl/parent_updateInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/parent_updateInfo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_tpl/parent_updateVena.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/parent_updateVena.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_tpl/record_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/record_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_tpl/student_crud.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/student_crud.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_tpl/student_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/student_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_tpl/student_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/student_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_tpl/teacher_crud.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/teacher_crud.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_tpl/teacher_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/teacher_list.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -38,18 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="record_list.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/admin_tpl/record_list.html">
+      <file leaf-file-name="staff_login.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin_tpl/staff_login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="52" column="26" lean-forward="true" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
-              <folding>
-                <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="376">
+              <caret line="68" column="49" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -114,19 +105,23 @@
         <option value="$PROJECT_DIR$/admin_tpl/clazz_crud.html" />
         <option value="$PROJECT_DIR$/admin_tpl/parent_form.html" />
         <option value="D:/备份/6.21/parent_crud_before.html" />
-        <option value="$PROJECT_DIR$/admin_tpl/parent_updateInfo.html" />
         <option value="$PROJECT_DIR$/admin_tpl/clazz_list.html" />
         <option value="$USER_HOME$/Desktop/student_form.html" />
         <option value="D:/软件/MDFingerVein/sample/finger/ch_index.html" />
-        <option value="$PROJECT_DIR$/admin_tpl/parent_updateVena.html" />
         <option value="$PROJECT_DIR$/admin_tpl/left.html" />
-        <option value="$PROJECT_DIR$/admin_tpl/teacher_list.html" />
-        <option value="$PROJECT_DIR$/admin_tpl/parent_crud.html" />
         <option value="$PROJECT_DIR$/admin_tpl/student_form.html" />
         <option value="$PROJECT_DIR$/admin_tpl/student_list.html" />
         <option value="$PROJECT_DIR$/admin_tpl/parent_list.html" />
         <option value="$PROJECT_DIR$/admin_tpl/student_crud.html" />
         <option value="$PROJECT_DIR$/admin_tpl/record_list.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/parent_crud.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/parent_updateVena.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/teacher_updateVena.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/teacher_list.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/parent_updateInfo.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/teacher_updateInfo.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/teacher_crud.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/staff_login.html" />
       </list>
     </option>
   </component>
@@ -140,11 +135,14 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="1">
-    <option name="y" value="110" />
-    <option name="width" value="1588" />
-    <option name="height" value="1089" />
+    <option name="x" value="28" />
+    <option name="y" value="108" />
+    <option name="width" value="1602" />
+    <option name="height" value="1100" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -218,21 +216,21 @@
       <workItem from="1529373760658" duration="83127000" />
       <workItem from="1529648832099" duration="50973000" />
       <workItem from="1530061994200" duration="72902000" />
-      <workItem from="1530265788342" duration="342000" />
+      <workItem from="1530265788342" duration="23203000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="282417000" />
+    <option name="totallyTimeSpent" value="305278000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="110" width="1588" height="1089" extended-state="1" />
+    <frame x="28" y="108" width="1602" height="1100" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.1692112" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16330391" />
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="2" side_tool="true" visible="true" weight="0.21457906" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" visible="true" weight="0.21218275" />
       <window_info anchor="bottom" id="Run" order="6" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
@@ -256,39 +254,12 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="10" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin_tpl/calendar.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/editors.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/camera/view/camera.html" />
-    <entry file="file://$PROJECT_DIR$/admin_tpl/pl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/photo.html" />
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7885">
-          <caret line="428" column="4" selection-start-line="428" selection-start-column="4" selection-end-line="428" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin_tpl/login.html">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/forms.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-969" />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin_tpl/video_edit.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -316,11 +287,6 @@
         <state relative-caret-position="202">
           <caret line="244" column="16" selection-start-line="244" selection-start-column="16" selection-end-line="244" selection-end-column="16" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/tables.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1311" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin_tpl/update.html">
@@ -351,6 +317,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
           <caret line="110" column="55" lean-forward="true" selection-start-line="110" selection-start-column="55" selection-end-line="110" selection-end-column="55" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -395,13 +367,6 @@
     <entry file="file://$USER_HOME$/Downloads/jquery时间控件/日历控件优化/css/cxcalendar.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/camera.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/jquery时间控件/日历控件优化/calendar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="239">
@@ -413,13 +378,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
           <caret line="262" column="18" lean-forward="true" selection-start-line="241" selection-start-column="12" selection-end-line="262" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/软件/MDFingerVein/sample/finger/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="74" selection-start-line="74" selection-end-line="88" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -437,13 +395,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/clazz_crud.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="716">
-          <caret line="212" column="24" lean-forward="true" selection-start-line="212" selection-start-column="24" selection-end-line="212" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin_tpl/left.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -451,72 +402,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/teacher_crud.html">
+    <entry file="file://$PROJECT_DIR$/admin_tpl/clazz_crud.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-13050">
-          <caret line="24" column="37" lean-forward="true" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+        <state relative-caret-position="700">
+          <caret line="212" column="24" lean-forward="true" selection-start-line="212" selection-start-column="24" selection-end-line="212" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/teacher_list.html">
+    <entry file="file://D:/软件/MDFingerVein/sample/finger/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-600">
-          <caret line="63" column="45" lean-forward="true" selection-start-line="63" selection-start-column="45" selection-end-line="63" selection-end-column="45" />
+        <state relative-caret-position="942">
+          <caret line="67" column="21" lean-forward="true" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/student_form.html">
+    <entry file="file://$PROJECT_DIR$/admin_tpl/camera.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="566" column="50" selection-start-line="566" selection-start-column="50" selection-end-line="566" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/parent_updateInfo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/parent_updateVena.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="379" column="12" lean-forward="true" selection-start-line="379" selection-start-column="12" selection-end-line="379" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/student_crud.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="681">
-          <caret line="504" column="40" selection-start-line="504" selection-start-column="40" selection-end-line="504" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/parent_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="74" column="35" selection-start-line="74" selection-start-column="35" selection-end-line="74" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/parent_crud.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="539" column="18" lean-forward="true" selection-start-line="539" selection-start-column="18" selection-end-line="539" selection-end-column="18" />
+        <state relative-caret-position="-1725">
+          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#object#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#embed#0;n#object#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin_tpl/student_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="72" column="34" selection-start-line="72" selection-start-column="34" selection-end-line="72" selection-end-column="34" />
+        <state relative-caret-position="-1188">
+          <caret line="153" lean-forward="true" selection-start-line="153" selection-end-line="153" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/student_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="155" column="26" lean-forward="true" selection-start-line="155" selection-start-column="26" selection-end-line="155" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#1;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/teacher_updateVena.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="676">
+          <caret line="372" column="7" selection-start-line="372" selection-start-column="7" selection-end-line="372" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/student_crud.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2758">
+          <caret line="158" column="10" selection-start-line="158" selection-start-column="10" selection-end-line="158" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin_tpl/record_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
+        <state relative-caret-position="25">
           <caret line="52" column="26" lean-forward="true" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
           <folding>
             <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -525,6 +473,91 @@
             <element signature="n#style#0;n#input#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/parent_updateVena.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2308">
+          <caret line="107" column="28" lean-forward="true" selection-start-line="107" selection-start-column="28" selection-end-line="107" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/oth.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/tables.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/forms.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3825" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/make_card.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/teacher_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2198">
+          <caret line="92" column="38" selection-start-line="92" selection-start-column="38" selection-end-line="92" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2700" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/parent_crud.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="637">
+          <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
+          <folding>
+            <element signature="n#head#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#script#3;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/parent_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2616">
+          <caret line="73" column="31" selection-start-line="73" selection-start-column="31" selection-end-line="73" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/parent_updateInfo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="175" column="55" selection-start-line="175" selection-start-column="55" selection-end-line="175" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/teacher_updateInfo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="188" column="17" selection-start-line="188" selection-start-column="17" selection-end-line="191" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/teacher_crud.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="499" column="21" selection-start-line="499" selection-start-column="21" selection-end-line="499" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/staff_login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="68" column="49" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="49" />
         </state>
       </provider>
     </entry>

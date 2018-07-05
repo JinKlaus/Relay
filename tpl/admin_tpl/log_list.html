@@ -62,36 +62,35 @@
         <div class="col-md-10">
             <div class="content-box-large">
                 <div class="panel-heading">
-                    <div class="panel-title">家长管理</div>
-                    <div>
-                        <button id="out" type="button" class="btn btn-primary" onclick="add()">
-                            家长录入
-                        </button>
-                        <button id="searchbytel" type="button" class="btn btn-primary" onclick="searchbytel()">
-                            按家长手机号查询
-                        </button>
-                        <button id="searchbyname" type="button" class="btn btn-primary" onclick="searchbyname()">
-                            按学生姓名查询
-                        </button>
-                        <br>
-                        <div class="col-sm-6">
-                            <input value="" type="text" class="form-control" id="search" name="search" placeholder="">
-                        </div>
+                    <div class="panel-title">日志记录列表</div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="input-group form">
+                        <input type="text" class="form-control" placeholder="按教师姓名查询" id="byname" name="byname">
+                        <span class="input-group-btn">
+					         <button class="btn btn-primary" type="button" onclick="search()">搜索</button>
+				          </span>
                     </div>
                 </div>
+                <!--<div class="col-lg-5">-->
+                <!--<span class="glyphicon glyphicon-floppy-open"></span>-->
+                <!--<button id="out" type="submit" class="btn btn-primary"  style="align-items: right">-->
+                <!--导出当前教师请假记录-->
+                <!--</button>-->
+                <!--</div>-->
 
                 <div class="panel-body">
                     <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered"
                            id="example">
                         <thead>
                         <tr>
-                            <th>id</th>
-                            <th>学生所在班级</th>
-                            <th>学生姓名</th>
-                            <th>家长姓名</th>
-                            <th>家庭住址</th>
-                            <th>联系方式</th>
-                            <th>操作</th>
+                            <th>日志编号</th>
+                            <th>操作的控制器名称</th>
+                            <th>操作的方法</th>
+                            <th>操作时间</th>
+                            <th>操作人员姓名</th>
+                            <th>get方式的数据</th>
+                            <th>post方式的数据</th>
                         </tr>
                         </thead>
                         <tbody id="tlist">
@@ -135,13 +134,15 @@
 <script>
     var current_page = 0;
 
-    function add() {
-        window.location.href = "add";
-    }
-
     $(function () {
         tohtml();
     })
+
+
+    function search() {
+        current_page = 0;
+        tohtml();
+    }
 
     function lastpage() {
         current_page--;
@@ -159,49 +160,30 @@
         tohtml();
     }
 
-    function change_info(id) {
-        window.location.href = "edit_info?id=" + id;
-    }
 
-    function change_vena(id) {
-        window.location.href = "edit_vena?id=" + id;
-    }
-
-    function del(id) {
-        $.getJSON("remove?id=" + id, {}, function (res) {
-            if (res.code == "success") {
-                alert("删除成功");
-                $("#tr_" + id).remove();
-            } else {
-                alert(res.msg);
-            }
-        })
-    }
-
-    var key;
-
-    function searchbytel() {
-        current_page = 0;
-        key = $("#search").val();
-        tohtml();
-    }
-
-    function searchbyname() {
-        current_page = 0;
-        key = $("#search").val();
-        tohtml();
-    }
+    // var excel_data = {};
+    // $("#out").on("click",function () {
+    //     alert(JSON.stringify(excel_data));
+    //     $.post("do_excel",excel_data, function (res) {
+    //         var ret = JSON.parse(res)
+    //         if (ret.code == "success") {
+    //             if(window.confirm("进出记录导出成功，是否打开记录表"))
+    //                 window.open(ret.data);
+    //         } else {
+    //             alert(ret.msg);
+    //         }
+    //     })
+    // })
 
 
     function tohtml() {
-
+        var url, searchname;
+        searchname = $("#byname").val();
         var d = {"page": current_page}
-
-        if (key) {
-            d['key'] = key;
-        }
-
-        $.getJSON("getList", d, function (res) {
+        d['searchname'] = searchname;
+        url = "getSearchList";
+        // excel_data = d;
+        $.getJSON(url, d, function (res) {
             if (res.code == "success") {
                 var da = res.data, s = '', data = da['list'], num = da['num'], pi = "";
                 $("#example_info").html("共" + num + "条记录");
@@ -232,17 +214,17 @@
                 for (i = 0; i < data.length; i++) {
                     s += ' <tr class="odd gradeX" id="tr_' + data[i]['id'] + '">\n' +
                         '\t\t\t\t\t\t\t  <td>' + data[i]['id'] + '</td>\n' +
-                        '\t\t\t\t\t\t\t  <td>' + data[i]['clazz_name'] + '</td>\n' +
-                        '\t\t\t\t\t\t\t  <td>' + data[i]['stu_name'] + '</td>\n' +
-                        '\t\t\t\t\t\t\t  <td> ' + data[i]['par_name'] + '</td>' +
-                        '\t\t\t\t\t\t\t  <td> ' + data[i]['address'] + '</td>' +
-                        '\t\t\t\t\t\t\t  <td> ' + data[i]['tel'] + '</td>' +
-                        '\t\t\t\t\t\t\t  <td class="center"> <button onclick="change_info(' + data[i]['id'] + ')">修改个人资料</button>' +
-                        '									<button onclick="change_vena(' + data[i]['id'] + ')">修改指静脉</button>' +
-                        '									<button onclick="del(' + data[i]['id'] + ')">删除</button></td>' +
-                        '\t\t\t\t\t\t  </tr>'
+                        '\t\t\t\t\t\t\t  <td>' + data[i]['controller'] + '</td>\n' +
+                        '\t\t\t\t\t\t\t  <td>' + data[i]['action'] + '</td>\n' +
+                        '\t\t\t\t\t\t\t  <td> ' + data[i]['create_time'] + '</td>\n' +
+                        '\t\t\t\t\t\t\t  <td> ' + data[i]['tea_name'] + '</td>\n' +
+                        '\t\t\t\t\t\t\t  <td> ' + data[i]['getdata'] + '</td>\n' +
+                        '\t\t\t\t\t\t\t  <td> ' + data[i]['postdata'] + '</td>\n' +
+                        '\t\t\t\t\t\t\t</tr>'
                 }
                 $("#tlist").html(s);
+            } else {
+                alert(res.msg);
             }
         })
     }

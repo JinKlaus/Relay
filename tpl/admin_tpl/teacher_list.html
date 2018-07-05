@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>后台系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
@@ -11,227 +11,238 @@
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-  	<div class="header">
-	     <div class="container">
-	        <div class="row">
-	           <div class="col-md-5">
-	              <!-- Logo -->
-	              <div class="logo">
-	                 <h1><a >后台系统</a></h1>
-	              </div>
-	           </div>
-	           <div class="col-md-5">
-	              <div class="row">
-	                <div class="col-lg-12">
-	                  <!--<div class="input-group form" >-->
-	                       <!--<input type="text" class="form-control" placeholder="Search...">-->
-	                       <!--<span class="input-group-btn">-->
-	                         <!--<button class="btn btn-primary" type="button">Search</button>-->
-	                       <!--</span>-->
-	                  <!--</div>-->
-	                </div>
-	              </div>
-	           </div>
-	           <div class="col-md-2">
-	              <div class="navbar navbar-inverse" role="banner">
-	                  <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
-	                    <!--<ul class="nav navbar-nav">-->
-	                      <!--<li class="dropdown">-->
-	                        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>-->
-	                        <!--<ul class="dropdown-menu animated fadeInUp">-->
-	                          <!--<li><a href="profile.html">Profile</a></li>-->
-	                          <!--<li><a href="login.html">Logout</a></li>-->
-	                        <!--</ul>-->
-	                      <!--</li>-->
-	                    <!--</ul>-->
-	                  </nav>
-	              </div>
-	           </div>
-	        </div>
-	     </div>
-	</div>
-
-    <div class="page-content">
-    	<div class="row">
-			<%include("left.html"){}%>
-		  <div class="col-md-10">
-			  <div class="content-box-large">
-				  <div class="panel-heading">
-					  <div class="panel-title">教师管理</div>
-					  <div class="btn-group">
-						  <button id="out" type="button" class="btn btn-primary" onclick="add()">
-							  教师录入
-						  </button>
-						  <br><br><br>
-						  <div>
-							  <button id="searchbyname" type="button" class="btn btn-primary" onclick="searchbyname()">
-								  按教师姓名查询
-							  </button>
-						  </div>
-						  <br>
-						  <div class="col-sm-12">
-						  	<input value="" type="text" class="form-control" id="search" name="search" placeholder="">
-						  </div>
-					  </div>
-				  </div>
-
-				  <div class="panel-body">
-					  <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
-						  <thead>
-						  <tr>
-							  <th>id</th>
-							  <th>所属班级</th>
-							  <th>教师姓名</th>
-							  <th>职工编号</th>
-							  <th>家庭住址</th>
-							  <th>联系方式</th>
-							  <th>教工权限</th>
-							  <th>操作</th>
-						  </tr>
-						  </thead>
-						  <tbody id="tlist">
-
-						  </tbody>
-					  </table>
-				  </div>
-
-				  <div class="row"><div class="col-xs-6">
-					  <div class="dataTables_info" id="example_info"></div>
-				  </div><div class="col-xs-6"><div class="dataTables_paginate paging_bootstrap">
-					  <ul class="pagination">
-						 </ul></div></div></div>
-			  </div>
-		  </div>
-		</div>
+</head>
+<body>
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <!-- Logo -->
+                <div class="logo">
+                    <h1><a>后台系统</a></h1>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!--<div class="input-group form" >-->
+                        <!--<input type="text" class="form-control" placeholder="Search...">-->
+                        <!--<span class="input-group-btn">-->
+                        <!--<button class="btn btn-primary" type="button">Search</button>-->
+                        <!--</span>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="navbar navbar-inverse" role="banner">
+                    <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+                        <!--<ul class="nav navbar-nav">-->
+                        <!--<li class="dropdown">-->
+                        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>-->
+                        <!--<ul class="dropdown-menu animated fadeInUp">-->
+                        <!--<li><a href="profile.html">Profile</a></li>-->
+                        <!--<li><a href="login.html">Logout</a></li>-->
+                        <!--</ul>-->
+                        <!--</li>-->
+                        <!--</ul>-->
+                    </nav>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 
-    <footer>
-         <div class="container">
-         
-            <!--<div class="copy text-center">-->
-               <!--Copyright 2014 <a href='#'>Website</a>-->
-            <!--</div>-->
-            
-         </div>
-      </footer>
+<div class="page-content">
+    <div class="row">
+        <%include("left.html"){}%>
+        <div class="col-md-10">
+            <div class="content-box-large">
+                <div class="panel-heading">
+                    <div class="panel-title">教师管理</div>
+                    <div>
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="input-group form">
+                                    <input type="text" class="form-control" placeholder="按教师姓名查询" id="search"
+                                           name="search">
+                                    <span class="input-group-btn">
+					 <button id="searchbyname" class="btn btn-primary" type="button"
+                             onclick="searchbyname()">搜索</button>
+				                 </span>
+                                </div>
+                            </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/js/custom.js"></script>
+                            <button id="out" type="button" class="btn btn-primary" onclick="add()">
+                                教师录入
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered"
+                           id="example">
+                        <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>所属班级</th>
+                            <th>教师姓名</th>
+                            <th>职工编号</th>
+                            <th>家庭住址</th>
+                            <th>联系方式</th>
+                            <th>教工权限</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tlist">
 
-  <script>
-	  var current_page=0;
+                        </tbody>
+                    </table>
+                </div>
 
-		function add(){
-		    window.location.href="add";
-		}
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="dataTables_info" id="example_info"></div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="dataTables_paginate paging_bootstrap">
+                            <ul class="pagination">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-	  $(function(){
-	     tohtml();
-	  })
+<footer>
+    <div class="container">
 
-	  function lastpage(){
-	      current_page--;
-	      tohtml();
-	  }
+        <!--<div class="copy text-center">-->
+        <!--Copyright 2014 <a href='#'>Website</a>-->
+        <!--</div>-->
 
+    </div>
+</footer>
 
-	  function nextpage(){
-	      current_page++;
-	      tohtml();
-	  }
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/custom.js"></script>
 
-	  function topage(s){
-	      current_page = s;
-	      tohtml();
-	  }
+<script>
+    var current_page = 0;
 
-	  function change_info(id) {
-           window.location.href="edit_info?id="+id;
-	  }
-      function change_vena(id) {
-          window.location.href="edit_vena?id="+id;
-      }
+    function add() {
+        window.location.href = "add";
+    }
 
-      function del(id){
-	      $.getJSON("remove?id="+id,{},function(res){
-	          if(res.code=="success"){
-	              alert("删除成功");
-	              $("#tr_"+id).remove();
-			  }else{
-	              alert(res.msg);
-			  }
-		  })
-	  }
+    $(function () {
+        tohtml();
+    })
 
-      var key;
-      function searchbyname(){
-          current_page=0;
-          key=$("#search").val();
-          tohtml();
-      }
-
+    function lastpage() {
+        current_page--;
+        tohtml();
+    }
 
 
-	  function tohtml(){
+    function nextpage() {
+        current_page++;
+        tohtml();
+    }
 
-	      var d = {"page":current_page}
+    function topage(s) {
+        current_page = s;
+        tohtml();
+    }
 
-          if(key){
-              d['key']=key;
-          }
+    function change_info(id) {
+        window.location.href = "edit_info?id=" + id;
+    }
 
-          $.getJSON("getList",d,function(res){
-              if(res.code=="success"){
-                  var da=res.data,s='',data=da['list'],num=da['num'],pi="";
-                  $("#example_info").html("共"+num+"条记录");
-                  if(current_page==0)  pi+=' <li class="prev disabled"> <a href="#">上一页</a></li>';
-                  else pi+='<li class="prev"> <a href="#" onclick="lastpage()">上一页</a></li>'
-				  var max = num/10>5?5:Math.ceil(num/10)
-                  for(var i=current_page;i<max;i++){
-                      var p = i+1;
-                      if(i==0){
-                          pi+= '<li class="active"><a href="#">'+p+'</a></li>'
-					  }
+    function change_vena(id) {
+        window.location.href = "edit_vena?id=" + id;
+    }
 
-					  else{
-                          pi+= '<li><a href="#"  onclick="topage('+(p-1)+')">'+p+'</a></li>';
-					  }
+    function del(id) {
+        $.getJSON("remove?id=" + id, {}, function (res) {
+            if (res.code == "success") {
+                alert("删除成功");
+                $("#tr_" + id).remove();
+            } else {
+                alert(res.msg);
+            }
+        })
+    }
 
-				  }
-					if(current_page+1>=num/10){
-                        pi+= '  <li class="next disabled"><a href="#" >下一页</a></li>'
-					}else{
-                        pi+= '  <li class="next"><a href="#" onclick="nextpage()">下一页</a></li>'
-					}
+    var key;
 
-					$(".pagination").html(pi)
+    function searchbyname() {
+        current_page = 0;
+        key = $("#search").val();
+        tohtml();
+    }
 
-                  for(i=0;i<data.length;i++){
-                      s+=' <tr class="odd gradeX" id="tr_'+data[i]['id']+'">\n' +
-                          '\t\t\t\t\t\t\t  <td>'+data[i]['id']+'</td>\n' +
-                          '\t\t\t\t\t\t\t  <td>'+data[i]['clazz_name']+'</td>\n' +
-                          '\t\t\t\t\t\t\t  <td>'+data[i]['name']+'</td>\n' +
-                          '\t\t\t\t\t\t\t  <td> '+data[i]['tid']+'</td>\n' +
-                          '\t\t\t\t\t\t\t  <td> '+data[i]['address']+'</td>\n' +
-                          '\t\t\t\t\t\t\t  <td> '+data[i]['tel']+'</td>\n' +
-                          '\t\t\t\t\t\t\t  <td> '+data[i]['isadmin']+'</td>\n' +
-                          '\t\t\t\t\t\t\t  <td class="center"> <button onclick="change_info('+data[i]['id']+')">修改个人资料</button>' +
-						  '<button onclick="change_vena('+data[i]['id']+')">修改指静脉</button>' +
-						  '<button onclick="del('+data[i]['id']+')">删除</button></td>' +
-                          '\t\t\t\t\t\t  </tr>'
-                  }
-                  $("#tlist").html(s);
-              }
-          })
-	  }
-  </script>
-  </body>
+
+    function tohtml() {
+
+        var d = {"page": current_page}
+
+        if (key) {
+            d['key'] = key;
+        }
+
+        $.getJSON("getList", d, function (res) {
+            if (res.code == "success") {
+                var da = res.data, s = '', data = da['list'], num = da['num'], pi = "";
+                $("#example_info").html("共" + num + "条记录");
+                if (current_page == 0) pi += ' <li class="prev disabled"> <a href="#">上一页</a></li>';
+                else pi += '<li class="prev"> <a href="#" onclick="lastpage()">上一页</a></li>'
+
+                var min = current_page - 2 < 0 ? 0 : current_page - 2;
+                var max = min + 5 > num / 10 ? num / 10 : min + 5
+                for (var i = min; i < max; i++) {
+                    var p = i + 1;
+                    if (i == current_page) {
+                        pi += '<li class="active"><a href="#">' + p + '</a></li>'
+                    }
+
+                    else {
+                        pi += '<li><a href="#"  onclick="topage(' + (p - 1) + ')">' + p + '</a></li>';
+                    }
+
+                }
+                if (current_page + 1 >= num / 10) {
+                    pi += '  <li class="next disabled"><a href="#" >下一页</a></li>'
+                } else {
+                    pi += '  <li class="next"><a href="#" onclick="nextpage()">下一页</a></li>'
+                }
+
+                $(".pagination").html(pi)
+                for (i = 0; i < data.length; i++) {
+                    s += ' <tr class="odd gradeX" id="tr_' + data[i]['id'] + '">\n' +
+                        '\t\t\t\t\t\t\t  <td>' + data[i]['id'] + '</td>\n' +
+                        '\t\t\t\t\t\t\t  <td>' + data[i]['clazz_name'] + '</td>\n' +
+                        '\t\t\t\t\t\t\t  <td>' + data[i]['name'] + '</td>\n' +
+                        '\t\t\t\t\t\t\t  <td> ' + data[i]['tid'] + '</td>\n' +
+                        '\t\t\t\t\t\t\t  <td> ' + data[i]['address'] + '</td>\n' +
+                        '\t\t\t\t\t\t\t  <td> ' + data[i]['tel'] + '</td>\n' +
+                        '\t\t\t\t\t\t\t  <td> ' + data[i]['isadmin'] + '</td>\n' +
+                        '\t\t\t\t\t\t\t  <td class="center"> <button onclick="change_info(' + data[i]['id'] + ')">修改个人资料</button>' +
+                        '<button onclick="change_vena(' + data[i]['id'] + ')">修改指静脉</button>' +
+                        '<button onclick="del(' + data[i]['id'] + ')">删除</button></td>' +
+                        '\t\t\t\t\t\t  </tr>'
+                }
+                $("#tlist").html(s);
+            }
+        })
+    }
+</script>
+</body>
 </html>

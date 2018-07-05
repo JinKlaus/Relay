@@ -4,45 +4,46 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-
-
 import com.alibaba.fastjson.JSON;
-
 
 import annotation.action;
 import server.Controller;
 import server.ControllerContext;
+import util.AuthUtil;
 import util.TimeUtil;
 
-public class ClazzController extends Controller{
+public class ClazzController extends AdminController {
 
 	public ClazzController(ControllerContext context) {
 		super(context);
-		// TODO Auto-generated constructor stub
+		if (admin_type < DUTY) {
+			pri = false;
+			return;
+		}
 	}
-	
+
 	@action
 	public void add() {
 		assign("clazz", false);
 		toHtml("admin_tpl/clazz_crud");
 	}
-	
+
 	@action
 	public void do_add() throws ParseException {
-		String name,start_Date,end_Date;
+		String name, start_Date, end_Date;
 		try {
-			name=I("post.name").toString();
-			start_Date=I("post.start_Date").toString();
-			end_Date=I("post.end_Date").toString();
+			name = I("post.name").toString();
+			start_Date = I("post.start_Date").toString();
+			end_Date = I("post.end_Date").toString();
 		} catch (Exception e) {
 			error("参数提交错误");
 			return;
 		}
-		HashMap<String, String> clazz=new HashMap<>();
-		clazz.put("name",name);
-		clazz.put("create_time",TimeUtil.getShortTimeStamp()+"");
-		clazz.put("start_date",TimeUtil.dateToStamp(start_Date, "yyyy-MM"));
-		clazz.put("end_date",TimeUtil.dateToStamp(end_Date, "yyyy-MM"));
+		HashMap<String, String> clazz = new HashMap<>();
+		clazz.put("name", name);
+		clazz.put("create_time", TimeUtil.getShortTimeStamp() + "");
+		clazz.put("start_date", TimeUtil.dateToStamp(start_Date, "yyyy-MM"));
+		clazz.put("end_date", TimeUtil.dateToStamp(end_Date, "yyyy-MM"));
 		try {
 			M("clazz").add(clazz);
 			success("数据库更新成功");
@@ -50,16 +51,16 @@ public class ClazzController extends Controller{
 			error("数据加载到数据库失败");
 		}
 	}
-	
+
 	@action
 	public void list() {
 		toHtml("admin_tpl/clazz_list");
 	}
-	
+
 	@action
 	public void getList() {
-		String page=I("get.page").toString();
-		String limit = Integer.parseInt(page)*10+",10";
+		String page = I("get.page").toString();
+		String limit = Integer.parseInt(page) * 10 + ",10";
 		HashMap<String, Object> res = new HashMap<>();
 		int num = M("clazz").count();
 		ArrayList<HashMap<String, String>> list = M("clazz").limit(limit).select();
@@ -69,44 +70,44 @@ public class ClazzController extends Controller{
 			list.get(i).put("end_date", TimeUtil.stampToDate(list.get(i).get("end_date").toString(), "yyyy-MM"));
 		}
 		res.put("num", num);
-		res.put("list",list);
-		success(res);	
+		res.put("list", list);
+		success(res);
 	}
-	
+
 	@action
-	public void remove(){
-		int num=0;
-		String id=I("get.id").toString();
+	public void remove() {
+		int num = 0;
+		String id = I("get.id").toString();
 		try {
-			num=M("student").where("clazz_id="+id).count();
+			num = M("student").where("clazz_id=" + id).count();
 		} catch (Exception e) {
 			error("1");
 		}
-		
-		HashMap<String, Object> res=new HashMap<>();
+
+		HashMap<String, Object> res = new HashMap<>();
 		res.put("clazz_stu", num);
 		success(res);
 	}
-	
+
 	@action
 	public void do_remove() {
-		String id=I("get.id").toString();
-		M("clazz").where("id="+id).delete();
+		String id = I("get.id").toString();
+		M("clazz").where("id=" + id).delete();
 		success(1);
 	}
-	
+
 	@action
 	public void edit() {
-		String id=I("get.id").toString();
-		HashMap<String, String> res = M("clazz").where("id="+id).find();
-		String start_date=TimeUtil.stampToDate(res.get("start_date"), "yyyy-MM");
-		String end_date=TimeUtil.stampToDate(res.get("end_date"), "yyyy-MM");
-		String startdate[]=start_date.split("-");
-		String start_year=startdate[0];
-		String start_month=startdate[1];
-		String enddate[]=end_date.split("-");
-		String end_year=enddate[0];
-		String end_month=enddate[1];
+		String id = I("get.id").toString();
+		HashMap<String, String> res = M("clazz").where("id=" + id).find();
+		String start_date = TimeUtil.stampToDate(res.get("start_date"), "yyyy-MM");
+		String end_date = TimeUtil.stampToDate(res.get("end_date"), "yyyy-MM");
+		String startdate[] = start_date.split("-");
+		String start_year = startdate[0];
+		String start_month = startdate[1];
+		String enddate[] = end_date.split("-");
+		String end_year = enddate[0];
+		String end_month = enddate[1];
 		res.put("start_year", start_year);
 		res.put("start_month", start_month);
 		res.put("end_year", end_year);
@@ -114,25 +115,25 @@ public class ClazzController extends Controller{
 		assign("clazz", JSON.toJSON(res));
 		toHtml("admin_tpl/clazz_crud");
 	}
-	
+
 	@action
 	public void do_edit() throws ParseException {
-		String id,name,start_Date,end_Date;
+		String id, name, start_Date, end_Date;
 		try {
-			id=I("post.id").toString();
-			name=I("post.name").toString();
-			start_Date=I("post.start_Date").toString();
-			end_Date=I("post.end_Date").toString();
+			id = I("post.id").toString();
+			name = I("post.name").toString();
+			start_Date = I("post.start_Date").toString();
+			end_Date = I("post.end_Date").toString();
 		} catch (Exception e) {
 			error("参数提交错误");
 			return;
 		}
-		HashMap<String, String> data=new HashMap<>();
-		data.put("name",name);
-		data.put("start_date",TimeUtil.dateToStamp(start_Date, "yyyy-MM"));
-		data.put("end_date",TimeUtil.dateToStamp(end_Date, "yyyy-MM"));
+		HashMap<String, String> data = new HashMap<>();
+		data.put("name", name);
+		data.put("start_date", TimeUtil.dateToStamp(start_Date, "yyyy-MM"));
+		data.put("end_date", TimeUtil.dateToStamp(end_Date, "yyyy-MM"));
 		try {
-			M("clazz").where("id="+id).save_string(data);
+			M("clazz").where("id=" + id).save_string(data);
 			success("数据库更新成功");
 		} catch (Exception e) {
 			error("数据加载到数据库失败");

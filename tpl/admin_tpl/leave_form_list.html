@@ -62,21 +62,11 @@
         <div class="col-md-10">
             <div class="content-box-large">
                 <div class="panel-heading">
-                    <div class="panel-title">家长管理</div>
-                    <div>
+                    <div class="panel-title">教师请假申请列表</div>
+                    <div class="btn-group">
                         <button id="out" type="button" class="btn btn-primary" onclick="add()">
-                            家长录入
+                            教师请假申请
                         </button>
-                        <button id="searchbytel" type="button" class="btn btn-primary" onclick="searchbytel()">
-                            按家长手机号查询
-                        </button>
-                        <button id="searchbyname" type="button" class="btn btn-primary" onclick="searchbyname()">
-                            按学生姓名查询
-                        </button>
-                        <br>
-                        <div class="col-sm-6">
-                            <input value="" type="text" class="form-control" id="search" name="search" placeholder="">
-                        </div>
                     </div>
                 </div>
 
@@ -85,13 +75,12 @@
                            id="example">
                         <thead>
                         <tr>
-                            <th>id</th>
-                            <th>学生所在班级</th>
-                            <th>学生姓名</th>
-                            <th>家长姓名</th>
-                            <th>家庭住址</th>
-                            <th>联系方式</th>
-                            <th>操作</th>
+                            <th>编号</th>
+                            <th>教师姓名</th>
+                            <th>请假时间</th>
+                            <th>销假时间</th>
+                            <th>请假理由</th>
+                            <th>审核状态</th>
                         </tr>
                         </thead>
                         <tbody id="tlist">
@@ -136,7 +125,7 @@
     var current_page = 0;
 
     function add() {
-        window.location.href = "add";
+        window.location.href = "/v1/leave/add";
     }
 
     $(function () {
@@ -159,47 +148,9 @@
         tohtml();
     }
 
-    function change_info(id) {
-        window.location.href = "edit_info?id=" + id;
-    }
-
-    function change_vena(id) {
-        window.location.href = "edit_vena?id=" + id;
-    }
-
-    function del(id) {
-        $.getJSON("remove?id=" + id, {}, function (res) {
-            if (res.code == "success") {
-                alert("删除成功");
-                $("#tr_" + id).remove();
-            } else {
-                alert(res.msg);
-            }
-        })
-    }
-
-    var key;
-
-    function searchbytel() {
-        current_page = 0;
-        key = $("#search").val();
-        tohtml();
-    }
-
-    function searchbyname() {
-        current_page = 0;
-        key = $("#search").val();
-        tohtml();
-    }
-
-
     function tohtml() {
 
         var d = {"page": current_page}
-
-        if (key) {
-            d['key'] = key;
-        }
 
         $.getJSON("getList", d, function (res) {
             if (res.code == "success") {
@@ -228,19 +179,15 @@
                 }
 
                 $(".pagination").html(pi)
-
                 for (i = 0; i < data.length; i++) {
                     s += ' <tr class="odd gradeX" id="tr_' + data[i]['id'] + '">\n' +
                         '\t\t\t\t\t\t\t  <td>' + data[i]['id'] + '</td>\n' +
-                        '\t\t\t\t\t\t\t  <td>' + data[i]['clazz_name'] + '</td>\n' +
-                        '\t\t\t\t\t\t\t  <td>' + data[i]['stu_name'] + '</td>\n' +
-                        '\t\t\t\t\t\t\t  <td> ' + data[i]['par_name'] + '</td>' +
-                        '\t\t\t\t\t\t\t  <td> ' + data[i]['address'] + '</td>' +
-                        '\t\t\t\t\t\t\t  <td> ' + data[i]['tel'] + '</td>' +
-                        '\t\t\t\t\t\t\t  <td class="center"> <button onclick="change_info(' + data[i]['id'] + ')">修改个人资料</button>' +
-                        '									<button onclick="change_vena(' + data[i]['id'] + ')">修改指静脉</button>' +
-                        '									<button onclick="del(' + data[i]['id'] + ')">删除</button></td>' +
-                        '\t\t\t\t\t\t  </tr>'
+                        '\t\t\t\t\t\t\t  <td>' + data[i]['tea_name'] + '</td>\n' +
+                        '\t\t\t\t\t\t\t  <td>' + data[i]['startdate'] + '</td>\n' +
+                        '\t\t\t\t\t\t\t  <td> ' + data[i]['enddate'] + '</td>\n' +
+                        '\t\t\t\t\t\t\t  <td> ' + data[i]['reason'] + '</td>\n' +
+                        '\t\t\t\t\t\t\t  <td> ' + data[i]['state'] + '</td>\n' +
+                        '\t\t\t\t\t\t\t</tr>'
                 }
                 $("#tlist").html(s);
             }

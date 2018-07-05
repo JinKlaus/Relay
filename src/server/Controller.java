@@ -19,6 +19,7 @@ import exception.ParamsErrorException;
 import model.Model;
 import util.FilterUtil;
 import util.FilterUtil.FilterHandler;
+import util.ModelUtil;
 import util.StringUtil;
 import util.TimeUtil;
 import util.TplUtil;
@@ -35,12 +36,13 @@ public class Controller {
 	public Controller(ControllerContext context){
 		this.context = context;
 		assigns = new HashMap<>();
-		sessionID=context.request.getSession().getId();
 	}
+	
+	
 	
 	protected void session(Object object) throws Exception {
 		HashMap<String, String> res = new HashMap<>();
-		HashMap<String, String> map = M("session").where("sessionid="+sessionID).find();
+		HashMap<String, String> map = M("session").where("sessionid='"+sessionID+"'").find();
 		if(map == null) {
 			res.put("sessionid",sessionID );
 			res.put("object",JSON.toJSONString(object));

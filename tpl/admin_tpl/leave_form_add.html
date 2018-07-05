@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>后台系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- styles -->
+    <link href="/css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/cxcalendar.css">
+    <style>
+        h1, h2, h3 {
+            font: bold 36px/1 "\5fae\8f6f\96c5\9ed1";
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        h3 {
+            font-size: 16px;
+        }
+
+        fieldset {
+            margin: 1em 0;
+        }
+
+        fieldset legend {
+            font: bold 14px/2 "\5fae\8f6f\96c5\9ed1";
+        }
+
+        a {
+            color: #06f;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #00f;
+        }
+
+        .wrap {
+            width: 600px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            border: 2px solid #999;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+
+
+    <script src="/js/jquery-1.9.1.js"></script>
+    <script src="/js/jquery-calendar.js" charset="GBK"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <!-- Logo -->
+                <div class="logo">
+                    <h1><a>后台系统</a></h1>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!--<div class="input-group form" >-->
+                        <!--<input type="text" class="form-control" placeholder="Search...">-->
+                        <!--<span class="input-group-btn">-->
+                        <!--<button class="btn btn-primary" type="button">Search</button>-->
+                        <!--</span>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="navbar navbar-inverse" role="banner">
+                    <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+                        <!--<ul class="nav navbar-nav">-->
+                        <!--<li class="dropdown">-->
+                        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>-->
+                        <!--<ul class="dropdown-menu animated fadeInUp">-->
+                        <!--<li><a href="profile.html">Profile</a></li>-->
+                        <!--<li><a href="login.html">Logout</a></li>-->
+                        <!--</ul>-->
+                        <!--</li>-->
+                        <!--</ul>-->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-content">
+    <div class="row">
+        <%include("left.html"){}%>
+        <div class="col-md-6">
+            <div class="content-box-large">
+                <div class="panel-heading">
+                    <div class="panel-title"><a href="list" style="margin-right: 15px">
+                        <返回当前登录教师请假列表
+                    </a></div>
+                </div>
+                <style type="text/css">
+                    .panel-body .pic {
+                        width: 300px;
+                        height: 150px;
+                        margin-bottom: 20px
+                    }
+                </style>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">请假事由</label>
+                        <textarea style="width:200px;height:100px" id="reason"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">请假时间</label>
+                        <input name="leave" type="text" class="input_cxcalendar" id="leave"
+                               style="width: 200px;height: 30px;">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">销假时间</label>
+                        <input name="come" type="text" class="input_cxcalendar" id="come"
+                               style="width: 200px;height: 30px;">
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button id="sub" type="submit" class="btn btn-primary">提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+
+        <!--<div class="copy text-center">-->
+        <!--Copyright 2014 <a href='#'>Website</a>-->
+        <!--</div>-->
+
+    </div>
+</footer>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/js/jquery.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/custom.js"></script>
+
+<script>
+    var d = {};
+
+    $('.input_cxcalendar').each(function () {
+        var a = new Calendar({
+            targetCls: $(this),
+            type: 'yyyy-MM-dd HH:mm',
+            wday: 2
+        }, function (val) {
+            console.log(val);
+        });
+    });
+
+    $(function () {
+        $("#sub").on("click", function () {
+            d['startdate'] = $("#leave").val();
+            d['enddate'] = $("#come").val();
+            d['reason'] = $("#reason").val();
+
+            if (!data['startdate'] || data['startdate'] == " ") {
+                alert("请假时间不能为空，请输入正确的请假时间");
+                return;
+            } else if (!data['enddate'] || data['enddate'] == " ") {
+                alert("销假时间不能为空，请输入正确的销假时间");
+                return;
+            } else if (!data['reason'] || data['reason'] == " ") {
+                alert("姓名栏不能为空，请输入正确的姓名");
+                return;
+            }
+
+            $.post("/v1/leave/do_add", d, function (res) {
+                var ret = JSON.parse(res);
+                if (ret.code == "success") {
+                    alert("请假申请提交成功");
+                    window.location.href = "list";
+                } else {
+                    alert(ret.msg);
+                }
+
+            })
+        })
+
+
+    })
+
+
+</script>
+
+</body>
+</html>

@@ -1,13 +1,21 @@
+
+<style type="text/css">
+    .page-content{ min-height: 600px}
+    </style>
 <div class="col-md-2">
     <div class="sidebar content-box" style="display: block;">
         <ul class="nav">
             <!-- Main menu -->
-            <li ><a href="/v1/student/list"><i class="glyphicon glyphicon-home"></i> 学生管理</a></li>
-            <li ><a href="/v1/clazz/list"><i class="glyphicon glyphicon-home"></i> 班级管理</a></li>
-            <li ><a href="/v1/parent/list"><i class="glyphicon glyphicon-home"></i> 家长管理</a></li>
-            <li ><a href="/v1/iorecord/list"><i class="glyphicon glyphicon-home"></i> 进出记录</a></li>
-            <li ><p>——管理人员选项——</p></li>
-            <li ><a href="/v1/teacher/list"><i class="glyphicon glyphicon-home"></i> 教师管理</a></li>
+            <% if(admin_type>=2){ %>  <li ${controller=="student"?"class='current'":''}><a  href="/v1/student/list"><i class="glyphicon glyphicon-home"></i>学生管理</a></li> <% }%>
+            <% if(admin_type>=0){ %>  <li ${controller=="absent"?"class='current'":''}><a href="/v1/absent/list"><i class="glyphicon glyphicon-home"></i> 学生请假记录</a></li> <% }%>
+            <% if(admin_type>=2){ %>  <li ${controller=="statistic"?"class='current'":''}><a href="/v1/statistic/list"><i class="glyphicon glyphicon-home"></i> 全校学生请假记录</a></li> <% }%>
+            <% if(admin_type>=2){ %>  <li ${controller=="clazz"?"class='current'":''}><a href="/v1/clazz/list"><i class="glyphicon glyphicon-home"></i> 班级管理</a></li> <% }%>
+            <% if(admin_type>=1){ %>  <li ${controller=="parent"?"class='current'":''}><a href="/v1/parent/list"><i class="glyphicon glyphicon-home"></i> 家长管理</a></li> <% }%>
+            <% if(admin_type>=1){ %>  <li ${controller=="iorecord"?"class='current'":''}><a href="/v1/iorecord/list"><i class="glyphicon glyphicon-home"></i> 进出记录</a></li> <% }%>
+            <% if(admin_type>=3){ %>  <li ${controller=="teacher"?"class='current'":''}><a href="/v1/teacher/list"><i class="glyphicon glyphicon-home"></i> 教师管理</a></li> <% }%>
+            <% if(admin_type>=0){ %>  <li ${controller=="leave"?"class='current'":''}><a href="/v1/leave/list"><i class="glyphicon glyphicon-home"></i> 教师请假申请</a></li> <% }%>
+            <% if(admin_type>=2){ %>  <li ${controller=="approval"?"class='current'":''}><a href="/v1/approval/list"><i class="glyphicon glyphicon-home"></i> 教师请假审核</a></li> <% }%>
+            <% if(admin_type>=3){ %>  <li ${controller=="log"?"class='current'":''}><a href="/v1/log/list"><i class="glyphicon glyphicon-home"></i> 操作日志记录</a></li> <% }%>
             <!--<li><a href="make_card"><i class="glyphicon glyphicon-calendar"></i> 生成卡密</a></li>-->
             <!--<li ><a href="user"><i class="glyphicon glyphicon-user"></i> 用户管理</a></li>-->
            <!--<li><a href="video"><i class="glyphicon glyphicon-facetime-video"></i> 平台切换</a></li>-->

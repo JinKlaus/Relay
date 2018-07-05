@@ -62,35 +62,43 @@
         <div class="col-md-10">
             <div class="content-box-large">
                 <div class="panel-heading">
-                    <div class="panel-title">家长管理</div>
-                    <div>
-                        <button id="out" type="button" class="btn btn-primary" onclick="add()">
-                            家长录入
-                        </button>
-                        <button id="searchbytel" type="button" class="btn btn-primary" onclick="searchbytel()">
-                            按家长手机号查询
-                        </button>
-                        <button id="searchbyname" type="button" class="btn btn-primary" onclick="searchbyname()">
-                            按学生姓名查询
-                        </button>
-                        <br>
-                        <div class="col-sm-6">
-                            <input value="" type="text" class="form-control" id="search" name="search" placeholder="">
-                        </div>
+                    <div class="panel-title">教工请假审核列表</div>
+                </div>
+                <div class="col-lg-2">
+                    <select id="isapprove" class="form-control">
+                        <option value="3" selected>请选择审核状态</option>
+                        <option value="0">待审核</option>
+                        <option value="1">审核通过</option>
+                        <option value="2">审核驳回</option>
+                    </select>
+                </div>
+                <div class="col-lg-5">
+                    <div class="input-group form">
+                        <input type="text" class="form-control" placeholder="按教师姓名查询" id="byname" name="byname">
+                        <span class="input-group-btn">
+					         <button class="btn btn-primary" type="button" onclick="search()">搜索</button>
+				          </span>
                     </div>
                 </div>
+                <div class="col-lg-5">
+                    <span class="glyphicon glyphicon-floppy-open"></span>
+                    <button id="out" type="submit" class="btn btn-primary" style="align-items: right">
+                        导出当前教师请假记录
+                    </button>
+                </div>
+
 
                 <div class="panel-body">
                     <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered"
                            id="example">
                         <thead>
                         <tr>
-                            <th>id</th>
-                            <th>学生所在班级</th>
-                            <th>学生姓名</th>
-                            <th>家长姓名</th>
-                            <th>家庭住址</th>
-                            <th>联系方式</th>
+                            <th>编号</th>
+                            <th>教师姓名</th>
+                            <th>请假时间</th>
+                            <th>销假时间</th>
+                            <th>请假理由</th>
+                            <th>审核状态</th>
                             <th>操作</th>
                         </tr>
                         </thead>
@@ -135,13 +143,60 @@
 <script>
     var current_page = 0;
 
-    function add() {
-        window.location.href = "add";
-    }
-
     $(function () {
         tohtml();
     })
+
+    function del(id) {
+        if (window.confirm("是否删除该条请假申请？")) {
+            $.getJSON("remove?id=" + id, {}, function (res) {
+                if (res.code == "success") {
+                    alert("删除成功");
+                    $("#tr_" + id).remove();
+                } else {
+                    alert(res.msg);
+                }
+            })
+        } else {
+            alert("您已取消删除");
+        }
+
+    }
+
+    function approve(id) {
+        var info = {};
+        info['id'] = "" + id;
+        $.post("approve", info, function (res) {
+            var ret = JSON.parse(res)
+            if (ret.code == "success") {
+                alert("审核成功");
+                window.location.href = "list";
+                return;
+            } else {
+                alert(ret.msg)
+            }
+        })
+    }
+
+    function refuse(id) {
+        var info = {};
+        info['id'] = "" + id;
+        $.post("refuse", info, function (res) {
+            var ret = JSON.parse(res)
+            if (ret.code == "success") {
+                alert("审核成功");
+                window.location.href = "list";
+                return;
+            } else {
+                alert(ret.msg)
+            }
+        })
+    }
+
+    function search() {
+        current_page = 0;
+        tohtml();
+    }
 
     function lastpage() {
         current_page--;
@@ -159,49 +214,33 @@
         tohtml();
     }
 
-    function change_info(id) {
-        window.location.href = "edit_info?id=" + id;
-    }
 
-    function change_vena(id) {
-        window.location.href = "edit_vena?id=" + id;
-    }
-
-    function del(id) {
-        $.getJSON("remove?id=" + id, {}, function (res) {
-            if (res.code == "success") {
-                alert("删除成功");
-                $("#tr_" + id).remove();
+    var excel_data = {};
+    $("#out").on("click", function () {
+        alert(JSON.stringify(excel_data));
+        $.post("do_excel", excel_data, function (res) {
+            var ret = JSON.parse(res)
+            if (ret.code == "success") {
+                if (window.confirm("进出记录导出成功，是否打开记录表"))
+                    window.open(ret.data);
             } else {
-                alert(res.msg);
+                alert(ret.msg);
             }
         })
-    }
-
-    var key;
-
-    function searchbytel() {
-        current_page = 0;
-        key = $("#search").val();
-        tohtml();
-    }
-
-    function searchbyname() {
-        current_page = 0;
-        key = $("#search").val();
-        tohtml();
-    }
+    })
 
 
     function tohtml() {
-
+        var url, searchname, searchstate;
+        searchname = $("#byname").val();
+        searchstate = $("#isapprove option:selected").val();
         var d = {"page": current_page}
+        d['searchname'] = searchname;
+        d['searchstate'] = searchstate;
+        url = "getSearchList";
 
-        if (key) {
-            d['key'] = key;
-        }
-
-        $.getJSON("getList", d, function (res) {
+        excel_data = d;
+        $.getJSON(url, d, function (res) {
             if (res.code == "success") {
                 var da = res.data, s = '', data = da['list'], num = da['num'], pi = "";
                 $("#example_info").html("共" + num + "条记录");
@@ -232,17 +271,19 @@
                 for (i = 0; i < data.length; i++) {
                     s += ' <tr class="odd gradeX" id="tr_' + data[i]['id'] + '">\n' +
                         '\t\t\t\t\t\t\t  <td>' + data[i]['id'] + '</td>\n' +
-                        '\t\t\t\t\t\t\t  <td>' + data[i]['clazz_name'] + '</td>\n' +
-                        '\t\t\t\t\t\t\t  <td>' + data[i]['stu_name'] + '</td>\n' +
-                        '\t\t\t\t\t\t\t  <td> ' + data[i]['par_name'] + '</td>' +
-                        '\t\t\t\t\t\t\t  <td> ' + data[i]['address'] + '</td>' +
-                        '\t\t\t\t\t\t\t  <td> ' + data[i]['tel'] + '</td>' +
-                        '\t\t\t\t\t\t\t  <td class="center"> <button onclick="change_info(' + data[i]['id'] + ')">修改个人资料</button>' +
-                        '									<button onclick="change_vena(' + data[i]['id'] + ')">修改指静脉</button>' +
-                        '									<button onclick="del(' + data[i]['id'] + ')">删除</button></td>' +
-                        '\t\t\t\t\t\t  </tr>'
+                        '\t\t\t\t\t\t\t  <td>' + data[i]['tea_name'] + '</td>\n' +
+                        '\t\t\t\t\t\t\t  <td>' + data[i]['startdate'] + '</td>\n' +
+                        '\t\t\t\t\t\t\t  <td> ' + data[i]['enddate'] + '</td>\n' +
+                        '\t\t\t\t\t\t\t  <td> ' + data[i]['reason'] + '</td>\n' +
+                        '\t\t\t\t\t\t\t  <td> ' + data[i]['state'] + '</td>\n' +
+                        '\t\t\t\t\t\t\t  <td class="center"> <button onclick="approve(' + data[i]['id'] + ')">通过</button>' +
+                        '									 <button onclick="refuse(' + data[i]['id'] + ')">驳回</button>' +
+                        '                                   <button onclick="del(' + data[i]['id'] + ')">删除</button>' +
+                        '\t\t\t\t\t\t\t</tr>'
                 }
                 $("#tlist").html(s);
+            } else {
+                alert(res.msg);
             }
         })
     }

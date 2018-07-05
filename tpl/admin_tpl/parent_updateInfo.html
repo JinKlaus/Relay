@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
-  <head>
-	  <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+<head>
+    <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
     <title>后台系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
@@ -12,196 +12,198 @@
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-  	<div class="header">
-	     <div class="container">
-	        <div class="row">
-	           <div class="col-md-5">
-	              <!-- Logo -->
-	              <div class="logo">
-	                 <h1><a >后台系统</a></h1>
-	              </div>
-	           </div>
-	           <div class="col-md-2">
-	              <div class="navbar navbar-inverse" role="banner">
-	                  <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
-	                    <!--<ul class="nav navbar-nav">-->
-	                      <!--<li class="dropdown">-->
-	                        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>-->
-	                        <!--<ul class="dropdown-menu animated fadeInUp">-->
-	                          <!--<li><a href="profile.html">Profile</a></li>-->
-	                          <!--<li><a href="login.html">Logout</a></li>-->
-	                        <!--</ul>-->
-	                      <!--</li>-->
-	                    <!--</ul>-->
-	                  </nav>
-	              </div>
-	           </div>
-	        </div>
-	     </div>
-	</div>
-
-    <div class="page-content">
-    	<div class="row">
-			<%include("left.html"){}%>
-			<div class="col-md-6">
-				<div class="content-box-large">
-					<div class="panel-heading">
-						<div class="panel-title"><a href="list" style="margin-right: 15px">返回家长列表</a></div>
-					</div>
-					<style type="text/css">
-						.panel-body .pic{ width: 300px; height: 150px; margin-bottom: 20px}
-					</style>
-					<div class="panel-body form-horizontal" >
-							<input type="hidden" value="{$api[id]}" name="id">
-
-							<div class="form-group">
-								<label  class="col-sm-2 control-label">所在班级</label>
-								<div class="col-sm-4">
-									<select id="clazzInfo" class="form-control"></select>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label  class="col-sm-2 control-label">学生姓名</label>
-								<div class="col-sm-4">
-									<select id="studentInfo" class="form-control"></select>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label  class="col-sm-2 control-label">家长姓名</label>
-								<div class="col-sm-4">
-									<input value="" type="text" class="form-control" id="par_name" name="par_name" placeholder="">
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label  class="col-sm-2 control-label">住址</label>
-								<div class="col-sm-8">
-									<input value="" type="text" class="form-control" id="address" name="address" placeholder="">
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label  class="col-sm-2 control-label">手机</label>
-								<div class="col-sm-8">
-									<input value="" type="text" class="form-control" id="tel" name="tel" placeholder="">
-								</div>
-							</div>
-
-
-							<div class="form-group">
-								<div class="col-sm-offset-2 col-sm-10">
-									<button id="sub" type="submit"  class="btn btn-primary">提交</button>
-								</div>
-							</div>
-					</div>
-				</div>
-			</div>
-		</div>
+</head>
+<body>
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <!-- Logo -->
+                <div class="logo">
+                    <h1><a>后台系统</a></h1>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="navbar navbar-inverse" role="banner">
+                    <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+                        <!--<ul class="nav navbar-nav">-->
+                        <!--<li class="dropdown">-->
+                        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>-->
+                        <!--<ul class="dropdown-menu animated fadeInUp">-->
+                        <!--<li><a href="profile.html">Profile</a></li>-->
+                        <!--<li><a href="login.html">Logout</a></li>-->
+                        <!--</ul>-->
+                        <!--</li>-->
+                        <!--</ul>-->
+                    </nav>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 
-    <footer>
-         <div class="container">
-         
-            <!--<div class="copy text-center">-->
-               <!--Copyright 2014 <a href='#'>Website</a>-->
-            <!--</div>-->
-            
-         </div>
-      </footer>
+<div class="page-content">
+    <div class="row">
+        <%include("left.html"){}%>
+        <div class="col-md-6">
+            <div class="content-box-large">
+                <div class="panel-heading">
+                    <div class="panel-title"><a href="list" style="margin-right: 15px">返回家长列表</a></div>
+                </div>
+                <style type="text/css">
+                    .panel-body .pic {
+                        width: 300px;
+                        height: 150px;
+                        margin-bottom: 20px
+                    }
+                </style>
+                <div class="panel-body form-horizontal">
+                    <input type="hidden" value="{$api[id]}" name="id">
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="/js/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/js/custom.js"></script>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">所在班级</label>
+                        <div class="col-sm-4">
+                            <select id="clazzInfo" class="form-control"></select>
+                        </div>
+                    </div>
 
-  <script>
-	  	var data={};
-		$(function () {
-			var info=${info};
-			$("#par_name").val(info.par_name);
-			$("#address").val(info.address);
-			$("#tel").val(info.tel);
-            $.getJSON("getClazzInfo", {}, function (res) {
-                if (res.code == "success")
-                    var da = res.data, s = '';
-                for (var i = 0; i < da.length; i++) {
-                    s += '<option value="' + da[i].id + '">' + da[i].name + '</option>'
-                }
-                $("#clazzInfo").html(s);
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">学生姓名</label>
+                        <div class="col-sm-4">
+                            <select id="studentInfo" class="form-control"></select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">家长姓名</label>
+                        <div class="col-sm-4">
+                            <input value="" type="text" class="form-control" id="par_name" name="par_name"
+                                   placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">住址</label>
+                        <div class="col-sm-8">
+                            <input value="" type="text" class="form-control" id="address" name="address" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">手机</label>
+                        <div class="col-sm-8">
+                            <input value="" type="text" class="form-control" id="tel" name="tel" placeholder="">
+                        </div>
+                    </div>
 
 
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button id="sub" type="submit" class="btn btn-primary">提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-				$("#clazzInfo").on("change", function () {
-                        var v = $(this).val();
-                        $.getJSON("getStudentInfo", {"clazz_id": v}, function (res) {
-                            if (res.code == "success")
-                                var da = res.data, s = '';
-                            for (var i = 0; i < da.length; i++) {
-                                s += '<option value="' + da[i].id + '">' + da[i].name + '</option>'
-                            }
-                            $("#studentInfo").html(s);
+<footer>
+    <div class="container">
 
-                        })
-                })
-                $("#clazzInfo").val(info.clazz_id);
-                $.getJSON("getStudentInfo", {"clazz_id": info.clazz_id}, function (res) {
+        <!--<div class="copy text-center">-->
+        <!--Copyright 2014 <a href='#'>Website</a>-->
+        <!--</div>-->
+
+    </div>
+</footer>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/js/jquery.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/custom.js"></script>
+
+<script>
+    var data = {};
+    $(function () {
+        var info =${info};
+        $("#par_name").val(info.par_name);
+        $("#address").val(info.address);
+        $("#tel").val(info.tel);
+        $.getJSON("getClazzInfo", {}, function (res) {
+            if (res.code == "success")
+                var da = res.data, s = '';
+            for (var i = 0; i < da.length; i++) {
+                s += '<option value="' + da[i].id + '">' + da[i].name + '</option>'
+            }
+            $("#clazzInfo").html(s);
+
+
+            $("#clazzInfo").on("change", function () {
+                var v = $(this).val();
+                $.getJSON("getStudentInfo", {"clazz_id": v}, function (res) {
                     if (res.code == "success")
                         var da = res.data, s = '';
                     for (var i = 0; i < da.length; i++) {
                         s += '<option value="' + da[i].id + '">' + da[i].name + '</option>'
                     }
                     $("#studentInfo").html(s);
-                    $("#studentInfo").val(info.stu_id);
 
                 })
             })
+            $("#clazzInfo").val(info.clazz_id);
+            $.getJSON("getStudentInfo", {"clazz_id": info.clazz_id}, function (res) {
+                if (res.code == "success")
+                    var da = res.data, s = '';
+                for (var i = 0; i < da.length; i++) {
+                    s += '<option value="' + da[i].id + '">' + da[i].name + '</option>'
+                }
+                $("#studentInfo").html(s);
+                $("#studentInfo").val(info.stu_id);
 
-
-
-		    $("#sub").on("click",function () {
-                data['stu_id']=$("#studentInfo").val();
-                data['par_name']=$("#par_name").val();
-                data['address']=$("#address").val();
-                data['tel']=$("#tel").val();
-                data['clazz_id']=$("#clazzInfo").val();
-                data['uid']=info.uid;
-                data['original_pwd']=info.original_pwd;
-                    if(!data['par_name'] || data['par_name']==" ") {
-                        alert("家长姓名不能为空，请输入正确的家长姓名");
-                        return;
-                    }
-                    else  if(!data['address'] || data['address']==" ") {
-                        alert("住址栏不能为空，请输入正确的家庭住址");
-                        return;
-                    }else  if(!data['tel'] || data['tel']==" ") {
-                        alert("手机栏不能为空，请输入正确的联系方式");
-                        return;
-                    }
-
-                $.post('/v1/parent/do_edit_info',data,function (res) {
-                    var ret = JSON.parse(res)
-                    if(ret.code=="success"){
-                        alert("修改成功");
-                        window.location.href("list");
-                        return;
-                    }else{
-                        alert(ret.msg)
-                    }
-                })
             })
-		})
+        })
 
 
+        $("#sub").on("click", function () {
+            data['stu_id'] = $("#studentInfo").val();
+            data['par_name'] = $("#par_name").val();
+            data['address'] = $("#address").val();
+            data['tel'] = $("#tel").val();
+            data['clazz_id'] = $("#clazzInfo").val();
+            data['uid'] = info.uid;
+            data['original_pwd'] = info.original_pwd;
+            if (!data['par_name'] || data['par_name'] == " ") {
+                alert("家长姓名不能为空，请输入正确的家长姓名");
+                return;
+            }
+            else if (!data['address'] || data['address'] == " ") {
+                alert("住址栏不能为空，请输入正确的家庭住址");
+                return;
+            } else if (!data['tel'] || data['tel'] == " ") {
+                alert("手机栏不能为空，请输入正确的联系方式");
+                return;
+            }
 
-  </script>
+            $.post('/v1/parent/do_edit_info', data, function (res) {
+                var ret = JSON.parse(res)
+                if (ret.code == "success") {
+                    alert("修改成功");
+                    window.location.href = "list";
+                    return;
+                } else {
+                    alert(ret.msg)
+                }
+            })
+        })
+    })
 
-  </body>
+
+</script>
+
+</body>
 </html>

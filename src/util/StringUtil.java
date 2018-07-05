@@ -66,6 +66,11 @@ public class StringUtil {
     	else return false;
     }
     
+    public static boolean isEmpty(Object s){
+    	if(s==null || s.toString().isEmpty()) return true;
+    	else return false;
+    }
+    
     public static boolean isLetter(char c) {   
         int k = 0x80;   
         return c / k == 0 ? true : false;   

@@ -28,4 +28,9 @@ public class Dictionary {
 	public static final int STATE_UPDATE=2;//修改
 	public static final int STATE_BLACKLIST=3;//黑名单
 	
+	
+	//请假审核状态
+	public static final int STATE_SUBMIT=0;//已提交
+	public static final int STATE_SUCCESS=1;//通过
+	public static final int STATE_FAILURE=2;//失败
 }

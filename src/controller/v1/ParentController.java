@@ -1,29 +1,26 @@
 package controller.v1;
 
 import java.net.URLDecoder;
-import java.rmi.AccessException;
 import java.util.ArrayList;
 import java.util.HashMap;
-
 
 import com.alibaba.fastjson.JSON;
 
 import annotation.action;
 import config.Dictionary;
-import server.Controller;
 import server.ControllerContext;
-import util.AuthUtil;
 import util.Md5Util;
 import util.StringUtil;
 import util.TimeUtil;
 
-public class ParentController extends Controller {
+public class ParentController extends AdminController {
 
-	public ParentController(ControllerContext context){
+	public ParentController(ControllerContext context) {
 		super(context);
-//		if(AuthUtil.judgeAuth(this) == 0){
-//		pri = false;
-//		}
+		if (admin_type < DUTY) {
+			pri = false;
+			return;
+		}
 	}
 
 	@action
@@ -37,7 +34,7 @@ public class ParentController extends Controller {
 		String limit = Integer.parseInt(page) * 10 + ",10";
 		HashMap<String, Object> res = new HashMap<>();
 		@SuppressWarnings("deprecation")
-		String key = I("get.key") == null || I("get.key").equals("") ? null : URLDecoder.decode(I("get.key").toString());
+		String key = StringUtil.isEmpty(I("get.key")) ? "" : URLDecoder.decode(I("get.key").toString());
 		try {
 			if (key != null) {
 				if (StringUtil.isNumeric(key)) {
@@ -117,7 +114,7 @@ public class ParentController extends Controller {
 		user.put("create_time", TimeUtil.getShortTimeStamp() + "");
 		user.put("update_time", TimeUtil.getLongTimeStamp() + "");
 		user.put("state", Dictionary.STATE_ADD + "");
-		user.put("passType", "6");
+		user.put("passType", "11111");
 		par.put("stu_id", stu_id);
 		par.put("par_name", par_name);
 		par.put("address", address);
@@ -177,7 +174,7 @@ public class ParentController extends Controller {
 
 	@action
 	public void do_edit_info() {
-		String stu_id, par_name, address, tel, uid,original_pwd;
+		String stu_id, par_name, address, tel, uid, original_pwd;
 		try {
 			stu_id = I("post.stu_id").toString();
 			par_name = I("post.par_name").toString();

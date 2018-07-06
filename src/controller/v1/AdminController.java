@@ -49,6 +49,7 @@ public class AdminController extends Controller {
 		case 3:
 			role="管理员";break;
 		default:
+			role="";
 			break;
 		}
 		assign("role", role);

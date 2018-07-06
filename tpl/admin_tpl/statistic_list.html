@@ -71,24 +71,27 @@
                     <div class="panel-title">全校学生请假记录</div>
                 </div>
                 <div class="form-group col-sm-2">
-                    <input name="mydate" type="text" class="input_cxcalendar form-control" placeholder="按请假时间"
-                           id="leavedate">
-                    <input name="mydate" type="text" class="input_cxcalendar form-control" placeholder="结束时间"
-                           id="enddate">
+                    <label class=" control-label">请假时间</label>
+                    <input name="mydate" type="text" class="input_cxcalendar form-control" id="leavedate">
+                </div>
+                <div class="form-group col-sm-2">
+                    <label class="control-label">结束时间</label>
+                    <input name="mydate2" type="text" class="input_cxcalendar form-control" id="enddate">
                 </div>
 
-                <div class="col-lg-5">
-                    <div class="input-group form">
-                        <input type="text" class="form-control" placeholder="按负责教师姓名查询" id="byname" name="byname">
-                        <div class="col-sm-4">
-                            <select id="clazzInfo" class="form-control"></select>
-                        </div>
-                        <span class="input-group-btn">
-					         <button class="btn btn-primary" type="button" onclick="search()">搜索</button>
-				          </span>
-                    </div>
-                </div>
+                <div class="form-group col-sm-2">
+                    <label class=" control-label">教师姓名</label>
+                    <input value="" type="text" class="form-control" id="byname" name="byname">
 
+                </div>
+                <div class="form-group col-sm-2">
+                    <label class=" control-label">班级名称</label>
+                    <select id="clazzInfo" class="form-control"></select>
+                </div>
+                <div class="form-group col-sm-2">
+                    <label class=" control-label">&nbsp;</label>
+                    <button type="button" class="btn btn-default form-control" onclick="search()">查询</button>
+                </div>
 
                 <div class="panel-body">
                     <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered"
@@ -160,7 +163,7 @@
     $(function () {
         $.getJSON("getClazzInfo", {}, function (res) {
             if (res.code == "success")
-                var da = res.data, s = '<option value="0">按班级查询</option>';
+                var da = res.data, s = '<option value="0">请选择班级</option>';
             for (var i = 0; i < da.length; i++) {
                 s += '<option value="' + da[i].id + '">' + da[i].name + '</option>'
             }

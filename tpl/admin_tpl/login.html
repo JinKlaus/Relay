@@ -66,7 +66,7 @@
 	     $.post("do_login",{"user":user,"password":password},function(r){
 	         var res = JSON.parse(r);
 	         if(res.code=="success"){
-	             window.location.href="index"
+	             window.location.href="/v1/index/index"
 			 }else{
 	             alert(res.msg);
 			 }

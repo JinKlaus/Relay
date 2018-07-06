@@ -55,9 +55,9 @@ public class TeacherController extends AdminController {
 					if (list.get(i).get("isadmin").equals("0")) {
 						list.get(i).put("isadmin", "普通教工");
 					} else if (list.get(i).get("isadmin").equals("1")) {
-						list.get(i).put("isadmin", "值班教工");
-					} else if (list.get(i).get("isadmin").equals("2")) {
 						list.get(i).put("isadmin", "审核教工");
+					} else if (list.get(i).get("isadmin").equals("2")) {
+						list.get(i).put("isadmin", "值班教工");
 					} else if (list.get(i).get("isadmin").equals("3")) {
 						list.get(i).put("isadmin", "管理员");
 					}
@@ -74,9 +74,9 @@ public class TeacherController extends AdminController {
 					if (list.get(i).get("isadmin").equals("0")) {
 						list.get(i).put("isadmin", "普通教工");
 					} else if (list.get(i).get("isadmin").equals("1")) {
-						list.get(i).put("isadmin", "值班教工");
-					} else if (list.get(i).get("isadmin").equals("2")) {
 						list.get(i).put("isadmin", "审核教工");
+					} else if (list.get(i).get("isadmin").equals("2")) {
+						list.get(i).put("isadmin", "值班教工");
 					} else if (list.get(i).get("isadmin").equals("3")) {
 						list.get(i).put("isadmin", "管理员");
 					}

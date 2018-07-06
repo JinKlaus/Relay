@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.jms.Session;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 
@@ -19,7 +19,7 @@ import exception.ParamsErrorException;
 import model.Model;
 import util.FilterUtil;
 import util.FilterUtil.FilterHandler;
-import util.ModelUtil;
+
 import util.StringUtil;
 import util.TimeUtil;
 import util.TplUtil;
@@ -36,6 +36,7 @@ public class Controller {
 	public Controller(ControllerContext context){
 		this.context = context;
 		assigns = new HashMap<>();
+		sessionID =context.request.getSession().getId();////"84cyjj3gyzoz1tm9zc36fggjj";// //"1pdkzj7jtkxy511byzigcyblr6";//
 	}
 	
 	

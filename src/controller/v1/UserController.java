@@ -19,6 +19,8 @@ public class UserController extends Controller {
 		String token = I("token") == null ? "" : I("token").toString();
 		if (token.isEmpty()) {
 			error("非法操作");
+			pri = false;
+			return;
 		}
 		user = M("parent").where("token=" + token).find();
 		if (user == null) {

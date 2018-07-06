@@ -14,7 +14,7 @@ public class StatisticController extends AdminController {
 
 	public StatisticController(ControllerContext context) {
 		super(context);
-		if (admin_type < APPROVAER) {
+		if (admin_type < DUTY) {
 			pri = false;
 			return;
 		}

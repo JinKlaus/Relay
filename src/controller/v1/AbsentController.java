@@ -24,11 +24,11 @@ public class AbsentController extends AdminController {
 		String page = I("get.page").toString();
 		String limit = Integer.parseInt(page) * 10 + ",10";
 		HashMap<String, Object> res = new HashMap<>();
+		String sql = "select a.*,b.tel,c.name,d.name as clazz_name,e.name as tea_name from studentleave a LEFT JOIN parent b on a.pid=b.id LEFT JOIN student c on b.stu_id =c.id LEFT JOIN clazz d on c.clazz_id=d.id LEFT JOIN teacher e on e.clazz_id=d.id where e.name='"
+				+ user.get("name") + "'  limit " + limit;
+		String sql1 = "select count(*),a.*,b.tel,c.name,d.name as clazz_name,e.name as tea_name from studentleave a LEFT JOIN parent b on a.pid=b.id LEFT JOIN student c on b.stu_id =c.id LEFT JOIN clazz d on c.clazz_id=d.id LEFT JOIN teacher e on e.clazz_id=d.id where e.name='"
+				+ user.get("name") + "'";
 		try {
-			String sql = "select a.*,b.tel,c.name,d.name as clazz_name,e.name as tea_name from studentleave a LEFT JOIN parent b on a.pid=b.id LEFT JOIN student c on b.stu_id =c.id LEFT JOIN clazz d on c.clazz_id=d.id LEFT JOIN teacher e on e.clazz_id=d.id where e.name='"
-					+ user.get("name") + "'  limit " + limit;
-			String sql1 = "select count(*),a.*,b.tel,c.name,d.name as clazz_name,e.name as tea_name from studentleave a LEFT JOIN parent b on a.pid=b.id LEFT JOIN student c on b.stu_id =c.id LEFT JOIN clazz d on c.clazz_id=d.id LEFT JOIN teacher e on e.clazz_id=d.id where e.name='"
-					+ user.get("name") + "'";
 			ArrayList<HashMap<String, String>> list = M("studentleave").query(sql);
 			String num = M("studentleave").query(sql1).get(0).get("count(*)");
 			for (int i = 0; i < list.size(); i++) {

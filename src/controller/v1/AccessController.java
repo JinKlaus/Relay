@@ -13,11 +13,6 @@ public class AccessController extends Controller {
 		super(context);
 	}
 
-	@action
-	public void test() {
-		HashMap<String, String> res = getSession(new HashMap().getClass());
-		success(sessionID);
-	}
 
 	@action
 	public void login() {

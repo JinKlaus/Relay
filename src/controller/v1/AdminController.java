@@ -13,8 +13,8 @@ import util.TimeUtil;
 public class AdminController extends Controller {
 
 	public static final int NORMAL = 0;
-	public static final int DUTY = 1;
-	public static final int APPROVAER = 2;
+	public static final int APPROVAER = 1;
+	public static final int DUTY = 2;
 	public static final int ADMIN = 3;
 
 	protected HashMap<String, String> user;
@@ -23,7 +23,6 @@ public class AdminController extends Controller {
 	@SuppressWarnings("unchecked")
 	public AdminController(ControllerContext context) {
 		super(context);
-		sessionID = "rdmd7yvst7xxzuzwt6l9bgpi";// "1q9ufcvccdk75o7f33s0h46g9";////context.request.getSession().getId();
 		assign("controller", context.CONTROLLER);
 		HashMap<String, String> map = M("session").where("sessionid='" + sessionID + "'").find();
 		if (map == null) {
@@ -38,7 +37,21 @@ public class AdminController extends Controller {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
+		assign("user", user.get("name"));
+		String role = "";
+		switch (admin_type) {
+		case 0:
+			role="老师";break;
+		case 1:
+			role="审核老师";break;
+		case 2:
+			role="值班老师";break;
+		case 3:
+			role="管理员";break;
+		default:
+			break;
+		}
+		assign("role", role);
 		setLog();
 	}
 

@@ -2,13 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cefd692-e790-4471-a934-d3d8888b132d" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/admin_tpl/head.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/css/cxcalendar.css" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/css/cxcalendar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/resourses/teacherleave.xls" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/resourses/teacherleave.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../assets/resourses/test.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/server/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/server/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/controller/v1/AbsentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/controller/v1/AbsentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/controller/v1/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/controller/v1/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/controller/v1/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/controller/v1/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/controller/v1/StatisticController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/controller/v1/StatisticController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/controller/v1/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/controller/v1/TeacherController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/controller/v1/Test.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/resourses/test.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/server/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/server/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../test.xls" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_tpl/absent_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/absent_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_tpl/approval_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/approval_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_tpl/clazz_crud.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/clazz_crud.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_tpl/clazz_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/clazz_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_tpl/leave_form_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/leave_form_add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_tpl/leave_form_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/leave_form_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_tpl/left.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/left.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_tpl/log_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/log_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_tpl/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_tpl/parent_crud.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/parent_crud.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_tpl/parent_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/parent_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_tpl/parent_updateInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/parent_updateInfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_tpl/parent_updateVena.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/parent_updateVena.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_tpl/record_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/record_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_tpl/statistic_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/statistic_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_tpl/student_crud.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/student_crud.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_tpl/student_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/student_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_tpl/student_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/student_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_tpl/teacher_crud.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/teacher_crud.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_tpl/teacher_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/teacher_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_tpl/teacher_updateInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/teacher_updateInfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_tpl/teacher_updateVena.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/teacher_updateVena.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,108 +52,96 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="record_list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin_tpl/record_list.html">
+      <file leaf-file-name="student_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin_tpl/student_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="752">
-              <caret line="140" column="26" lean-forward="true" selection-start-line="119" selection-start-column="19" selection-end-line="140" selection-end-column="26" />
+            <state relative-caret-position="450">
+              <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="left.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin_tpl/left.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="725">
+              <caret line="44" column="123" selection-start-line="44" selection-start-column="106" selection-end-line="44" selection-end-column="123" />
               <folding>
-                <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="statistic_list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin_tpl/statistic_list.html">
+      <file leaf-file-name="teacher_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin_tpl/teacher_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="165" column="63" selection-start-line="165" selection-start-column="63" selection-end-line="165" selection-end-column="63" />
+            <state relative-caret-position="25">
+              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parent_updateInfo.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin_tpl/parent_updateInfo.html">
+      <file leaf-file-name="teacher_updateInfo.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin_tpl/teacher_updateInfo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="111" column="6" selection-start-line="111" selection-start-column="6" selection-end-line="111" selection-end-column="6" />
+            <state relative-caret-position="375">
+              <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parent_list.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/admin_tpl/parent_list.html">
+      <file leaf-file-name="teacher_updateVena.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin_tpl/teacher_updateVena.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="74" column="51" selection-start-line="74" selection-start-column="51" selection-end-line="74" selection-end-column="51" />
+            <state relative-caret-position="106">
+              <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
               <folding>
-                <element signature="e#3251#3257#0" expanded="true" />
-                <element signature="e#3257#3263#0" expanded="true" />
-                <element signature="e#3263#3269#0" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#textarea#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parent_crud.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin_tpl/parent_crud.html">
+      <file leaf-file-name="user.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin_tpl/user.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="567" selection-start-line="567" selection-end-line="567" />
+            <state relative-caret-position="-1500" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin_tpl/update.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="video.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin_tpl/video.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
               <folding>
-                <element signature="n#head#0;n#html#0;n#!!top" />
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#textarea#0;n#div#2;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#img#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="log_list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin_tpl/log_list.html">
+      <file leaf-file-name="video_edit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin_tpl/video_edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+            <state relative-caret-position="625">
+              <caret line="37" column="24" lean-forward="true" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="leave_form_list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin_tpl/leave_form_list.html">
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin_tpl/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="leave_form_add.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin_tpl/leave_form_add.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="179" column="44" selection-start-line="179" selection-start-column="44" selection-end-line="179" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="clazz_list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin_tpl/clazz_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="81" column="41" selection-start-line="81" selection-start-column="41" selection-end-line="81" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="clazz_crud.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin_tpl/clazz_crud.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="164" lean-forward="true" selection-start-line="164" selection-end-line="164" />
+            <state relative-caret-position="616">
+              <caret line="68" column="42" selection-start-line="68" selection-start-column="42" selection-end-line="68" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -191,29 +209,31 @@
         <option value="D:/软件/MDFingerVein/sample/finger/ch_index.html" />
         <option value="$PROJECT_DIR$/admin_tpl/staff_login.html" />
         <option value="$PROJECT_DIR$/admin_tpl/leave_form.html" />
-        <option value="$PROJECT_DIR$/admin_tpl/clazz_crud.html" />
         <option value="$PROJECT_DIR$/admin_tpl/tables.html" />
         <option value="$PROJECT_DIR$/admin_tpl/approval.html" />
-        <option value="$PROJECT_DIR$/admin_tpl/teacher_list.html" />
-        <option value="$PROJECT_DIR$/admin_tpl/student_crud.html" />
-        <option value="$PROJECT_DIR$/admin_tpl/student_list.html" />
         <option value="$PROJECT_DIR$/admin_tpl/left.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/student_list.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/head.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/absent_list.html" />
         <option value="$PROJECT_DIR$/admin_tpl/approval_list.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/clazz_crud.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/clazz_list.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/leave_form_add.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/leave_form_list.html" />
         <option value="$PROJECT_DIR$/admin_tpl/log_list.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/parent_crud.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/parent_list.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/parent_updateInfo.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/parent_updateVena.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/record_list.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/statistic_list.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/student_crud.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/student_form.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/teacher_crud.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/teacher_list.html" />
         <option value="$PROJECT_DIR$/admin_tpl/teacher_updateInfo.html" />
         <option value="$PROJECT_DIR$/admin_tpl/teacher_updateVena.html" />
-        <option value="$PROJECT_DIR$/admin_tpl/teacher_crud.html" />
-        <option value="$PROJECT_DIR$/admin_tpl/student_form.html" />
-        <option value="$PROJECT_DIR$/admin_tpl/record_list.html" />
-        <option value="$PROJECT_DIR$/admin_tpl/parent_updateVena.html" />
-        <option value="$PROJECT_DIR$/admin_tpl/parent_updateInfo.html" />
-        <option value="$PROJECT_DIR$/admin_tpl/parent_crud.html" />
-        <option value="$PROJECT_DIR$/admin_tpl/leave_form_list.html" />
-        <option value="$PROJECT_DIR$/admin_tpl/leave_form_add.html" />
-        <option value="$PROJECT_DIR$/admin_tpl/clazz_list.html" />
-        <option value="$PROJECT_DIR$/admin_tpl/absent_list.html" />
-        <option value="$PROJECT_DIR$/admin_tpl/statistic_list.html" />
-        <option value="$PROJECT_DIR$/admin_tpl/parent_list.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/login.html" />
       </list>
     </option>
   </component>
@@ -227,10 +247,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="419" />
-    <option name="y" value="346" />
-    <option name="width" value="1476" />
-    <option name="height" value="634" />
+    <option name="x" value="431" />
+    <option name="y" value="176" />
+    <option name="width" value="1254" />
+    <option name="height" value="841" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -308,12 +328,12 @@
       <workItem from="1529373760658" duration="83127000" />
       <workItem from="1529648832099" duration="50973000" />
       <workItem from="1530061994200" duration="72902000" />
-      <workItem from="1530265788342" duration="92274000" />
+      <workItem from="1530265788342" duration="105751000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="374349000" />
+    <option name="totallyTimeSpent" value="387826000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
@@ -350,42 +370,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin_tpl/parent_crud.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="110" column="55" lean-forward="true" selection-start-line="110" selection-start-column="55" selection-end-line="110" selection-end-column="55" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/parent_doUpdateInfo.html" />
-    <entry file="file://D:/备份/6.15/student_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="331" column="21" lean-forward="true" selection-start-line="331" selection-start-column="21" selection-end-line="344" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/student_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="972">
-          <caret line="388" column="41" selection-start-line="388" selection-start-column="41" selection-end-line="388" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa3292.7278/jquery-ui-timepicker-addon.js" />
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa3292.9364/jquery-ui.css" />
-    <entry file="file://$PROJECT_DIR$/../assets/js/jquery-ui.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-975" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa3292.19523/jquery-ui.js" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa3292.37211/jquery-ui.css" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa3292.25535/index.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -432,33 +416,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/camera.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1725">
-          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#object#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#embed#0;n#object#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin_tpl/oth.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/admin_tpl/make_card.html">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/forms.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5325" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1575" />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin_tpl/jx.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -503,34 +465,137 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/staff_login.html">
+    <entry file="file://$USER_HOME$/Desktop/left.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="68" column="49" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="49" />
+        <state relative-caret-position="325">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="178" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/left.html">
+    <entry file="file://$PROJECT_DIR$/admin_tpl/absent_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        <state relative-caret-position="250">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/approval_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/calendar.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/camera.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#object#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#embed#0;n#object#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/teacher_updateInfo.html">
+    <entry file="file://$PROJECT_DIR$/admin_tpl/clazz_crud.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="130" column="27" selection-start-line="130" selection-start-column="27" selection-end-line="130" selection-end-column="27" />
+        <state relative-caret-position="250">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/teacher_updateVena.html">
+    <entry file="file://$PROJECT_DIR$/admin_tpl/clazz_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="420" lean-forward="true" selection-start-line="420" selection-end-line="420" />
+        <state relative-caret-position="325">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/forms.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1725" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/head.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="n#style#0;n#h4#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1125" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/leave_form_add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="62" column="26" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/leave_form_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/log_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/parent_crud.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+          <folding>
+            <element signature="n#head#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#2;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/parent_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+          <folding>
+            <element signature="e#3251#3257#0" expanded="true" />
+            <element signature="e#3257#3263#0" expanded="true" />
+            <element signature="e#3263#3269#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/parent_updateInfo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/parent_updateVena.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
           <folding>
             <element signature="n#style#0;n#p#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -539,29 +604,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/teacher_list.html">
+    <entry file="file://$PROJECT_DIR$/admin_tpl/record_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="98" column="32" selection-end-line="247" selection-end-column="7" />
+        <state relative-caret-position="25">
+          <caret line="63" column="26" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/teacher_crud.html">
+    <entry file="file://$PROJECT_DIR$/admin_tpl/staff_login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="175" column="9" selection-start-line="175" selection-start-column="9" selection-end-line="175" selection-end-column="9" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#div#2;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="1301">
+          <caret line="68" column="49" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/statistic_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin_tpl/student_crud.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="308" column="46" selection-start-line="308" selection-start-column="46" selection-end-line="308" selection-end-column="46" />
+        <state relative-caret-position="250">
+          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
           <folding>
             <element signature="n#style#0;n#p#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#html#0;n#!!top" expanded="true" />
@@ -572,8 +642,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin_tpl/student_form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="572" column="41" selection-start-line="572" selection-start-column="41" selection-end-line="572" selection-end-column="41" />
+        <state relative-caret-position="100">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
           <folding>
             <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#1;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -581,17 +651,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/student_list.html">
+    <entry file="file://$PROJECT_DIR$/admin_tpl/teacher_crud.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="87" selection-start-line="87" selection-end-line="87" />
+        <state relative-caret-position="150">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#2;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/parent_updateVena.html">
+    <entry file="file://$PROJECT_DIR$/admin_tpl/teacher_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="392" column="17" selection-start-line="392" selection-start-column="17" selection-end-line="392" selection-end-column="17" />
+        <state relative-caret-position="25">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/teacher_updateInfo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/teacher_updateVena.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
           <folding>
             <element signature="n#style#0;n#p#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -600,102 +689,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/approval_list.html">
+    <entry file="file://$PROJECT_DIR$/admin_tpl/user.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="97" column="41" selection-start-line="97" selection-start-column="41" selection-end-line="97" selection-end-column="41" />
-        </state>
+        <state relative-caret-position="-1500" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/absent_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1802">
-          <caret line="86" column="43" selection-start-line="86" selection-start-column="43" selection-end-line="86" selection-end-column="43" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/update.html">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/clazz_crud.html">
+    <entry file="file://$PROJECT_DIR$/admin_tpl/video.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="164" lean-forward="true" selection-start-line="164" selection-end-line="164" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/clazz_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="81" column="41" selection-start-line="81" selection-start-column="41" selection-end-line="81" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/leave_form_add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="179" column="44" selection-start-line="179" selection-start-column="44" selection-end-line="179" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/leave_form_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/log_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/parent_crud.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="567" selection-start-line="567" selection-end-line="567" />
+        <state>
           <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" />
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#div#2;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#img#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/parent_updateInfo.html">
+    <entry file="file://$PROJECT_DIR$/admin_tpl/video_edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="111" column="6" selection-start-line="111" selection-start-column="6" selection-end-line="111" selection-end-column="6" />
+        <state relative-caret-position="625">
+          <caret line="37" column="24" lean-forward="true" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/record_list.html">
+    <entry file="file://$PROJECT_DIR$/admin_tpl/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="140" column="26" lean-forward="true" selection-start-line="119" selection-start-column="19" selection-end-line="140" selection-end-column="26" />
+        <state relative-caret-position="616">
+          <caret line="68" column="42" selection-start-line="68" selection-start-column="42" selection-end-line="68" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/student_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/left.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="44" column="123" selection-start-line="44" selection-start-column="106" selection-end-line="44" selection-end-column="123" />
           <folding>
-            <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/statistic_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="165" column="63" selection-start-line="165" selection-start-column="63" selection-end-line="165" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/parent_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="74" column="51" selection-start-line="74" selection-start-column="51" selection-end-line="74" selection-end-column="51" />
-          <folding>
-            <element signature="e#3251#3257#0" expanded="true" />
-            <element signature="e#3257#3263#0" expanded="true" />
-            <element signature="e#3263#3269#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -44,7 +44,13 @@ public class StatisticController extends AdminController {
 		if (!leavedate.isEmpty() && !enddate.isEmpty()) {
 			s.append(" and startdate BETWEEN '" + leavedate + "' AND '" + enddate + "'");
 			snum.append(" and startdate BETWEEN '" + leavedate + "' AND '" + enddate + "'");
+		}else {
+			String currentDay= (TimeUtil.getShortTimeStamp()-TimeUtil.getHourMinuteSecond())+"";
+			s.append(" and startdate >= '"+currentDay+"'");
+			snum.append(" and startdate >= '"+currentDay+"'");
 		}
+		
+		
 		if (!searchname.isEmpty()) {
 			s.append(" and e.name like '%" + searchname + "%'");
 			snum.append(" and e.name like '%" + searchname + "%'");

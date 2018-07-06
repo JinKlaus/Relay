@@ -14,6 +14,7 @@ public class AuthController extends Controller {
 		super(context);
 	}
 
+	@SuppressWarnings("serial")
 	@action
 	public void login() {
 		String username, password;

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import org.eclipse.jetty.server.Authentication.User;
 
 import com.alibaba.fastjson.JSON;
 
@@ -13,7 +12,6 @@ import config.Dictionary;
 import model.Model;
 import server.Controller;
 import server.ControllerContext;
-import util.AuthUtil;
 import util.ModelUtil;
 import util.TimeUtil;
 

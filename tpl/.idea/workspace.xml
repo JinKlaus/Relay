@@ -2,43 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cefd692-e790-4471-a934-d3d8888b132d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/admin_tpl/head.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../assets/css/cxcalendar.css" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/css/cxcalendar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../assets/resourses/teacherleave.xls" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/resourses/teacherleave.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/../.classpath" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../assets/resourses/test.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bin/server/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/server/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/controller/v1/AbsentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/controller/v1/AbsentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/controller/v1/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/controller/v1/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/controller/v1/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/controller/v1/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/controller/v1/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/controller/v1/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/controller/v1/ClazzController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/controller/v1/ClazzController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/controller/v1/ClientRequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/controller/v1/ClientRequestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/controller/v1/DeviceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/controller/v1/DeviceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/controller/v1/LogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/controller/v1/LogController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/controller/v1/StatisticController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/controller/v1/StatisticController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/controller/v1/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/controller/v1/TeacherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/controller/v1/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/controller/v1/StudentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/controller/v1/Test.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/resourses/test.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/server/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/server/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../test.xls" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_tpl/absent_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/absent_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_tpl/approval_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/approval_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_tpl/clazz_crud.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/clazz_crud.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_tpl/clazz_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/clazz_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_tpl/leave_form_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/leave_form_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_tpl/leave_form_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/leave_form_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_tpl/left.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/left.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_tpl/log_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/log_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_tpl/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_tpl/parent_crud.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/parent_crud.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_tpl/parent_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/parent_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_tpl/parent_updateInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/parent_updateInfo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_tpl/parent_updateVena.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/parent_updateVena.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_tpl/record_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/record_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_tpl/statistic_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/statistic_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_tpl/student_crud.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/student_crud.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_tpl/student_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/student_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_tpl/student_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/student_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_tpl/teacher_crud.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/teacher_crud.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_tpl/teacher_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/teacher_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_tpl/teacher_updateInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/teacher_updateInfo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_tpl/teacher_updateVena.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tpl/teacher_updateVena.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -52,20 +33,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="student_list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin_tpl/student_list.html">
+      <file leaf-file-name="record_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin_tpl/record_list.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="450">
-              <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="26" />
+              <caret line="74" column="77" lean-forward="true" selection-start-line="73" selection-start-column="20" selection-end-line="74" selection-end-column="77" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="left.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="student_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin_tpl/student_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="34" column="97" lean-forward="true" selection-start-line="34" selection-start-column="76" selection-end-line="34" selection-end-column="97" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="left.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin_tpl/left.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="725">
-              <caret line="44" column="123" selection-start-line="44" selection-start-column="106" selection-end-line="44" selection-end-column="123" />
+            <state relative-caret-position="900">
+              <caret line="36" column="32" lean-forward="true" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -73,42 +63,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="teacher_list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin_tpl/teacher_list.html">
+      <file leaf-file-name="absent_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin_tpl/absent_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+            <state relative-caret-position="525">
+              <caret line="36" column="85" selection-start-line="36" selection-start-column="64" selection-end-line="36" selection-end-column="85" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="teacher_updateInfo.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin_tpl/teacher_updateInfo.html">
+      <file leaf-file-name="statistic_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin_tpl/statistic_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+            <state relative-caret-position="450">
+              <caret line="44" column="22" lean-forward="true" selection-start-line="44" selection-start-column="22" selection-end-line="44" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="teacher_updateVena.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin_tpl/teacher_updateVena.html">
+      <file leaf-file-name="approval_list.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin_tpl/approval_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+            <state relative-caret-position="275">
+              <caret line="28" column="73" selection-start-line="28" selection-start-column="73" selection-end-line="28" selection-end-column="73" />
               <folding>
-                <element signature="n#style#0;n#p#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#textarea#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin_tpl/user.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1500" />
           </provider>
         </entry>
       </file>
@@ -212,10 +193,7 @@
         <option value="$PROJECT_DIR$/admin_tpl/tables.html" />
         <option value="$PROJECT_DIR$/admin_tpl/approval.html" />
         <option value="$PROJECT_DIR$/admin_tpl/left.html" />
-        <option value="$PROJECT_DIR$/admin_tpl/student_list.html" />
         <option value="$PROJECT_DIR$/admin_tpl/head.html" />
-        <option value="$PROJECT_DIR$/admin_tpl/absent_list.html" />
-        <option value="$PROJECT_DIR$/admin_tpl/approval_list.html" />
         <option value="$PROJECT_DIR$/admin_tpl/clazz_crud.html" />
         <option value="$PROJECT_DIR$/admin_tpl/clazz_list.html" />
         <option value="$PROJECT_DIR$/admin_tpl/leave_form_add.html" />
@@ -225,8 +203,6 @@
         <option value="$PROJECT_DIR$/admin_tpl/parent_list.html" />
         <option value="$PROJECT_DIR$/admin_tpl/parent_updateInfo.html" />
         <option value="$PROJECT_DIR$/admin_tpl/parent_updateVena.html" />
-        <option value="$PROJECT_DIR$/admin_tpl/record_list.html" />
-        <option value="$PROJECT_DIR$/admin_tpl/statistic_list.html" />
         <option value="$PROJECT_DIR$/admin_tpl/student_crud.html" />
         <option value="$PROJECT_DIR$/admin_tpl/student_form.html" />
         <option value="$PROJECT_DIR$/admin_tpl/teacher_crud.html" />
@@ -234,6 +210,11 @@
         <option value="$PROJECT_DIR$/admin_tpl/teacher_updateInfo.html" />
         <option value="$PROJECT_DIR$/admin_tpl/teacher_updateVena.html" />
         <option value="$PROJECT_DIR$/admin_tpl/login.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/student_list.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/absent_list.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/statistic_list.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/record_list.html" />
+        <option value="$PROJECT_DIR$/admin_tpl/approval_list.html" />
       </list>
     </option>
   </component>
@@ -246,11 +227,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="431" />
-    <option name="y" value="176" />
-    <option name="width" value="1254" />
-    <option name="height" value="841" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="144" />
+    <option name="y" value="295" />
+    <option name="width" value="1405" />
+    <option name="height" value="979" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -328,15 +309,15 @@
       <workItem from="1529373760658" duration="83127000" />
       <workItem from="1529648832099" duration="50973000" />
       <workItem from="1530061994200" duration="72902000" />
-      <workItem from="1530265788342" duration="105751000" />
+      <workItem from="1530265788342" duration="109179000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="387826000" />
+    <option name="totallyTimeSpent" value="391254000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.13489583" />
@@ -472,20 +453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/absent_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/approval_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin_tpl/calendar.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -604,27 +571,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/record_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="63" column="26" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin_tpl/staff_login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1301">
           <caret line="68" column="49" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/statistic_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -677,18 +627,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/teacher_updateVena.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin_tpl/user.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1500" />
@@ -720,19 +658,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/student_list.html">
+    <entry file="file://$PROJECT_DIR$/admin_tpl/left.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="26" />
+        <state relative-caret-position="900">
+          <caret line="36" column="32" lean-forward="true" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_tpl/left.html">
+    <entry file="file://$PROJECT_DIR$/admin_tpl/teacher_updateVena.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="44" column="123" selection-start-line="44" selection-start-column="106" selection-end-line="44" selection-end-column="123" />
+        <state relative-caret-position="106">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/absent_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="36" column="85" selection-start-line="36" selection-start-column="64" selection-end-line="36" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/student_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="34" column="97" lean-forward="true" selection-start-line="34" selection-start-column="76" selection-end-line="34" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/record_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="74" column="77" lean-forward="true" selection-start-line="73" selection-start-column="20" selection-end-line="74" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/statistic_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="44" column="22" lean-forward="true" selection-start-line="44" selection-start-column="22" selection-end-line="44" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_tpl/approval_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="28" column="73" selection-start-line="28" selection-start-column="73" selection-end-line="28" selection-end-column="73" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

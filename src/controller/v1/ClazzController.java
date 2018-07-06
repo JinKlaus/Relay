@@ -7,9 +7,7 @@ import java.util.HashMap;
 import com.alibaba.fastjson.JSON;
 
 import annotation.action;
-import server.Controller;
 import server.ControllerContext;
-import util.AuthUtil;
 import util.TimeUtil;
 
 public class ClazzController extends AdminController {

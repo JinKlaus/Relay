@@ -8,11 +8,18 @@ import annotation.action;
 import server.ControllerContext;
 import util.TimeUtil;
 
+/**
+ * @Description 学生请假管理
+ * @Author Administrator
+ * @Date 2018-07-09  15:06
+ * @Version 1.0
+ **/
 public class AbsentController extends AdminController {
 
 	public AbsentController(ControllerContext context) {
 		super(context);
 	}
+
 
 	@action
 	public void list() {

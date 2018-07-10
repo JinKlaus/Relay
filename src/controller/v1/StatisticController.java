@@ -10,6 +10,12 @@ import server.ControllerContext;
 import util.StringUtil;
 import util.TimeUtil;
 
+/**
+ * @Description 全校学生请假统计
+ * @Author Administrator
+ * @Date 2018-07-09  15:06
+ * @Version 1.0
+ **/
 public class StatisticController extends AdminController {
 
 	public StatisticController(ControllerContext context) {

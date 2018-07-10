@@ -11,6 +11,12 @@ import server.ControllerContext;
 import util.TimeUtil;
 import util.ExcelUtil.ExcelMap;
 
+/**
+ * @Description 进出记录管理
+ * @Author Administrator
+ * @Date 2018-07-09  15:06
+ * @Version 1.0
+ **/
 public class IorecordController extends AdminController {
 
 	public IorecordController(ControllerContext context) {

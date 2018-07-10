@@ -7,6 +7,12 @@ import annotation.action;
 import server.Controller;
 import server.ControllerContext;
 
+/**
+ * @Description 主页面
+ * @Author Administrator
+ * @Date 2018-07-09  15:06
+ * @Version 1.0
+ **/
 public class IndexController extends AdminController{
 
 	public IndexController(ControllerContext context) {

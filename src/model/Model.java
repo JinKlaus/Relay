@@ -284,7 +284,6 @@ public class Model {
 		}
 		
 		 return execute(sql)==0?false:true;
-		
 	}
 	
 	public int delete(){

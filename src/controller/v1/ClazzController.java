@@ -10,6 +10,12 @@ import annotation.action;
 import server.ControllerContext;
 import util.TimeUtil;
 
+/**
+ * @Description 班级管理
+ * @Author Administrator
+ * @Date 2018-07-09  15:06
+ * @Version 1.0
+ **/
 public class ClazzController extends AdminController {
 
 	public ClazzController(ControllerContext context) {

@@ -8,6 +8,13 @@ import server.ControllerContext;
 import util.Md5Util;
 import util.TimeUtil;
 
+
+/**
+ * @Description 客户端权限控制
+ * @Author Administrator
+ * @Date 2018-07-09  15:06
+ * @Version 1.0
+ **/
 public class AuthController extends Controller {
 
 	public AuthController(ControllerContext context) {

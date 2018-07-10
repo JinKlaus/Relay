@@ -13,6 +13,12 @@ import util.Md5Util;
 import util.StringUtil;
 import util.TimeUtil;
 
+/**
+ * @Description 家长管理
+ * @Author Administrator
+ * @Date 2018-07-09  15:06
+ * @Version 1.0
+ **/
 public class ParentController extends AdminController {
 
 	public ParentController(ControllerContext context) {

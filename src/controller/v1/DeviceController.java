@@ -13,11 +13,18 @@ import model.Model;
 import server.Controller;
 import server.ControllerContext;
 import util.ModelUtil;
+import util.StringUtil;
 import util.TimeUtil;
 
+/**
+ * @Description 白名单信息获取及进出记录上传
+ * @Author Administrator
+ * @Date 2018-07-09  15:06
+ * @Version 1.0
+ **/
 public class DeviceController extends Controller {
 
-	String controllerID = I("post.controllerID").toString();
+	String controllerID = StringUtil.isEmpty(I("post.controllerID"))?"":I("post.controllerID").toString();
 
 	public DeviceController(ControllerContext context) {
 		super(context);

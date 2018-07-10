@@ -12,6 +12,12 @@ import server.ControllerContext;
 import util.Md5Util;
 import util.TimeUtil;
 
+/**
+ * @Description 教师管理
+ * @Author Administrator
+ * @Date 2018-07-09  15:06
+ * @Version 1.0
+ **/
 public class TeacherController extends AdminController {
 
 	public TeacherController(ControllerContext context) {

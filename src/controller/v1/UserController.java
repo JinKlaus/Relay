@@ -10,6 +10,12 @@ import server.ControllerContext;
 import util.ModelUtil;
 import util.TimeUtil;
 
+/**
+ * @Description 客户端权限控制及日志记录
+ * @Author Administrator
+ * @Date 2018-07-09  15:06
+ * @Version 1.0
+ **/
 public class UserController extends Controller {
 
 	protected HashMap<String, String> user;

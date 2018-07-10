@@ -9,6 +9,12 @@ import server.ControllerContext;
 import util.StringUtil;
 import util.TimeUtil;
 
+/**
+ * @Description 日志管理列表
+ * @Author Administrator
+ * @Date 2018-07-09  15:06
+ * @Version 1.0
+ **/
 public class LogController extends AdminController {
 
 	public LogController(ControllerContext context) {

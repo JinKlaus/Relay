@@ -10,6 +10,12 @@ import server.ControllerContext;
 import util.ModelUtil;
 import util.TimeUtil;
 
+/**
+ * @Description 后台权限设置
+ * @Author Administrator
+ * @Date 2018-07-09  15:06
+ * @Version 1.0
+ **/
 public class AdminController extends Controller {
 
 	public static final int NORMAL = 0;

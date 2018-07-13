@@ -2,43 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef7104b2-ba98-4d13-9b69-48fa9f35859f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zhibo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/assets.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/resourses/test.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/annotation/action.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/annotation/action.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/annotation/consumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/annotation/consumer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/config/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/config/Config.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/config/Dictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/config/Dictionary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/config/Entrance.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/config/Entrance.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/config/MysqlDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/config/MysqlDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/config/SchoolOpenTime$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/config/SchoolOpenTime$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/config/SchoolOpenTime$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/config/SchoolOpenTime$10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/config/SchoolOpenTime$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/config/SchoolOpenTime$11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/config/SchoolOpenTime$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/config/SchoolOpenTime$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/config/SchoolOpenTime$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/config/SchoolOpenTime$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/config/SchoolOpenTime$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/config/SchoolOpenTime$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/config/SchoolOpenTime$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/config/SchoolOpenTime$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/config/SchoolOpenTime$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/config/SchoolOpenTime$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/config/SchoolOpenTime$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/config/SchoolOpenTime$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/config/SchoolOpenTime$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/config/SchoolOpenTime$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/config/SchoolOpenTime$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/config/SchoolOpenTime$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/config/SchoolOpenTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/config/SchoolOpenTime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/error/WebErrorHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/error/WebErrorHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/exception/AssetsException.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/exception/AssetsException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/exception/ParamsErrorException.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/exception/ParamsErrorException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/exception/RouteErrorException.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/exception/RouteErrorException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/model/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/Model.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/server/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/server/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/server/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/server/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/server/ControllerContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/server/ControllerContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/server/DbManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/server/DbManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/server/HttpServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/server/HttpServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/server/ServerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/server/ServerHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/v1/AbsentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/v1/AbsentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/v1/AccessController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/v1/AccessController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/v1/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/v1/AdminController.java" afterDir="false" />
@@ -55,12 +19,9 @@
       <change beforePath="$PROJECT_DIR$/src/controller/v1/StatisticController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/v1/StatisticController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/v1/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/v1/StudentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/v1/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/v1/TeacherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/v1/Test.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/v1/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/v1/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resourses/test.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpl/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tpl/admin_tpl/parent_crud.html" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/admin_tpl/parent_crud.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -72,23 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="AccessController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/v1/AccessController.java">
+      <file leaf-file-name="ParentController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controller/v1/ParentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeviceController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/controller/v1/DeviceController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="45" column="21" lean-forward="true" selection-start-line="45" selection-start-column="21" selection-end-line="46" selection-end-column="30" />
-              <folding>
-                <element signature="method#getWhiteListData#0;class#DeviceController#0" />
-              </folding>
+            <state relative-caret-position="22">
+              <caret line="130" column="33" selection-start-line="130" selection-start-column="33" selection-end-line="130" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -114,7 +63,6 @@
         <option value="$PROJECT_DIR$/src/controller/v1/TeacherController.java" />
         <option value="$PROJECT_DIR$/src/controller/v1/StudentController.java" />
         <option value="$PROJECT_DIR$/src/controller/v1/StatisticController.java" />
-        <option value="$PROJECT_DIR$/src/controller/v1/ParentController.java" />
         <option value="$PROJECT_DIR$/src/controller/v1/UserController.java" />
         <option value="$PROJECT_DIR$/src/controller/v1/LogController.java" />
         <option value="$PROJECT_DIR$/src/controller/v1/LeaveController.java" />
@@ -126,7 +74,11 @@
         <option value="$PROJECT_DIR$/src/controller/v1/ApprovalController.java" />
         <option value="$PROJECT_DIR$/src/controller/v1/AdminController.java" />
         <option value="$PROJECT_DIR$/src/controller/v1/AbsentController.java" />
+        <option value="D:/软件/MDFingerVein/sample/finger/ch_index.html" />
+        <option value="D:/软件/MDFingerVein/sample/finger/index.html" />
+        <option value="$PROJECT_DIR$/tpl/admin_tpl/parent_crud.html" />
         <option value="$PROJECT_DIR$/src/controller/v1/DeviceController.java" />
+        <option value="$PROJECT_DIR$/src/controller/v1/ParentController.java" />
       </list>
     </option>
   </component>
@@ -140,17 +92,17 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="225" />
-    <option name="y" value="43" />
+    <option name="x" value="142" />
+    <option name="y" value="56" />
     <option name="width" value="1534" />
-    <option name="height" value="1054" />
+    <option name="height" value="886" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -167,19 +119,14 @@
               <item name="Relay" type="b2602c69:ProjectViewProjectNode" />
               <item name="Relay" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="v1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Relay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Relay" type="462c0819:PsiDirectoryNode" />
-              <item name="tpl" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -273,12 +220,24 @@
       <option name="presentableId" value="Default" />
       <updated>1531111224772</updated>
       <workItem from="1531111236270" duration="10909000" />
-      <workItem from="1531124608878" duration="4932000" />
+      <workItem from="1531124608878" duration="27027000" />
+      <workItem from="1531448159438" duration="43000" />
+      <workItem from="1531452713916" duration="399000" />
+      <workItem from="1531453129453" duration="167000" />
+      <workItem from="1531453329330" duration="107000" />
     </task>
+    <task id="LOCAL-00001" summary="6.0">
+      <created>1531192763217</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1531192763217</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15841000" />
+    <option name="totallyTimeSpent" value="38652000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -293,7 +252,7 @@
       <window_info anchor="right" id="Maven Projects" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25917926" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2149028" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
@@ -308,9 +267,9 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,7 +278,19 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="5.0" />
+    <MESSAGE value="6.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="6.0" />
+  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/controller/v1/ParentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2530">
+          <caret line="130" column="33" selection-start-line="130" selection-start-column="33" selection-end-line="130" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/v1/IndexController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -331,9 +302,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-          <folding>
-            <element signature="method#getWhiteListData#0;class#DeviceController#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -452,13 +420,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/v1/ParentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/v1/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -477,13 +438,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/v1/IorecordController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -557,30 +511,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-          <folding>
-            <element signature="e#2573#2574#0" expanded="true" />
-            <element signature="e#2603#2604#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/student_crud.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-132" />
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
           <caret line="633" column="19" selection-start-line="633" selection-start-column="19" selection-end-line="633" selection-end-column="19" />
-          <folding>
-            <element signature="e#23072#23073#0" expanded="true" />
-            <element signature="e#23112#23113#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -598,6 +532,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/v1/IorecordController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3520">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/v1/AccessController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -605,13 +546,73 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="428" column="4" selection-start-line="428" selection-start-column="4" selection-end-line="428" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/软件/MDFingerVein/sample/finger/ch_index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-88">
+          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/student_crud.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2935">
+          <caret line="414" column="3" lean-forward="true" selection-start-line="414" selection-start-column="3" selection-end-line="414" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/软件/MDFingerVein/sample/finger/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="33" column="85" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/parent_crud.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="305" selection-start-line="305" selection-end-line="305" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="172" column="51" lean-forward="true" selection-start-line="172" selection-start-column="51" selection-end-line="172" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="125" column="4" lean-forward="true" selection-start-line="125" selection-start-column="4" selection-end-line="125" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/v1/DeviceController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="45" column="21" lean-forward="true" selection-start-line="45" selection-start-column="21" selection-end-line="46" selection-end-column="30" />
-          <folding>
-            <element signature="method#getWhiteListData#0;class#DeviceController#0" />
-          </folding>
+        <state relative-caret-position="330">
+          <caret line="68" column="161" selection-start-line="68" selection-start-column="161" selection-end-line="68" selection-end-column="161" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/jre/lib/rt.jar!/sun/nio/ch/Net.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="157" selection-start-line="157" selection-end-line="157" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/v1/ParentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="130" column="33" selection-start-line="130" selection-start-column="33" selection-end-line="130" selection-end-column="33" />
         </state>
       </provider>
     </entry>

@@ -88,11 +88,17 @@ public class ParentController extends AdminController {
 
 	@action
 	public void do_add() {
-		String veinData1, veinData2, veinData3, stu_id, par_name, address, tel, original_pwd;
+		String veinData1, veinData2, veinData3, image1,image2,image3,image4,image5,image6,stu_id, par_name, address, tel, original_pwd;
 		try {
-			veinData1 = I("post.image1").toString();
-			veinData2 = I("post.image2").toString();
-			veinData3 = I("post.image3").toString();
+			veinData1 = I("post.f1").toString();
+			veinData2 = I("post.f2").toString();
+			veinData3 = I("post.f3").toString();
+			image1 = I("post.i1").toString();
+			image2 = I("post.i2").toString();
+			image3 = I("post.i3").toString();
+			image4 = I("post.i4").toString();
+			image5= I("post.i5").toString();
+			image6= I("post.i6").toString();
 			stu_id = I("post.stu_id").toString();
 			par_name = I("post.par_name").toString();
 			address = I("post.address").toString();
@@ -117,6 +123,12 @@ public class ParentController extends AdminController {
 		user.put("veinData1", veinData1);
 		user.put("veinData2", veinData2);
 		user.put("veinData3", veinData3);
+		user.put("image1", image1);
+		user.put("image2", image2);
+		user.put("image3", image3);
+		user.put("image4", image4);
+		user.put("image5", image5);
+		user.put("image6", image6);
 		user.put("create_time", TimeUtil.getShortTimeStamp() + "");
 		user.put("update_time", TimeUtil.getLongTimeStamp() + "");
 		user.put("state", Dictionary.STATE_ADD + "");

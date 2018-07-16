@@ -102,7 +102,7 @@ public class ClientRequestController extends UserController {
 
 	@action
 	public void getParIorecord() {
-		String sql = "select b.id as par_id,a.name,a.dateTime,a.inoutType,a.channelID from reportrecord a left join parent b on b.par_name=a.name where name = '" + user.get("par_name")
+		String sql = "select b.id as par_id,a.name,a.dateTime,a.inoutType,a.channelID from reportrecord a left join parent b on b.par_name=a.name where a.name = '" + user.get("par_name")
 				+ "'";
 		try {
 			ArrayList<HashMap<String, String>> list = M("reportrecord").query(sql);

@@ -63,7 +63,7 @@ public class ClientRequestController extends UserController {
 
 	@action
 	public void getStudentInfo() {
-		String sql = "select a.id,a.name,a.sid,c.name as clazz_name from student a left join parent b on a.id=b.stu_id left join clazz c on a.clazz_id=c.id  where b.id ="
+		String sql = "select a.id as stu_id,a.name,a.sid,c.name as clazz_name from student a left join parent b on a.id=b.stu_id left join clazz c on a.clazz_id=c.id  where b.id ="
 				+ user.get("id");
 		try {
 			ArrayList<HashMap<String, String>> list = M("student").query(sql);
@@ -75,7 +75,7 @@ public class ClientRequestController extends UserController {
 
 	@action
 	public void getStuIorecord() {
-		String sql = "select a.name,a.dateTime,a.inoutType,a.channelID from reportrecord a left join student b on a.name=b.name left join parent c on b.id=c.stu_id where c.id ="
+		String sql = "select b.id as stu_id,a.name,a.dateTime,a.inoutType,a.channelID from reportrecord a left join student b on a.name=b.name left join parent c on b.id=c.stu_id where c.id ="
 				+ user.get("id");
 		try {
 			ArrayList<HashMap<String, String>> list = M("reportrecord").query(sql);
@@ -102,7 +102,7 @@ public class ClientRequestController extends UserController {
 
 	@action
 	public void getParIorecord() {
-		String sql = "select name,dateTime,inoutType,channelID from reportrecord where name = '" + user.get("par_name")
+		String sql = "select b.id as par_id,a.name,a.dateTime,a.inoutType,a.channelID from reportrecord a left join parent b on b.par_name=a.name where name = '" + user.get("par_name")
 				+ "'";
 		try {
 			ArrayList<HashMap<String, String>> list = M("reportrecord").query(sql);

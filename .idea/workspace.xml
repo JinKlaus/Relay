@@ -3,24 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ef7104b2-ba98-4d13-9b69-48fa9f35859f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/v1/AbsentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/v1/AbsentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/v1/AccessController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/v1/AccessController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/v1/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/v1/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/v1/ApprovalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/v1/ApprovalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/v1/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/v1/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/v1/ClazzController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/v1/ClazzController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/v1/ClientRequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/v1/ClientRequestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/v1/DeviceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/v1/DeviceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/v1/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/v1/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/v1/IorecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/v1/IorecordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/v1/LeaveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/v1/LeaveController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/v1/LogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/v1/LogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/v1/ParentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/v1/ParentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/v1/StatisticController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/v1/StatisticController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/v1/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/v1/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/v1/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/v1/TeacherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/v1/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/v1/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tpl/admin_tpl/parent_crud.html" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/admin_tpl/parent_crud.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
@@ -38,6 +20,73 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="22">
               <caret line="130" column="33" selection-start-line="130" selection-start-column="33" selection-end-line="130" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/v1/AdminController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LICENSE.txt" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/fastjson-1.2.17.jar!/META-INF/LICENSE.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="858">
+              <caret line="39" selection-start-line="39" selection-end-line="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccessController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/v1/AccessController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="616">
+              <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuthController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/v1/AuthController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/server/Controller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="572">
+              <caret line="48" column="43" selection-start-line="48" selection-start-column="43" selection-end-line="48" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="left.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/left.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parent_crud.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/parent_crud.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2046">
+              <caret line="93" column="37" selection-start-line="93" selection-start-column="37" selection-end-line="93" selection-end-column="37" />
+              <folding>
+                <element signature="n#style#0;n#div#2;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#textarea#0;n#div#2;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -92,17 +141,19 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="142" />
-    <option name="y" value="56" />
+    <option name="x" value="371" />
+    <option name="y" value="242" />
     <option name="width" value="1534" />
-    <option name="height" value="886" />
+    <option name="height" value="1076" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -110,23 +161,10 @@
               <item name="Relay" type="b2602c69:ProjectViewProjectNode" />
               <item name="Relay" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Relay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Relay" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Relay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Relay" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -225,6 +263,9 @@
       <workItem from="1531452713916" duration="399000" />
       <workItem from="1531453129453" duration="167000" />
       <workItem from="1531453329330" duration="107000" />
+      <workItem from="1531454085671" duration="9000" />
+      <workItem from="1531454397284" duration="5495000" />
+      <workItem from="1531703128774" duration="49000" />
     </task>
     <task id="LOCAL-00001" summary="6.0">
       <created>1531192763217</created>
@@ -237,14 +278,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38652000" />
+    <option name="totallyTimeSpent" value="44205000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32937366" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
@@ -270,6 +310,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32937366" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,27 +325,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="6.0" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/controller/v1/ParentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2530">
-          <caret line="130" column="33" selection-start-line="130" selection-start-column="33" selection-end-line="130" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/v1/IndexController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/v1/DeviceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/v1/ClientRequestController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -364,38 +384,11 @@
     <entry file="file://$PROJECT_DIR$/zhibo.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-371" />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/approval_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-264">
-          <caret line="39" column="29" lean-forward="true" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/help - 副本.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-462" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-990" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/record_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="156" column="19" lean-forward="true" selection-start-line="156" selection-start-column="19" selection-end-line="156" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md" />
+    <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/approval_list.html" />
+    <entry file="file://$PROJECT_DIR$/assets/help - 副本.html" />
+    <entry file="file://$PROJECT_DIR$/assets/register.html" />
+    <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/record_list.html" />
     <entry file="file://$PROJECT_DIR$/src/controller/v1/ADAD.java" />
     <entry file="file://$PROJECT_DIR$/src/controller/v1/Boss.java" />
     <entry file="file://$PROJECT_DIR$/src/controller/v1/Test.java" />
@@ -469,13 +462,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/v1/AuthController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/v1/ApprovalController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -487,13 +473,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/left.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-147">
-          <caret line="13" column="184" lean-forward="true" selection-start-line="13" selection-start-column="178" selection-end-line="13" selection-end-column="184" />
         </state>
       </provider>
     </entry>
@@ -525,24 +504,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/v1/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="70" column="50" lean-forward="true" selection-start-line="70" selection-start-column="50" selection-end-line="70" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/v1/IorecordController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3520">
           <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/v1/AccessController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -560,13 +525,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/student_crud.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2935">
-          <caret line="414" column="3" lean-forward="true" selection-start-line="414" selection-start-column="3" selection-end-line="414" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/student_crud.html" />
     <entry file="file://D:/软件/MDFingerVein/sample/finger/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
@@ -574,24 +533,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/parent_crud.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="305" selection-start-line="305" selection-end-line="305" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Model.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
           <caret line="172" column="51" lean-forward="true" selection-start-line="172" selection-start-column="51" selection-end-line="172" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="125" column="4" lean-forward="true" selection-start-line="125" selection-start-column="4" selection-end-line="125" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -606,6 +551,69 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
           <caret line="157" selection-start-line="157" selection-end-line="157" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/parent_crud.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2046">
+          <caret line="93" column="37" selection-start-line="93" selection-start-column="37" selection-end-line="93" selection-end-column="37" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#2;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/left.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="48" column="43" selection-start-line="48" selection-start-column="43" selection-end-line="48" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/v1/AccessController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/v1/AuthController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/fastjson-1.2.17.jar!/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/fastjson-1.2.17.jar!/META-INF/LICENSE.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="858">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/fastjson-1.2.17.jar!/com/alibaba/fastjson/JSON.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="304" column="24" selection-start-line="304" selection-start-column="24" selection-end-line="304" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/v1/AdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
         </state>
       </provider>
     </entry>

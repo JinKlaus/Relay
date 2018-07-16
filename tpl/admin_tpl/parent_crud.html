@@ -74,7 +74,8 @@
                             <p id="fingerVeinmsg" style="text-align:left; font-weight:bold;font-size:14px;">
                                 请准备将手指放到指静脉识别器上</p>
                         </div>
-                        <div ><textarea style="width:600px;height:200px" id="consoles"></textarea></div>
+                        <div id="show" style="display:none;"><textarea style="width:600px;height:200px"
+                                                                       id="consoles"></textarea></div>
                         <!--<label  class="col-sm-2 control-label">家长照片</label>-->
                         <!--<div class="col-sm-10">-->
                         <!--<object  id="My_Cam" align="middle" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"-->
@@ -299,11 +300,23 @@
                     var f1 = feature['1'];
                     var f2 = feature['2'];
 
+                    var i0=image['0'];
+                    var i1=image['1'];
+                    var i2=image['2'];
+                    var i3=image['3'];
+                    var i4=image['4'];
+                    var i5=image['5'];
 
                     data['f1'] = f0;
                     data['f2'] = f1;
                     data['f3'] = f2;
 
+                    data['i1'] = i0;
+                    data['i2'] = i1;
+                    data['i3'] = i2;
+                    data['i4'] = i3;
+                    data['i5'] = i4;
+                    data['i6'] = i5;
                     $('#fingerVeinmsg').text("successful").show();
                     closeOCX();
                 } else if (json.RETURNID == -1) {

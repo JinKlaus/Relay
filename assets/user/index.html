@@ -10,7 +10,7 @@
 <style type="text/css">
     .weui-btn_primary{background-color: #d6393f}
     .page__hd{
-        padding: 40px;
+        padding: 20px 30px;
     }
     .page__title {
         text-align: left;
@@ -24,7 +24,7 @@
         text-align: left;
         font-size: 14px;
     }
-
+    .weui-grid__icon{ width: 50px; height: 50px}
 
 </style>
 <body>
@@ -32,64 +32,55 @@
 
         <div class="page grid js_show">
             <div class="page__hd">
-                <h1 class="page__title"></h1>
-                <p class="page__desc"></p>
-            </div>
+                <div class="weui-flex">
+                    <div ><img style="width: 60px; height: 60px" src="image/student.png"></div>
+                    <div class="weui-flex__item" style="margin-left: 20px"> <h1 class="page__title" data-attr="text:name"></h1>
+                        <p class="page__desc" data-attr="text:clazz_name"></p></div>
+
+                </div>
+
+
+                </div>
+
+
             <div class="weui-grids">
                 <a href="javascript:;" class="weui-grid">
                     <div class="weui-grid__icon">
-                        <img src="./images/icon_tabbar.png" alt="">
+                        <img src="image/qingjia.png" alt="">
                     </div>
-                    <p class="weui-grid__label">Grid</p>
+                    <p class="weui-grid__label">请假</p>
                 </a>
                 <a href="javascript:;" class="weui-grid">
                     <div class="weui-grid__icon">
-                        <img src="./images/icon_tabbar.png" alt="">
+                        <img src="image/child_record.png" alt="">
                     </div>
-                    <p class="weui-grid__label">Grid</p>
+                    <p class="weui-grid__label">孩子进出记录</p>
                 </a>
                 <a href="javascript:;" class="weui-grid">
                     <div class="weui-grid__icon">
-                        <img src="./images/icon_tabbar.png" alt="">
+                        <img src="image/record.png" alt="">
                     </div>
-                    <p class="weui-grid__label">Grid</p>
+                    <p class="weui-grid__label">我的记录</p>
                 </a>
                 <a href="javascript:;" class="weui-grid">
                     <div class="weui-grid__icon">
-                        <img src="./images/icon_tabbar.png" alt="">
+                        <img src="image/qingjia_record.png" alt="">
                     </div>
-                    <p class="weui-grid__label">Grid</p>
+                    <p class="weui-grid__label">请假记录</p>
                 </a>
                 <a href="javascript:;" class="weui-grid">
                     <div class="weui-grid__icon">
-                        <img src="./images/icon_tabbar.png" alt="">
+                        <img src="image/team.png" alt="">
                     </div>
-                    <p class="weui-grid__label">Grid</p>
+                    <p class="weui-grid__label">家庭成员</p>
                 </a>
                 <a href="javascript:;" class="weui-grid">
                     <div class="weui-grid__icon">
-                        <img src="./images/icon_tabbar.png" alt="">
+                        <img src="image/change_password.png" alt="">
                     </div>
-                    <p class="weui-grid__label">Grid</p>
+                    <p class="weui-grid__label">修改密码</p>
                 </a>
-                <a href="javascript:;" class="weui-grid">
-                    <div class="weui-grid__icon">
-                        <img src="./images/icon_tabbar.png" alt="">
-                    </div>
-                    <p class="weui-grid__label">Grid</p>
-                </a>
-                <a href="javascript:;" class="weui-grid">
-                    <div class="weui-grid__icon">
-                        <img src="./images/icon_tabbar.png" alt="">
-                    </div>
-                    <p class="weui-grid__label">Grid</p>
-                </a>
-                <a href="javascript:;" class="weui-grid">
-                    <div class="weui-grid__icon">
-                        <img src="./images/icon_tabbar.png" alt="">
-                    </div>
-                    <p class="weui-grid__label">Grid</p>
-                </a>
+
             </div>
         </div>
 
@@ -98,12 +89,13 @@
 
     <script src="/user/js/jquery-3.3.1.js"></script>
     <script src="/user/js/list.js"></script>
-    <script src="/user/js/lib.js"></script>
+    <script src="/user/js/lib.js?4"></script>
 <script>
 
     $(function () {
         $.getdata("clientRequest/getStudentInfo",{},function(res){
-            alert(JSON.stringify(res))
+            var guardian = res[0]
+            $.tohtml($(".page"),guardian)
         })
     })
 

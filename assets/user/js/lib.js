@@ -170,8 +170,9 @@ $(function(){
         },
         "tohtml":function(a,b){
 
-            if(b['id'])
-            a.attr("data-id",b['id']);
+            var id = b['id'] || 0;
+
+            a.attr("data-id",id);
 
             a.find("[data-attr]").each(
                 function(){

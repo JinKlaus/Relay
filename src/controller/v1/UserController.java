@@ -28,7 +28,7 @@ public class UserController extends Controller {
 			pri = false;
 			return;
 		}
-		user = M("parent").where("token=" + token).find();
+		user = M("parent").where("token= '" + token +"'").find();
 		if (user == null) {
 			error("登录异常请重新登录");
 			pri = false;

@@ -175,4 +175,20 @@ public class ClientRequestController extends UserController {
 		}
 	}
 
+	/**
+	 * @Description:  查看系统已录入的家庭成员
+	 * @param:
+	 * @return:
+	 * @auther: CodyLongo
+	 * @modified:
+	 */
+	 @action
+	public void getMember(){
+	 	try {
+			ArrayList<HashMap<String, String>> list = M("parent").field("par_name").where("stu_id=" + user.get("stu_id")).select();
+			success(list);
+		}catch (Exception e){
+	 		error("获取家庭成员失败");
+		}
+	 	}
 }

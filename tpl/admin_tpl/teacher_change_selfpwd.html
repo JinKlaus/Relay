@@ -29,7 +29,7 @@
 
                 <div class="panel-body form-horizontal">
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">请输入您要重置的密码</label>
+                        <label class="col-sm-2 control-label">请输入您要修改的密码</label>
                         <div class="col-sm-4">
                             <input value="" type="password" class="form-control" id="new_pwd" name="new_pwd"
                                    placeholder="">
@@ -65,24 +65,32 @@
 <script src="/js/custom.js"></script>
 
 <script>
-$(function () {
-    $("#sub").on("click", function () {
 
-    })
 
-    $.post('/v1/setup/change', data, function (res) {
-        var ret = JSON.parse(res)
-        if (ret.code == "success") {
-            if (window.confirm("确认重置您的登录密码吗？")) {
-                window.location.reload()
-            } else {
-                window.location.href = "/v1/teacher/list";
+    var data= {};
+    $(function () {
+
+        $("#sub").on("click", function () {
+            data['new_pwd'] = $("#new_pwd").val();
+            if (!data['new_pwd'] || data['new_pwd'] == " ") {
+                alert("密码不能为空，请输入正确的密码");
+                return;
             }
-        } else {
-            alert(ret.msg)
-        }
+
+            $.post('/v1/setup/change',data, function (res) {
+                var ret = JSON.parse(res)
+                if (ret.code == "success") {
+                    if (window.confirm("确认修改您的登录密码吗？")) {
+                        window.location.href = "/v1/absent/list";
+                    } else {
+                        window.location.href = "/v1/setup/list";
+                    }
+                } else {
+                    alert(ret.msg)
+                }
+            })
+        })
     })
-})
 
 </script>
 

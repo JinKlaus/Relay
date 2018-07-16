@@ -6,6 +6,7 @@ import java.util.HashMap;
 import annotation.action;
 import config.Dictionary;
 import server.ControllerContext;
+import util.Md5Util;
 import util.TimeUtil;
 
 /**
@@ -42,6 +43,14 @@ public class ClientRequestController extends UserController {
 		}
 
 	}
+
+	/**
+	 * @Description: 提交请假申请
+	 * @param:
+	 * @return:
+	 * @auther: CodyLongo
+	 * @modified:
+	 */
 	@action
 	public void getAbsentInfo() {
 		try {
@@ -61,6 +70,13 @@ public class ClientRequestController extends UserController {
 		}
 	}
 
+	/**
+	 * @Description: 获取学生的信息
+	 * @param:
+	 * @return:
+	 * @auther: CodyLongo
+	 * @modified:
+	 */
 	@action
 	public void getStudentInfo() {
 		String sql = "select a.id as stu_id,a.name,a.sid,c.name as clazz_name from student a left join parent b on a.id=b.stu_id left join clazz c on a.clazz_id=c.id  where b.id ="
@@ -73,10 +89,16 @@ public class ClientRequestController extends UserController {
 		}
 	}
 
+	/**
+	 * @Description: 获取当前登录家长的小孩进出记录
+	 * @param:
+	 * @return:
+	 * @auther: CodyLongo
+	 * @modified:
+	 */
 	@action
 	public void getStuIorecord() {
-		String sql = "select b.id as stu_id,a.name,a.dateTime,a.inoutType,a.channelID from reportrecord a left join student b on a.name=b.name left join parent c on b.id=c.stu_id where c.id ="
-				+ user.get("id");
+		String sql="select a.name,a.dateTime,a.inoutType,a.channelID from reportrecord a left join student b on a.cardNo=b.sid left join parent c on c.stu_id=b.id where persontype=10 and c.id="+user.get("id")+"";
 		try {
 			ArrayList<HashMap<String, String>> list = M("reportrecord").query(sql);
 			HashMap<Integer, String> inoutTypes = new HashMap<Integer, String>() {
@@ -100,10 +122,16 @@ public class ClientRequestController extends UserController {
 		}
 	}
 
+	/**
+	 * @Description: 获取当前登录家长进出记录
+	 * @param:
+	 * @return:
+	 * @auther: CodyLongo
+	 * @modified:
+	 */
 	@action
 	public void getParIorecord() {
-		String sql = "select b.id as par_id,a.name,a.dateTime,a.inoutType,a.channelID from reportrecord a left join parent b on b.par_name=a.name where a.name = '" + user.get("par_name")
-				+ "'";
+		String sql="select a.name,a.dateTime,a.inoutType,a.channelID from reportrecord a left join student b on a.cardNo=b.sid left join parent c on c.stu_id=b.id where persontype=13 and c.id="+user.get("id")+"";
 		try {
 			ArrayList<HashMap<String, String>> list = M("reportrecord").query(sql);
 			HashMap<Integer, String> inoutTypes = new HashMap<Integer, String>() {
@@ -124,6 +152,26 @@ public class ClientRequestController extends UserController {
 			success(list);
 		} catch (Exception e) {
 			error("获取家长进出记录失败");
+		}
+	}
+
+	/**
+	 * @Description: 修改家长登录密码
+	 * @param:
+	 * @return:
+	 * @auther: CodyLongo
+	 * @modified:
+	 */
+	@action
+	public void changepwd(){
+		try {
+			String new_pwd = I("post.new_pwd").toString();
+			HashMap<String,String> map=new HashMap<>();
+			map.put("original_pwd",Md5Util.MD5(new_pwd));
+			M("parent").where("id="+user.get("id")).save_string(map);
+			success("修改登录密码成功");
+		}catch (Exception e){
+			error("修改登录密码失败");
 		}
 	}
 

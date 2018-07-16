@@ -45,8 +45,17 @@
                     <% if(admin_type>=1){ %>  <li ${controller=="approval"?"class='current'":''}><a href="/v1/approval/list"><i class="glyphicon glyphicon-ok-circle"></i> 教师请假审核</a></li> <% }%>
                 </ul>
             </li>
+            <li class="submenu">
+                <% if(admin_type>=0){ %><a href="#">
+                <i class="glyphicon glyphicon-wrench"></i> 系统设置
+                <span class="caret pull-right"></span>
+            </a><% }%>
+                <ul>
+                    <% if(admin_type>=0){ %>  <li ${controller=="setup"?"class='current'":''}><a href="/v1/setup/list"><i class="glyphicon glyphicon-repeat"></i> 重置登录密码</a></li> <% }%>
+                </ul>
+            </li>
             <% if(admin_type>=2){ %>  <li ${controller=="iorecord"?"class='current'":''}><a href="/v1/iorecord/list"><i class="glyphicon glyphicon-camera"></i> 进出记录</a></li> <% }%>
-            <% if(admin_type>=3){ %>  <li ${controller=="log"?"class='current'":''}><a href="/v1/log/list"><i class="glyphicon glyphicon-wrench"></i> 操作日志记录</a></li> <% }%>
+            <% if(admin_type>=3){ %>  <li ${controller=="log"?"class='current'":''}><a href="/v1/log/list"><i class="glyphicon glyphicon-search"></i> 操作日志记录</a></li> <% }%>
         </ul>
     </div>
 </div>

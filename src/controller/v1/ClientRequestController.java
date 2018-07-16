@@ -32,8 +32,8 @@ public class ClientRequestController extends UserController {
 		try{
 			ArrayList<HashMap<String, String>> list = M("studentleave").where("pid=" + user.get("id")).select();
 			for (int i = 0; i < list.size(); i++) {
-				list.get(i).put("startdate", TimeUtil.stampToDate(list.get(i).get("startdate"), "yyyy-MM-dd HH:mm:ss"));
-				list.get(i).put("enddate",  TimeUtil.stampToDate(list.get(i).get("enddate"), "yyyy-MM-dd HH:mm:ss"));
+				list.get(i).put("startdate", TimeUtil.stampToDate(list.get(i).get("startdate"), "yyyy-MM-dd"));
+				list.get(i).put("enddate",  TimeUtil.stampToDate(list.get(i).get("enddate"), "yyyy-MM-dd"));
 				list.get(i).put("create_time",  TimeUtil.stampToDate(list.get(i).get("create_time"), "yyyy-MM-dd HH:mm:ss"));
 			}
 			success(list);
@@ -46,12 +46,12 @@ public class ClientRequestController extends UserController {
 	public void getAbsentInfo() {
 		try {
 			String startdate = I("post.startdate").toString();
-			String enddate = I("post.startdate").toString();
+			String enddate = I("post.enddate").toString();
 			String reason = I("post.reason").toString();
 			HashMap<String, String> map = new HashMap<>();
 			map.put("pid", user.get("id"));
-			map.put("startdate", TimeUtil.dateToStamp(startdate, "yyyy-MM-dd HH:mm:ss"));
-			map.put("enddate", TimeUtil.dateToStamp(enddate, "yyyy-MM-dd HH:mm:ss"));
+			map.put("startdate", TimeUtil.dateToStamp(startdate, "yyyy-MM-dd"));
+			map.put("enddate", TimeUtil.dateToStamp(enddate, "yyyy-MM-dd"));
 			map.put("reason", reason);
 			map.put("create_time", TimeUtil.getShortTimeStamp() + "");
 			M("studentleave").add(map);

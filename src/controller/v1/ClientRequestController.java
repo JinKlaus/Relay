@@ -20,6 +20,28 @@ public class ClientRequestController extends UserController {
 		super(context);
 	}
 
+	/**
+	 * @Description: 获取小孩请假记录
+	 * @param:
+	 * @return:
+	 * @auther: CodyLongo
+	 * @modified:
+	 */
+	@action
+	public void getStuAbsentrecord(){
+		try{
+			ArrayList<HashMap<String, String>> list = M("studentleave").where("pid=" + user.get("id")).select();
+			for (int i = 0; i < list.size(); i++) {
+				list.get(i).put("startdate", TimeUtil.stampToDate(list.get(i).get("startdate"), "yyyy-MM-dd HH:mm:ss"));
+				list.get(i).put("enddate",  TimeUtil.stampToDate(list.get(i).get("enddate"), "yyyy-MM-dd HH:mm:ss"));
+				list.get(i).put("create_time",  TimeUtil.stampToDate(list.get(i).get("create_time"), "yyyy-MM-dd HH:mm:ss"));
+			}
+			success(list);
+		}catch (Exception e){
+			error("获取学生请假信息失败");
+		}
+
+	}
 	@action
 	public void getAbsentInfo() {
 		try {

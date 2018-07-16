@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <title>学习进度</title>
+    <link rel="stylesheet" href="css/weui.css"/>
+
+</head>
+<body style="background-color: #eeeeee">
+<style type="text/css">
+
+    .weui-cell{ position: relative}
+    .weui-cell .pro{ position: absolute; width: 0%; background-color: #333333; opacity: 0.1; height: 100%}
+    .template{ display: none}
+    .weui-panel__hd{ font-size: 16px}
+    h2{ line-height: 100px; text-align: center; color: #cccccc}
+</style>
+<div class="page" >
+
+    <div class="weui-panel book_list" style="margin-top: 15px">
+        <div class="weui-panel__hd">目录</div>
+        <div class="weui-panel__bd">
+            <div class="weui-media-box weui-media-box_small-appmsg">
+
+                <a class="weui-cell sec weui-cell_access template" onclick="open_video($(this))" href="javascript:;">
+                    <div class="pro"  data-attr="func:percent:topp"></div>
+
+                    <div class="weui-cell__bd weui-cell_primary">
+                        <p data-attr="func:name:toname">1、大禹治水</p>
+                    </div>
+
+                    <span class="weui-cell__ft" data-attr="func:percent:topercent"></span>
+
+                </a>
+
+                <div class="weui-cells">
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="weui-loadmore" style="display: none" >
+        <i class="weui-loading"></i>
+        <span class="weui-loadmore__tips">正在加载</span>
+    </div>
+
+</div>
+</div>
+
+</body>
+
+<script src="/user/js/jquery-3.3.1.js"></script>
+<script src="/user/js/lib.js"></script>
+
+<script>
+    var page = 0;
+    var index = 1;
+    var is_more = true;
+    var is_loading = true;
+
+    function topercent(a,b,c) {
+
+        a.html(b+"%")
+    }
+
+    function topp(a, b, c) {
+        a.css("width",b+"%");
+    }
+
+    function open_video(t) {
+        $.open_video(t.attr("data-id"))
+    }
+
+    function toname(a, b, c) {
+        a.html(index+"、"+b)
+        index++
+    }
+
+    function toperncent(a,b,c) {
+        $.toast(JSON.stringify(c))
+    }
+
+    // function toid(a,b,c) {
+    //
+    //     a.attr("data-id","1")
+    // }
+    //
+    // function dodir(t) {
+    //     var id = t.attr("data-id")
+    //     $.open("list.html?id="+id)
+    // }
+
+
+    function get_url(){
+
+        var url = location.search; //获取url中"?"符后的字串
+        var theRequest = new Object();
+        if (url.indexOf("?") != -1) {
+            var str = url.substr(1);
+            strs = str.split("&");
+            for(var i = 0; i < strs.length; i ++) {
+                theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+            }
+        }
+        return theRequest;
+
+    }
+
+
+    var data = get_url();
+
+    var id = data.id;
+
+    function get_data(){
+        $.getdata("list/get_sec_list",{"page":page,"id":id},function (res) {
+
+            $.tolist($(".book_list"),$(".sec"),res)
+            is_loading = false;
+
+            if(page==0 && res.length==0){
+                $(".weui-loadmore").hide()
+                $(".weui-cells").html("<h2>暂无目录</h2>")
+                return;
+
+            }
+
+            if(res.length<10){
+                $(".weui-loadmore").hide();
+                is_more = false;
+            }else{
+                $(".weui-loadmore").show();
+            }
+        })
+    }
+
+    $(function () {
+        get_data();
+
+
+        $(window).scroll(function(){
+            // scroll at bottom
+            if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+                if(is_more  && !is_loading){
+                    page++;
+                    is_loading = true;
+                    get_data();
+
+                }
+            }
+        });
+
+    })
+</script>
+
+</html>

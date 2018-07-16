@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <title>视频目录</title>
+    <link rel="stylesheet" href="css/weui.css"/>
+    <style>
+        .template{ display: none}
+        .sec img{width: 100%;height: 200px}
+        .sec p{width:25%;float: left}
+        /*body{background-color: gray}*/
+
+    </style>
+
+</head>
+<body>
+<div class="page">
+
+    <div class="weui-cell template sec" data-arrt="func:id:toid" onclick="dodir(this.id)">
+        <a href="" >
+            <p data-attr="num:order_num"></p>
+            <p data-attr="text:name"></p>
+            <p data-attr="text:name"></p>
+            <img src="image/1.jpg" data-attr="img:pic">
+        </a>
+    </div>
+
+    <div class="book_list" style="width: 100%; float: left; margin-bottom: 30px">
+    </div>
+</div>
+
+<script src="/user/js/jquery-3.3.1.js"></script>
+<script src="/user/js/lib.js"></script>
+
+<script>
+    var page = 0;
+    var is_more = true;
+    var is_loading = true;
+
+    function toid(a,b,c) {
+
+        a.attr("data-id","1")
+    }
+
+    function dodir(t) {
+        var id = t.attr("data-id")
+        $.open("list.html?id="+id)
+    }
+
+
+    function get_data(){
+        $.getdata("list/fir_list",{"page":page},function (res) {
+            // alert(JSON.stringify(res))
+            $.tolist($(".book_list"),$(".sec"),res)
+            is_loading = false;
+            if(res.length<10){
+                $(".weui-loadmore").hide();
+                is_more = false;
+            }
+        })
+    }
+
+    $(function () {
+        get_data();
+
+
+        $(window).scroll(function(){
+            // scroll at bottom
+            if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+                if(is_more  && !is_loading){
+                    page++;
+                    is_loading = true;
+                    get_data();
+
+                }
+            }
+        });
+
+    })
+</script>
+</body>
+</html>

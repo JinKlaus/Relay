@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>播放记录</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <link rel="stylesheet" href="/user/css/weui.css"/>
+    <link rel="stylesheet" href="/user/css/list.css"/>
+    <link rel="stylesheet" href="/user/css/cache.css"/>
+
+</head>
+<body>
+<style type="text/css">
+    .template{
+        display: none;}
+</style>
+<div class="page">
+
+    <div class="page__bd">
+        <div class="weui-panel weui-panel_access">
+
+            <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg template sec">
+                <div class="weui-media-box__hd">
+                    <img class="weui-media-box__thumb" data-attr="img:cover" alt="">
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title" data-attr="text:vname"></h4>
+                    <p class="weui-media-box__desc" data-attr="func:video_per:toper"></p>
+                </div>
+            </a>
+
+
+            <div class="weui-panel__bd book_list">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<script src="/user/js/jquery-3.3.1.js"></script>
+<script src="/user/js/lib.js"></script>
+
+<script>
+
+    function toper(a, b, c) {
+        a.html("观看至："+b+"%")
+    }
+    function get_data(){
+        $.getdata("audio/get_my_record",{},function (res) {
+
+            $.tolist($(".book_list"),$(".sec"),res)
+            is_loading = false;
+
+            if(page==0 && res.length==0){
+                $(".weui-loadmore").hide()
+                $(".weui-cells").html("<h2>暂无目录</h2>")
+                return;
+
+            }
+
+            if(res.length<10){
+                $(".weui-loadmore").hide();
+                is_more = false;
+            }else{
+                $(".weui-loadmore").show();
+            }
+        })
+    }
+
+    $(function () {
+        get_data()
+    })
+</script>
+
+</body>
+</html>

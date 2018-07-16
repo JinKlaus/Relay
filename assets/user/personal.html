@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <link rel="stylesheet" href="/user/css/weui.css"/>
+    <link rel="stylesheet" href="/user/css/list.css"/>
+
+</head>
+<body>
+    <div class="page">
+        <div class="weui-cell weui-cell_warn" >
+            <div class="weui-cell__hd"><label for="" class="weui-label"><img src="image/icon.png" style="width: 80px;
+            height: 80px"></label></div>
+            <div class="weui-cell__bd">
+                <p style="font-size: 26px; color:#333333" id="name" data-attr="text:phone"></p>
+
+            </div>
+        </div>
+
+
+
+        <div class="weui-panel">
+
+            <div class="weui-panel__bd">
+                <div class="weui-media-box weui-media-box_small-appmsg">
+                    <div class="weui-cells">
+                        <a class="weui-cell weui-cell_access" onclick="$.open('cache.html')">
+                            <div class="weui-cell__hd">
+                                <img src="image/11.png" alt="" style="width:20px;margin-right:5px;display:block"></div>
+                            <div class="weui-cell__bd">
+                                <p>播放记录</p>
+                            </div>
+                            <div class="weui-cell__ft">
+                            </div>
+                        </a>
+
+
+                        <a class="weui-cell weui-cell_access" onclick="cache()">
+                            <div class="weui-cell__hd">
+                                <img src="image/10.png" alt="" style="width:20px;margin-right:5px;display:block"></div>
+                            <div class="weui-cell__bd">
+                                <p>缓存列表</p>
+                            </div>
+                            <div class="weui-cell__ft">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w weui-cell_warn"  style="margin: 50px 30px">
+            <!--<div class="button-sp-area">-->
+                <a href="javascript:;" class="weui-btn weui-btn_plain-default" onclick="logout()">退出</a>
+            <!--</div>-->
+        </div>
+
+    </div>
+
+
+    <script src="/user/js/jquery-3.3.1.js"></script>
+    <script src="/user/js/lib.js?2"></script>
+
+    <script>
+
+    function cache() {
+        $.pickdate();
+    }
+
+    $(function () {
+        $.getdata("audio/get_my_info",{},function (res) {
+            $.tohtml($(".page"),res)
+        })
+    })
+
+        function logout() {
+            $.logout();
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>

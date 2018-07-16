@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>爱传小子</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <link rel="stylesheet" href="css/weui.css"/>
+    <!--<link rel="stylesheet" href="css/list.css"/>-->
+    <script src="js/jquery-3.3.1.js"></script>
+    <!--<script src="js/list.js"></script>-->
+</head>
+<body>
+
+<style type="text/css">
+    .template{ display: none}
+    body{ background-color: #f8f8f8}
+    section{ float: left; width: 40%; background-color: white; margin-left: 5%; margin-right: 2.5%; margin-top: 2%; text-align: center}
+    section img{ width: 100%; height: 200px}
+    section h4{ font-weight: normal; font-size: 14px; text-align: center; line-height: 30px; margin: 0px; padding: 0px}
+    section span{ display: block; position: absolute; width: 100px; height: 20px; padding: 5px 0px; right: 0px; line-height: 20px; bottom: 32px;
+        background-color: orange; color: white; opacity: 0.8; text-align: center }
+</style>
+<div class="page">
+
+
+    <section class="template sec">
+        <div data-attr="func:id:toid" onclick="dodir($(this))" style="position: relative">
+            <img src="image/1.jpg" data-attr="img:pic">
+            <h4 data-attr="text:book_name"></h4>
+            <span data-attr="func:buy_id:tobuy" onclick="gobuy($(this),event)">试看(购买)</span>
+        </div>
+    </section>
+
+    <div class="book_list" style="width: 100%; float: left; margin-bottom: 30px">
+
+
+
+
+    </div>
+    <div class="weui-loadmore" >
+        <i class="weui-loading"></i>
+        <span class="weui-loadmore__tips">正在加载</span>
+    </div>
+
+    <!---->
+    <!---->
+    <!--<div class="bookmark">-->
+    <!--<a href="test.html">-->
+    <!--<ul class="bookmark_ul">-->
+    <!--<li class="bookmark_ul_li">-->
+    <!--<img src="image/1.jpg">-->
+    <!--<div class="mask" >-->
+    <!--&lt;!&ndash;<p>购买</p>&ndash;&gt;-->
+    <!--</div>-->
+    <!--</li>-->
+    <!--<li class="bookmark_ul_li1">-->
+    <!--<img src="image/1.jpg">-->
+    <!--<div class="mask" >-->
+    <!--&lt;!&ndash;<p>购买</p>&ndash;&gt;-->
+    <!--</div>-->
+    <!--</li>-->
+    <!--</ul></a>-->
+    <!--</div>-->
+
+</div>
+
+<script src="/user/js/jquery-3.3.1.js"></script>
+<script src="/user/js/lib.js"></script>
+
+<script>
+
+    function tobuy(a, b, c) {
+        var s = parseInt(b);
+        if(b>0) a.hide();
+        else{
+            a.attr("data-id",c.id);
+        }
+    }
+
+    function gobuy(t,e) {
+        e.stopPropagation();
+        var id = t.attr("data-id");
+        $.scan();
+    }
+
+    var page = 0;
+    var is_more = true;
+    var is_loading = true;
+
+    function toid(a,b,c) {
+
+        a.attr("data-id",b)
+    }
+
+    function dodir(t) {
+        var id = t.attr("data-id")
+        $.open("fir_list.html?id="+id)
+    }
+
+
+    function get_data(){
+        $.getdata("list/book_list",{"page":page},function (res) {
+            $.tolist($(".book_list"),$(".sec"),res)
+            is_loading = false;
+            if(res.length<10){
+                $(".weui-loadmore").hide();
+                is_more = false;
+            }
+        })
+    }
+
+    $(function () {
+        get_data();
+
+
+        $(window).scroll(function(){
+            // scroll at bottom
+            if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+                if(is_more  && !is_loading){
+                    page++;
+                    is_loading = true;
+                    get_data();
+
+                }
+            }
+        });
+
+    })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>播放缓存列表</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <link rel="stylesheet" href="/user/css/weui.css"/>
+    <link rel="stylesheet" href="/user/css/list.css"/>
+    <link rel="stylesheet" href="/user/css/cache.css"/>
+    <link rel="stylesheet" href="/user/css/move.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="weui-flex">
+        <div class="weui-flex__item"><div class="placeholder">
+            <a href="javascript:;" class="weui-btn weui-btn_primary" >播放中</a>
+        </div></div>
+    </div>
+    <div class="page">
+        <div class="weui-flex" >
+
+           <a href="moves.html" style="color: white"> <div class="placeholder" style="width: 50px" >&lt返回</div></a>
+            <div class="placeholder" style="width: 80px">第一集</div>
+            <div class="weui-flex__item"><div class="placeholder">三过家门而不入</div></div>
+            <div class="placeholder" style="width: 80px">上一集</div>
+            <a href="" style="color: white"><div class="placeholder">下一集</div></a>
+        </div>
+    </div>
+    <video width="100%" height="100%" controls="controls" id="timo"  class="video_io" >
+        <!--<source src="1.qsv" type="video/mp4" />-->
+        <source src="video/movie.ogg" type="video/ogg" />
+        <source src="movie.webm" type="video/webm" />
+        <object data="movie.mp4" width="320" height="240">
+            <embed src="movie.swf" width="320" height="240" />
+        </object>
+    </video>
+
+</div>
+
+
+<script src="/user/js/jquery-3.3.1.js"></script>
+<script src="/user/js/list.js"></script>
+<script src="/user/js/lib.js"></script>
+
+<script>
+    var photo;
+
+    var direct = ${directory}
+    var id = direct.id;
+
+    photo = direct.pic;
+
+    $(function () {
+
+        $("#name").val(direct.name);
+        $("#order_num").val(direct.order_num);
+        $("#parent_id").val(direct.parent_id);
+        // $("#")
+
+        $("#files").on("change",function () {
+            var fd = new FormData();
+            fd.append("photo", $('#files')[0].files[0])
+            $.ajax({
+                url: '/home/common/upload',
+                type: 'post',
+                processData: false,
+                contentType: false,
+                data: fd,
+                success: function (res) {
+                    var ret = JSON.parse(res)
+                    if(ret.code=="success"){
+                        photo = ret.data[0]
+
+                    }
+                }
+            })
+
+        })
+    })
+
+
+    function sub() {
+
+        var cat_id = $("#order_num").val();
+        var book_id = $("#book_id").val();
+        var parent_id = $("#parent_id").val();
+        var name = $("#name").val();
+        if (name == "") {
+            alert("书籍名称不能为空");
+            return;
+        }
+
+        if(cat_id==""){
+            alert("书籍排序不能为空")
+            return;
+        }
+
+        $.post("do_edit", {"id":id,"name": name,"book_id":book_id,"parent_id":parent_id,"order_num":cat_id,"pic":photo,}, function (res) {
+            var ret = JSON.parse(res)
+            if (ret.code == "success") {
+                alert("修改成功")
+                window.location.href="list"
+            }else{
+                alert(ret.msg);
+            }
+        })
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

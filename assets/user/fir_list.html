@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <title>视频目录</title>
+    <link rel="stylesheet" href="css/weui.css"/>
+
+</head>
+<body style="background-color: #333333">
+<div class="page">
+
+
+
+    <style type="text/css">
+        .book_list img{ width: 100%; height: 200px; border-radius: 20px; }
+        .sl{ position: relative; margin-left: 5%;  width: 90%; height: 200px; margin-top: 15px}
+        .sl h3{ position: absolute; bottom: 0px; width: 100%; padding: 0px; text-align: center; background-color: #666666;
+            border-radius: 0px 0px 20px 20px;
+        opacity: 0.8; color: white; height: 40px; line-height: 40px;
+            font-weight: normal;}
+        .template{ display: none}
+    </style>
+
+    <div class="sl template">
+        <div data-attr="func:id:todiv" onclick="govideo($(this))">
+        <img src="image/2.jpg" data-attr="img:pic">
+        <h3 data-attr="text:name">第一章</h3>
+        </div>
+    </div>
+
+    <div class="book_list" style="width: 100%; float: left; margin-bottom: 30px">
+
+
+
+
+    </div>
+
+    <div class="weui-loadmore" style="display: none" >
+        <i class="weui-loading"></i>
+        <span class="weui-loadmore__tips">正在加载</span>
+    </div>
+</div>
+
+<style type="text/css">
+    h2{ line-height: 100px; text-align: center; color: #cccccc}
+</style>
+
+<script src="/user/js/jquery-3.3.1.js"></script>
+<script src="/user/js/lib.js"></script>
+
+<script>
+    var page = 0;
+    var is_more = true;
+    var is_loading = true;
+
+    // function toid(a,b,c) {
+    //
+    //     a.attr("data-id","1")
+    // }
+    //
+    // function dodir(t) {
+    //     var id = t.attr("data-id")
+    //     $.open("list.html?id="+id)
+    // }
+
+    function todiv(a, b, c) {
+        a.attr("data-id",b)
+    }
+
+    function govideo(t) {
+        var id = t.attr("data-id");
+        $.open("sec_list.html?id="+id)
+    }
+
+    function get_url(){
+
+        var url = location.search; //获取url中"?"符后的字串
+        var theRequest = new Object();
+        if (url.indexOf("?") != -1) {
+            var str = url.substr(1);
+            strs = str.split("&");
+            for(var i = 0; i < strs.length; i ++) {
+                theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+            }
+        }
+        return theRequest;
+
+    }
+
+
+    var data = get_url();
+
+    var id = data.id;
+    function get_data(){
+        $.getdata("list/get_fir_dir",{"page":page,"id":id},function (res) {
+            // alert(JSON.stringify(res))
+            if(page==0 && res.length==0){
+                $(".weui-loadmore").hide()
+                $(".book_list").html("<h2>暂无目录</h2>")
+                return;
+
+            }
+            $.tolist($(".book_list"),$(".sl"),res)
+            is_loading = false;
+            if(res.length<10){
+                $(".weui-loadmore").hide();
+                is_more = false;
+            }else{
+                $(".weui-loadmore").show();
+            }
+        })
+    }
+
+    $(function () {
+        get_data();
+
+
+        $(window).scroll(function(){
+            // scroll at bottom
+            if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+                if(is_more  && !is_loading){
+                    page++;
+                    is_loading = true;
+                    get_data();
+
+                }
+            }
+        });
+
+    })
+</script>
+</body>
+</html>

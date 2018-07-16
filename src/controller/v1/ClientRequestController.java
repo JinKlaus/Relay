@@ -63,7 +63,7 @@ public class ClientRequestController extends UserController {
 
 	@action
 	public void getStudentInfo() {
-		String sql = "select a.name,a.sid,c.name as clazz_name from student a left join parent b on a.id=b.stu_id left join clazz c on a.clazz_id=c.id  where b.id ="
+		String sql = "select a.id,a.name,a.sid,c.name as clazz_name from student a left join parent b on a.id=b.stu_id left join clazz c on a.clazz_id=c.id  where b.id ="
 				+ user.get("id");
 		try {
 			ArrayList<HashMap<String, String>> list = M("student").query(sql);

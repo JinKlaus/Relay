@@ -297,7 +297,7 @@
       <workItem from="1531454085671" duration="9000" />
       <workItem from="1531454397284" duration="5495000" />
       <workItem from="1531703128774" duration="49000" />
-      <workItem from="1531733730520" duration="1536000" />
+      <workItem from="1531733730520" duration="1828000" />
     </task>
     <task id="LOCAL-00001" summary="6.0">
       <created>1531192763217</created>
@@ -320,15 +320,21 @@
       <option name="project" value="LOCAL" />
       <updated>1531734995633</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="10.1">
+      <created>1531735295436</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1531735295436</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45741000" />
+    <option name="totallyTimeSpent" value="46033000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -339,12 +345,12 @@
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2149028" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.22185062" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18020834" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18562232" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -371,7 +377,8 @@
     <MESSAGE value="6.0" />
     <MESSAGE value="9.0" />
     <MESSAGE value="10.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="10.0" />
+    <MESSAGE value="10.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="10.1" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/controller/v1/ClientRequestController.java">

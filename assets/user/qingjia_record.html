@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>孩子进出记录</title>
+    <title>请假记录</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
     <link rel="stylesheet" href="/user/css/weui.css?2"/>
 
@@ -18,11 +18,9 @@
         <div class="weui-panel">
 
             <div class="weui-media-box weui-media-box_text template sec">
-                <h4 class="weui-media-box__title">标题一</h4>
-                <ul class="weui-media-box__info">
-                    <li class="weui-media-box__info__meta">进入</li>
-                    <li class="weui-media-box__info__meta weui-media-box__info__meta_extra">指静脉</li>
-                </ul>
+                <h4 class="weui-media-box__title" data-attr="func:startdate:todate"></h4>
+                <p class="weui-media-box__desc" data-attr="func:reason:toreason"></p>
+                <p class="weui-media-box__desc" data-attr="func:create_time:tocreate_time"></p>
             </div>
 
             <div class="weui-panel__bd book_list">
@@ -51,6 +49,20 @@
     <script src="/user/js/list.js"></script>
     <script src="/user/js/lib.js?5"></script>
 <script>
+
+    function todate(a,b,c) {
+        var s = b + " 至 " +c['enddate'];
+        a.html(s)
+    }
+
+    function toreason(a, b, c) {
+        a.html("请假原因："+b)
+    }
+
+    function tocreate_time(a, b, c) {
+        a.html("请假时间："+b)
+    }
+
     var page = 0;
     var is_more = true;
     var is_loading = true;
@@ -60,7 +72,7 @@
 
 
     function get_data(){
-        $.getdata("clientRequest/getStuIorecord",{"page":page},function (res) {
+        $.getdata("clientRequest/getStuAbsentrecord",{"page":page},function (res) {
             $.tolist($(".book_list"),$(".sec"),res)
             is_loading = false;
 

@@ -2,7 +2,7 @@
 var pre_url = "http://192.168.31.228:8000/";
 var pre_api = "http://192.168.31.228:8000/v1/";
 var host = "http://192.168.31.228:8000";
-var test_token = "2a14e24cb954070dbdf6a4a2d6938ad6";
+var test_token = "5cf7b58f03c91a222b45aa3310dd7723";
 //var test_token="";
 
 var current = 0; //0web 1android 2ios

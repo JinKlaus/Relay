@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef7104b2-ba98-4d13-9b69-48fa9f35859f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/v1/ClientRequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/v1/ClientRequestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/v1/ParentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/v1/ParentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/v1/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/v1/StudentController.java" afterDir="false" />
@@ -31,19 +32,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClientRequestController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ClientRequestController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controller/v1/ClientRequestController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1584">
-              <caret line="66" column="70" lean-forward="true" selection-start-line="66" selection-start-column="70" selection-end-line="66" selection-end-column="70" />
+            <state relative-caret-position="1936">
+              <caret line="139" column="115" selection-start-line="139" selection-start-column="115" selection-end-line="139" selection-end-column="115" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DeviceController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Dictionary.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/config/Dictionary.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeviceController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/v1/DeviceController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
+            <state relative-caret-position="792">
               <caret line="77" column="13" lean-forward="true" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
             </state>
           </provider>
@@ -103,13 +113,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parent_list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/parent_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1320" />
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -149,9 +152,9 @@
         <option value="$PROJECT_DIR$/tpl/admin_tpl/clazz_list.html" />
         <option value="$PROJECT_DIR$/tpl/admin_tpl/approval_list.html" />
         <option value="$PROJECT_DIR$/src/controller/v1/StudentController.java" />
-        <option value="$PROJECT_DIR$/src/controller/v1/ClientRequestController.java" />
         <option value="$PROJECT_DIR$/src/controller/v1/TeacherController.java" />
         <option value="$PROJECT_DIR$/src/controller/v1/ParentController.java" />
+        <option value="$PROJECT_DIR$/src/controller/v1/ClientRequestController.java" />
       </list>
     </option>
   </component>
@@ -311,7 +314,7 @@
       <workItem from="1531454085671" duration="9000" />
       <workItem from="1531454397284" duration="5495000" />
       <workItem from="1531703128774" duration="49000" />
-      <workItem from="1531733730520" duration="20072000" />
+      <workItem from="1531733730520" duration="20435000" />
     </task>
     <task id="LOCAL-00001" summary="6.0">
       <created>1531192763217</created>
@@ -397,11 +400,18 @@
       <option name="project" value="LOCAL" />
       <updated>1531794958092</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="11.4">
+      <created>1531798099450</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1531798099450</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64277000" />
+    <option name="totallyTimeSpent" value="64640000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -458,7 +468,8 @@
     <MESSAGE value="11.1" />
     <MESSAGE value="11.2" />
     <MESSAGE value="11.3" />
-    <option name="LAST_COMMIT_MESSAGE" value="11.3" />
+    <MESSAGE value="11.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="11.4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -636,13 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/config/Dictionary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/teacher_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="902">
@@ -776,13 +780,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/v1/ClientRequestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1584">
-          <caret line="66" column="70" lean-forward="true" selection-start-line="66" selection-start-column="70" selection-end-line="66" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/v1/ParentController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -799,8 +796,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/v1/DeviceController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
+        <state relative-caret-position="792">
           <caret line="77" column="13" lean-forward="true" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/Dictionary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/v1/ClientRequestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1936">
+          <caret line="139" column="115" selection-start-line="139" selection-start-column="115" selection-end-line="139" selection-end-column="115" />
         </state>
       </provider>
     </entry>

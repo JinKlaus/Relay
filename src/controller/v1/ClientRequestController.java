@@ -102,7 +102,7 @@ public class ClientRequestController extends UserController {
 	public void getStuIorecord() {
 		String page = I("get.page").toString();
 		String limit = Integer.parseInt(page) * 10 + ",10";
-		String sql="select name,dateTime,inoutType,channelID from reportrecord where persontype=10 and cardNo="+user.get("id")+" order by id desc limit " + limit;
+		String sql="select name,dateTime,inoutType,channelID from reportrecord where persontype="+Dictionary.STUDENT+" and cardNo="+user.get("stu_id")+" order by id desc limit " + limit;
 		try {
 			ArrayList<HashMap<String, String>> list = M("reportrecord").query(sql);
 			HashMap<Integer, String> inoutTypes = new HashMap<Integer, String>() {
@@ -137,7 +137,7 @@ public class ClientRequestController extends UserController {
 	public void getParIorecord() {
 		String page = I("get.page").toString();
 		String limit = Integer.parseInt(page) * 10 + ",10";
-		String sql="select name,dateTime,inoutType,channelID from reportrecord where persontype=13 and cardNo="+user.get("id")+"  order by id desc limit " + limit;
+		String sql="select name,dateTime,inoutType,channelID from reportrecord where persontype="+Dictionary.PARENT+" and cardNo="+user.get("id")+"  order by id desc limit " + limit;
 		try {
 			ArrayList<HashMap<String, String>> list = M("reportrecord").query(sql);
 			HashMap<Integer, String> inoutTypes = new HashMap<Integer, String>() {

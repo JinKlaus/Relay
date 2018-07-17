@@ -176,7 +176,7 @@ public class ClientRequestController extends UserController {
 			HashMap<String,String> map=new HashMap<>();
 			map.put("original_pwd",Md5Util.MD5(new_pwd));
 			HashMap<String, String> map2 = M("parent").where("id=" + user.get("id") + " and original_pwd='" + Md5Util.MD5(old_pwd) + "'").find();
-			if(map2.isEmpty()){
+			if(map2 == null){
 				error("原密码错误");
 				return;
 			}else{
@@ -184,6 +184,7 @@ public class ClientRequestController extends UserController {
 						success("修改登录密码成功");
 			}
 		}catch (Exception e){
+			e.printStackTrace();
 			error("修改登录密码失败");
 		}
 	}

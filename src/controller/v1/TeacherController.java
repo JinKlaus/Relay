@@ -150,7 +150,9 @@ public class TeacherController extends AdminController {
 			long id = M("user").add(user);
 			tea.put("uid", id + "");
 			long id1=M("teacher").add(tea);
-			user.put("cardNo",id1+"");
+			HashMap<String , String>  map=new HashMap<>();
+			map.put("cardNo",id1+"");
+			M("user").where("id="+id).save_string(map);
 			success("1");
 		} catch (Exception e) {
 			error("0");

@@ -33,7 +33,7 @@ public class ClientRequestController extends UserController {
 		try{
 			String page = I("get.page").toString();
 			String limit = Integer.parseInt(page) * 10 + ",10";
-			ArrayList<HashMap<String, String>> list = M("studentleave").where("pid=" + user.get("id")).limit(limit).select();
+			ArrayList<HashMap<String, String>> list = M("studentleave").order("id").where("pid=" + user.get("id")).limit(limit).select();
 			for (int i = 0; i < list.size(); i++) {
 				list.get(i).put("startdate", TimeUtil.stampToDate(list.get(i).get("startdate"), "yyyy-MM-dd"));
 				list.get(i).put("enddate",  TimeUtil.stampToDate(list.get(i).get("enddate"), "yyyy-MM-dd"));
@@ -102,7 +102,7 @@ public class ClientRequestController extends UserController {
 	public void getStuIorecord() {
 		String page = I("get.page").toString();
 		String limit = Integer.parseInt(page) * 10 + ",10";
-		String sql="select a.name,a.dateTime,a.inoutType,a.channelID from reportrecord a left join student b on a.cardNo=b.sid left join parent c on c.stu_id=b.id where persontype=10 and c.id="+user.get("id")+" limit " + limit;
+		String sql="select name,dateTime,inoutType,channelID from reportrecord where persontype=10 and cardNo="+user.get("id")+" order by id desc limit " + limit;
 		try {
 			ArrayList<HashMap<String, String>> list = M("reportrecord").query(sql);
 			HashMap<Integer, String> inoutTypes = new HashMap<Integer, String>() {
@@ -137,7 +137,7 @@ public class ClientRequestController extends UserController {
 	public void getParIorecord() {
 		String page = I("get.page").toString();
 		String limit = Integer.parseInt(page) * 10 + ",10";
-		String sql="select a.name,a.dateTime,a.inoutType,a.channelID from reportrecord a left join student b on a.cardNo=b.sid left join parent c on c.stu_id=b.id where persontype=13 and c.id="+user.get("id")+" limit " + limit;
+		String sql="select name,dateTime,inoutType,channelID from reportrecord where persontype=13 and cardNo="+user.get("id")+"  order by id desc limit " + limit;
 		try {
 			ArrayList<HashMap<String, String>> list = M("reportrecord").query(sql);
 			HashMap<Integer, String> inoutTypes = new HashMap<Integer, String>() {

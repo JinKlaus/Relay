@@ -115,7 +115,6 @@ public class ParentController extends AdminController {
 		String endDate = date.get("end_date");
 		HashMap<String, String> par = new HashMap<>();
 		HashMap<String, String> user = new HashMap<>();
-		user.put("cardNo", stu_id);
 		user.put("startDate", startDate);
 		user.put("endDate", endDate);
 		user.put("name", par_name);
@@ -142,7 +141,8 @@ public class ParentController extends AdminController {
 		try {
 			long id = M("user").add(user);
 			par.put("uid", id + "");
-			M("parent").add(par);
+			long id1=M("parent").add(par);
+			user.put("cardNo", id1+"");
 			success("1");
 		} catch (Exception e) {
 			error("0");

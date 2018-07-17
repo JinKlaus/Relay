@@ -127,7 +127,6 @@ public class TeacherController extends AdminController {
 		String endDate = date.get("end_date");
 		HashMap<String, String> tea = new HashMap<>();
 		HashMap<String, String> user = new HashMap<>();
-		user.put("cardNo", tid);
 		user.put("startDate", startDate);
 		user.put("endDate", endDate);
 		user.put("name", tea_name);
@@ -150,7 +149,8 @@ public class TeacherController extends AdminController {
 		try {
 			long id = M("user").add(user);
 			tea.put("uid", id + "");
-			M("teacher").add(tea);
+			long id1=M("teacher").add(tea);
+			user.put("cardNo",id1+"");
 			success("1");
 		} catch (Exception e) {
 			error("0");

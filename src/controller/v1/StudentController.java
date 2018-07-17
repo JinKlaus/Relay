@@ -104,7 +104,6 @@ public class StudentController extends AdminController {
 		data.put("sid", sid);
 		data.put("clazz_id", clazz_id);
 		data.put("create_time", TimeUtil.getShortTimeStamp() + "");
-		user.put("cardNo", sid);
 		user.put("startDate", startDate);
 		user.put("endDate", endDate);
 		user.put("name", name);
@@ -119,7 +118,8 @@ public class StudentController extends AdminController {
 		try {
 			long id = M("user").add(user);
 			data.put("uid", id + "");
-			M("student").add(data);
+			long id1=M("student").add(data);
+			user.put("cardNo",id1+"");
 			success("1");
 		} catch (Exception e) {
 			error("0");

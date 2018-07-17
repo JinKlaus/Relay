@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <link rel="stylesheet" href="/user/css/weui.css?2"/>
+
+</head>
+<style type="text/css">
+    body{ background-color: #f8f8f8}
+
+.template{ display: none}
+</style>
+<body>
+    <div class="page">
+
+        <div class="weui-panel weui-panel_access">
+
+            <div class="weui-media-box weui-media-box_text  template sz">
+                <h4 class="weui-media-box__title" data-attr="text:par_name"></h4>
+                <p class="weui-media-box__desc"></p>
+            </div>
+
+            <div class="weui-panel__bd content">
+
+
+            </div>
+
+        </div>
+
+
+</div>
+
+    <script src="/user/js/jquery-3.3.1.js"></script>
+    <script src="/user/js/list.js"></script>
+    <script src="/user/js/lib.js?4"></script>
+<script>
+
+    $(function () {
+        $.getdata("clientRequest/getMember",{},function(content){
+
+            $.tolist($(".content"),$(".sz"),content)
+        })
+    })
+
+</script>
+
+</body>
+</html>

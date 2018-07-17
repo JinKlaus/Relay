@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>孩子进出记录</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <link rel="stylesheet" href="/user/css/weui.css?2"/>
+
+</head>
+<style type="text/css">
+    .weui-btn_primary{background-color: #d6393f}
+    body{ background-color: #f8f8f8}
+
+</style>
+<body>
+    <div class="page">
+
+        <div class="weui-panel">
+
+            <div class="weui-panel__bd">
+                <div class="weui-media-box weui-media-box_text">
+                    <h4 class="weui-media-box__title">标题一</h4>
+                    <ul class="weui-media-box__info">
+                        <li class="weui-media-box__info__meta">进入</li>
+                        <li class="weui-media-box__info__meta weui-media-box__info__meta_extra">指静脉</li>
+                    </ul>
+                </div>
+                <div class="weui-media-box weui-media-box_text">
+                    <h4 class="weui-media-box__title">标题一</h4>
+                    <ul class="weui-media-box__info">
+                        <li class="weui-media-box__info__meta">进入</li>
+                        <li class="weui-media-box__info__meta weui-media-box__info__meta_extra">指静脉</li>
+                    </ul>
+                </div>
+                <div class="weui-media-box weui-media-box_text">
+                    <h4 class="weui-media-box__title">标题一</h4>
+                    <ul class="weui-media-box__info">
+                        <li class="weui-media-box__info__meta">进入</li>
+                        <li class="weui-media-box__info__meta weui-media-box__info__meta_extra">指静脉</li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="weui-loadmore">
+            <i class="weui-loading"></i>
+            <span class="weui-loadmore__tips">正在加载</span>
+        </div>
+
+        <div class="weui-loadmore weui-loadmore_line no_res" style="display: none">
+            <span class="weui-loadmore__tips">暂无数据</span>
+        </div>
+
+
+</div>
+
+    <script src="/user/js/jquery-3.3.1.js"></script>
+    <script src="/user/js/list.js"></script>
+    <script src="/user/js/lib.js?4"></script>
+<script>
+    var page = 0;
+    var is_more = true;
+    var is_loading = true;
+
+
+
+
+
+    function get_data(){
+        $.getdata("list/book_list",{"page":page},function (res) {
+            $.tolist($(".book_list"),$(".sec"),res)
+            is_loading = false;
+            if(res.length<10){
+                $(".weui-loadmore").hide();
+                is_more = false;
+            }
+        })
+    }
+
+    $(function () {
+        get_data();
+
+
+        $(window).scroll(function(){
+            // scroll at bottom
+            if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+                if(is_more  && !is_loading){
+                    page++;
+                    is_loading = true;
+                    get_data();
+
+                }
+            }
+        });
+
+    })
+
+
+</script>
+
+</body>
+</html>

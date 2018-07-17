@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ef7104b2-ba98-4d13-9b69-48fa9f35859f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/resourses/teacherleave.xls" beforeDir="false" afterPath="$PROJECT_DIR$/assets/resourses/teacherleave.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/v1/ClientRequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/v1/ClientRequestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tpl/admin_tpl/approval_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/admin_tpl/approval_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tpl/admin_tpl/clazz_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/admin_tpl/clazz_list.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,20 +23,77 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="ClientRequestController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/controller/v1/ClientRequestController.java">
+      <file leaf-file-name="ParentController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/v1/ParentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="187" column="77" selection-start-line="187" selection-start-column="77" selection-end-line="187" selection-end-column="77" />
+            <state relative-caret-position="316">
+              <caret line="59" column="56" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/v1/UserController.java">
+      <file leaf-file-name="ClientRequestController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controller/v1/ClientRequestController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+            <state relative-caret-position="242">
+              <caret line="185" column="29" lean-forward="true" selection-start-line="185" selection-start-column="29" selection-end-line="185" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="clazz_crud.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/clazz_crud.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-792" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="clazz_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/clazz_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="123" column="57" lean-forward="true" selection-start-line="123" selection-start-column="57" selection-end-line="123" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StudentController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/v1/StudentController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="record_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/record_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4026" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="approval_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/approval_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="180" column="39" selection-start-line="180" selection-start-column="39" selection-end-line="180" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parent_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/parent_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1320" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClazzController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/v1/ClazzController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1540">
+              <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -77,6 +137,8 @@
         <option value="$PROJECT_DIR$/tpl/admin_tpl/left.html" />
         <option value="$PROJECT_DIR$/src/controller/v1/SetupController.java" />
         <option value="$PROJECT_DIR$/tpl/admin_tpl/teacher_change_selfpwd.html" />
+        <option value="$PROJECT_DIR$/tpl/admin_tpl/clazz_list.html" />
+        <option value="$PROJECT_DIR$/tpl/admin_tpl/approval_list.html" />
         <option value="$PROJECT_DIR$/src/controller/v1/ClientRequestController.java" />
       </list>
     </option>
@@ -90,9 +152,9 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="230" />
-    <option name="y" value="7" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="267" />
+    <option name="y" value="27" />
     <option name="width" value="1534" />
     <option name="height" value="1074" />
   </component>
@@ -112,12 +174,6 @@
               <item name="Relay" type="b2602c69:ProjectViewProjectNode" />
               <item name="Relay" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Relay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Relay" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Relay" type="b2602c69:ProjectViewProjectNode" />
@@ -249,7 +305,7 @@
       <workItem from="1531454085671" duration="9000" />
       <workItem from="1531454397284" duration="5495000" />
       <workItem from="1531703128774" duration="49000" />
-      <workItem from="1531733730520" duration="11326000" />
+      <workItem from="1531733730520" duration="15577000" />
     </task>
     <task id="LOCAL-00001" summary="6.0">
       <created>1531192763217</created>
@@ -314,14 +370,21 @@
       <option name="project" value="LOCAL" />
       <updated>1531744436219</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="11.1">
+      <created>1531745174509</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1531745174509</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55531000" />
+    <option name="totallyTimeSpent" value="59782000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="230" y="7" width="1534" height="1074" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
@@ -333,13 +396,13 @@
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35300547" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39687848" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32349727" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.3299356" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2366621" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18508583" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
@@ -372,7 +435,8 @@
     <MESSAGE value="10.4" />
     <MESSAGE value="10.5" />
     <MESSAGE value="11.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="11.0" />
+    <MESSAGE value="11.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="11.1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -380,15 +444,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/zhibo.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md" />
-    <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/approval_list.html" />
-    <entry file="file://$PROJECT_DIR$/assets/help - 副本.html" />
-    <entry file="file://$PROJECT_DIR$/assets/register.html" />
-    <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/record_list.html" />
-    <entry file="file://$PROJECT_DIR$/src/controller/v1/ADAD.java" />
     <entry file="file://$PROJECT_DIR$/src/controller/v1/Boss.java" />
     <entry file="file://$PROJECT_DIR$/src/controller/v1/Test.java" />
     <entry file="file://$PROJECT_DIR$/src/controller/v1/TeacherController.java">
@@ -559,13 +614,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/v1/ClazzController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/teacher_crud.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="359">
@@ -601,13 +649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/v1/ParentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2134">
-          <caret line="130" column="33" selection-start-line="130" selection-start-column="33" selection-end-line="130" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/teacher_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="902">
@@ -618,13 +659,6 @@
     <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/student_crud.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8959" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/v1/StudentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1474">
-          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/student_form.html">
@@ -675,10 +709,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/ControllerContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="747" selection-start-line="747" selection-end-line="747" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/v1/ClazzController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1540">
+          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/clazz_crud.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-792" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/clazz_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="123" column="57" lean-forward="true" selection-start-line="123" selection-start-column="57" selection-end-line="123" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/v1/StudentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/record_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4026" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/approval_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="180" column="39" selection-start-line="180" selection-start-column="39" selection-end-line="180" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/admin_tpl/parent_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1320" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/v1/ParentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="59" column="56" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/v1/ClientRequestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="187" column="77" selection-start-line="187" selection-start-column="77" selection-end-line="187" selection-end-column="77" />
+        <state relative-caret-position="242">
+          <caret line="185" column="29" lean-forward="true" selection-start-line="185" selection-start-column="29" selection-end-line="185" selection-end-column="29" />
         </state>
       </provider>
     </entry>

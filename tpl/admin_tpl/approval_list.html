@@ -179,7 +179,6 @@
 
     var excel_data = {};
     $("#out").on("click", function () {
-        alert(JSON.stringify(excel_data));
         $.post("do_excel", excel_data, function (res) {
             var ret = JSON.parse(res)
             if (ret.code == "success") {

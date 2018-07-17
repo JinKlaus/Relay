@@ -124,9 +124,8 @@
         $.getJSON("remove?id=" + id, {}, function (res) {
             if (res.code == "success") {
                 var da = res.data, num = da['clazz_stu'];
-                alert(num);
                 if (num > 0) {
-                    alert("请先删除该班级的所有学生");
+                    alert("该班级仍有"+num+"名学生，请先删除该班级的所有学生");
                     return;
                 } else {
                     $.getJSON("do_remove?id=" + id, {}, function (res) {

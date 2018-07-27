@@ -10,6 +10,7 @@ import annotation.action;
 import config.Dictionary;
 import server.ControllerContext;
 import util.Md5Util;
+import util.StringUtil;
 import util.TimeUtil;
 
 /**
@@ -104,7 +105,7 @@ public class TeacherController extends AdminController {
 
 	@action
 	public void do_add() {
-		String veinData1, veinData2, veinData3, tea_name, tid, clazz_id, tel, address, original_pwd, isadmin;
+		String veinData1, veinData2, veinData3, tea_name, tid, clazz_id, tel, address, original_pwd, isadmin,cardNo,scenePhoto;
 		try {
 			veinData1 = I("post.image1").toString();
 			veinData2 = I("post.image2").toString();
@@ -116,6 +117,8 @@ public class TeacherController extends AdminController {
 			address = I("post.address").toString();
 			original_pwd = I("post.original_pwd").toString();
 			isadmin = I("post.isadmin").toString();
+			cardNo=I("post.cardNo").toString();
+			scenePhoto=StringUtil.isEmpty(I("post.scenePhoto"))?"":I("post.scenePhoto").toString();
 		} catch (Exception e) {
 			error("0");
 			return;
@@ -138,6 +141,8 @@ public class TeacherController extends AdminController {
 		user.put("update_time", TimeUtil.getLongTimeStamp() + "");
 		user.put("state", Dictionary.STATE_ADD + "");
 		user.put("passType", "11111");
+		user.put("cardNo",cardNo);
+		user.put("scenePhoto",scenePhoto);
 		tea.put("name", tea_name);
 		tea.put("tid", tid);
 		tea.put("clazz_id", clazz_id);
@@ -149,10 +154,7 @@ public class TeacherController extends AdminController {
 		try {
 			long id = M("user").add(user);
 			tea.put("uid", id + "");
-			long id1=M("teacher").add(tea);
-			HashMap<String , String>  map=new HashMap<>();
-			map.put("cardNo",id1+"");
-			M("user").where("id="+id).save_string(map);
+			M("teacher").add(tea);
 			success("1");
 		} catch (Exception e) {
 			error("0");

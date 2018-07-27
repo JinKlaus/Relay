@@ -88,22 +88,18 @@ public class ParentController extends AdminController {
 
 	@action
 	public void do_add() {
-		String veinData1, veinData2, veinData3, image1,image2,image3,image4,image5,image6,stu_id, par_name, address, tel, original_pwd;
+		String veinData1, veinData2, veinData3,stu_id, par_name, address, tel, original_pwd,cardNo,scenePhoto;
 		try {
-			veinData1 = I("post.f1").toString();
-			veinData2 = I("post.f2").toString();
-			veinData3 = I("post.f3").toString();
-			image1 = I("post.i1").toString();
-			image2 = I("post.i2").toString();
-			image3 = I("post.i3").toString();
-			image4 = I("post.i4").toString();
-			image5= I("post.i5").toString();
-			image6= I("post.i6").toString();
+			veinData1 = I("post.image1").toString();
+			veinData2 = I("post.image2").toString();
+			veinData3 = I("post.image3").toString();
 			stu_id = I("post.stu_id").toString();
 			par_name = I("post.par_name").toString();
 			address = I("post.address").toString();
 			tel = I("post.tel").toString();
 			original_pwd = I("post.original_pwd").toString();
+			scenePhoto=StringUtil.isEmpty(I("post.scenePhoto"))?"":I("post.scenePhoto").toString();
+			cardNo=I("post.cardNo").toString();
 		} catch (Exception e) {
 			error("0");
 			return;
@@ -122,16 +118,12 @@ public class ParentController extends AdminController {
 		user.put("veinData1", veinData1);
 		user.put("veinData2", veinData2);
 		user.put("veinData3", veinData3);
-		user.put("image1", image1);
-		user.put("image2", image2);
-		user.put("image3", image3);
-		user.put("image4", image4);
-		user.put("image5", image5);
-		user.put("image6", image6);
 		user.put("create_time", TimeUtil.getShortTimeStamp() + "");
 		user.put("update_time", TimeUtil.getLongTimeStamp() + "");
 		user.put("state", Dictionary.STATE_ADD + "");
 		user.put("passType", "11111");
+		user.put("cardNo",cardNo);
+		user.put("scenePhoto",scenePhoto);
 		par.put("stu_id", stu_id);
 		par.put("par_name", par_name);
 		par.put("address", address);
@@ -141,10 +133,7 @@ public class ParentController extends AdminController {
 		try {
 			long id = M("user").add(user);
 			par.put("uid", id + "");
-			long id1=M("parent").add(par);
-			HashMap<String , String>  map=new HashMap<>();
-			map.put("cardNo",id1+"");
-			M("user").where("id="+id).save_string(map);
+			M("parent").add(par);
 			success("1");
 		} catch (Exception e) {
 			error("0");

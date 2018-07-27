@@ -9,6 +9,7 @@ import com.alibaba.fastjson.JSON;
 import annotation.action;
 import config.Dictionary;
 import server.ControllerContext;
+import util.StringUtil;
 import util.TimeUtil;
 
 /**
@@ -81,7 +82,7 @@ public class StudentController extends AdminController {
 
 	@action
 	public void do_add() {
-		String name, sid, clazz_id, veinData1, veinData2, veinData3;
+		String name, sid, clazz_id, veinData1, veinData2, veinData3,cardNo,scenePhoto;
 		try {
 			name = I("post.name").toString();
 			sid = I("post.sid").toString();
@@ -89,6 +90,8 @@ public class StudentController extends AdminController {
 			veinData1 = I("post.image1").toString();
 			veinData2 = I("post.image2").toString();
 			veinData3 = I("post.image3").toString();
+			cardNo=I("post.cardNo").toString();
+			scenePhoto=StringUtil.isEmpty(I("post.scenePhoto"))?"":I("post.scenePhoto").toString();
 		} catch (Exception e) {
 			error("参数提交错误");
 			return;
@@ -111,17 +114,16 @@ public class StudentController extends AdminController {
 		user.put("veinData1", veinData1);
 		user.put("veinData2", veinData2);
 		user.put("veinData3", veinData3);
+		user.put("cardNo",cardNo);
 		user.put("create_time", TimeUtil.getShortTimeStamp() + "");
 		user.put("update_time", TimeUtil.getLongTimeStamp() + "");
 		user.put("state", Dictionary.STATE_ADD + "");
 		user.put("passType", "11111");
+		user.put("scenePhoto",scenePhoto);
 		try {
 			long id = M("user").add(user);
 			data.put("uid", id + "");
-			long id1=M("student").add(data);
-			HashMap<String , String>  map=new HashMap<>();
-			map.put("cardNo",id1+"");
-			M("user").where("id="+id).save_string(map);
+			M("student").add(data);
 			success("1");
 		} catch (Exception e) {
 			error("0");

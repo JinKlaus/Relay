@@ -75,22 +75,28 @@
                         </div>
                         <div id="show" style="display:none;"><textarea style="width:600px;height:200px"
                                                                        id="consoles"></textarea></div>
-                        <!--<label  class="col-sm-2 control-label">家长照片</label>-->
-                        <!--<div class="col-sm-10">-->
-                        <!--<object  id="My_Cam" align="middle" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"-->
-                        <!--codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0"-->
-                        <!--height="400" viewastext="在线拍照" width="400">-->
-                        <!--<param name="allowScriptAccess" value="sameDomain" />-->
-                        <!--<param name="movie" value="/js/MyCamera.swf" />-->
-                        <!--<param name="quality" value="high" />-->
-                        <!--<param name="bgcolor" value="#ffffff" />-->
-                        <!--<param name="wmode" value="transparent" />-->
-                        <!--<embed  align="middle" allowscriptaccess="sameDomain" bgcolor="#ffffff" height="400"-->
-                        <!--name="My_Cam" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high"  wmode="transparent"-->
-                        <!--src="/js/MyCamera.swf" type="application/x-shockwave-flash" width="400"></embed>-->
-                        <!--</object>-->
-                        <!--<div align="center"><button id="takePhoto" type="submit" value="拍照" onclick="doFlash()" class="btn btn-primary">拍照</button>  </div>-->
-                        <!--</div>-->
+                        <label class="col-sm-2 control-label">家长照片</label>
+                        <div class="col-sm-10">
+                            <object id="My_Cam" align="middle" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+                                    codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0"
+                                    height="400" viewastext="在线拍照" width="400">
+                                <param name="allowScriptAccess" value="sameDomain"/>
+                                <param name="movie" value="/js/MyCamera.swf"/>
+                                <param name="quality" value="high"/>
+                                <param name="bgcolor" value="#ffffff"/>
+                                <param name="wmode" value="transparent"/>
+                                <embed align="middle" allowscriptaccess="sameDomain" bgcolor="#ffffff" height="400"
+                                       name="My_Cam" pluginspage="http://www.macromedia.com/go/getflashplayer"
+                                       quality="high" wmode="transparent"
+                                       src="/js/MyCamera.swf" type="application/x-shockwave-flash" width="400">
+                                </embed>
+                            </object>
+                            <div align="center">
+                                <button id="takePhoto" type="submit" value="拍照" onclick="doFlash()"
+                                        class="btn btn-primary">拍照
+                                </button>
+                            </div>
+                        </div>
                     </div>
 
 
@@ -116,6 +122,27 @@
                         </div>
                     </div>
 
+                    <OBJECT id="plugin0" WIDTH=391 HEIGHT=259 CLASSID="CLSID:6269B716-92DF-4CBD-849F-18153C00CB65"
+                            codebase="/PiccRead.CAB" style="display: none">
+                        <PARAM NAME="_Version" VALUE="65536">
+                        <PARAM NAME="_ExtentX" VALUE="10314">
+                        <PARAM NAME="_ExtentY" VALUE="6821">
+                        <PARAM NAME="_StockProps" VALUE="0">
+                    </OBJECT>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">一卡通卡号</label>
+                        <div class="col-sm-4">
+                            <input value="" type="text" class="form-control" id="idNo" name="idNo" placeholder="">
+                        </div>
+                        <!--<label class="col-sm-2 control-label"></label>-->
+                        <!--<div class="col-sm-5">-->
+                        <!--<p id="getCardNoStatus" style="text-align:left; font-weight:bold;font-size:14px;">-->
+                        <!--请将卡放在识别器上</p>-->
+                        <!--</div>-->
+                        <!--<input type="button" value="读卡" class="btn btn-primary" onclick="javascript:readData()" />-->
+                    </div>
+
                     <div>
                         <label class="col-sm-2 control-label">教工权限</label>
                         <div>
@@ -125,7 +152,6 @@
                             <input value="3" type="radio" name="isadmin">管理员</input>
                         </div>
                     </div>
-
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <button id="sub" type="submit" class="btn btn-primary">提交</button>
@@ -300,7 +326,10 @@
                     modelVisJSON = json.IMAGE;
 
                     var objfeatureVis = jQuery.parseJSON(featureVisJSON);
+                    var objimageVis = jQuery.parseJSON(imageVisJSON);
+
                     var feature = objfeatureVis.feature;
+                    var image = objimageVis.images;
 
                     var image0 = feature['0'];
                     var image1 = feature['1'];
@@ -424,6 +453,120 @@
         }
     }
 
+    /**
+     * 初始化
+     */
+    var isBrowser;
+    $(function () {
+
+        //按钮样式
+        $("#takePhoto").button()
+            .click(function (event) {
+                event.preventDefault();
+            });
+        //判断浏览器
+        isBrowser = doVerificationBrowser();
+        //根据浏览器不同使用不同方法调用摄像头
+        if (isBrowser) {
+            $("#FalshDiv").show();
+        } else {
+            //判断浏览器是否 支持HTML5
+            if (checkHtml5()) {
+                $("#HTML5Div").show();
+                doHtml5();
+            }
+        }
+    });
+
+    /**
+     * 检查摄像头是否存在
+     */
+    function checkCamera() {
+    }
+
+    /**
+     *  判断浏览器是否为IE或者其他浏览器
+     */
+    function doVerificationBrowser() {
+        var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+        //判断浏览是否为IE
+        if (!!window.ActiveXObject || "ActiveXObject" in window || userAgent.indexOf("trident") > -1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * 拍照
+     */
+    function photo() {
+        //IE
+        if (isBrowser) {
+            doFlash();
+        } else {
+            //非IE
+            tabkePhotoForHtml5();
+        }
+    }
+
+    /**
+     * 使用FLASH调用摄像头拍照(适用于IE浏览器)
+     */
+    function doFlash() {
+        var MyCan = thisMovie("My_Cam");
+        var base64Data = MyCan.GetBase64Code();
+        data['scenePhoto'] = base64Data;
+        alert("拍照成功");
+    }
+
+    /**
+     * 获取Flash对象
+     */
+    function thisMovie(movieName) {
+        if (navigator.appName.indexOf("Microsoft") != -1) {
+            return document[movieName];
+        }
+        else {
+            return document[movieName];
+        }
+    }
+
+    /**
+     * 获取url请求参数
+     */
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+
+    function plugin() {
+        return document.getElementById('plugin0');
+    }
+
+    function readData() {
+        var tempPlugin = plugin();
+        var ret = tempPlugin.getCardInfo(1);
+        var infoJson = JSON.parse(ret);
+        if (infoJson.CardType == 'ID') {
+            alert("姓名-" + infoJson.Name + " 卡号-" + infoJson.CertNo);
+            $("#idNo").val(infoJson.CertNo);
+        }
+        if (infoJson.CardType == 'A') {
+            $('#otherCardNo').val(infoJson.IssuerId);
+            $("#otherCardType").val("2");
+            // alert($('#otherCardType').val()+"==");
+        }
+
+        if (infoJson.CardType == 'M1') {
+            $('#otherCardNo').val(infoJson.CardNo);
+            $("#otherCardType").val("3");
+        }
+
+    }
+
 
     var data = {};
     $(function () {
@@ -434,7 +577,7 @@
 
         createModel();
 
-
+        readData();
         $.getJSON("getClazzInfo", {}, function (res) {
             if (res.code == "success")
                 var da = res.data, s = '';
@@ -453,6 +596,7 @@
             data['tel'] = $("#tel").val();
             data['original_pwd'] = $("#original_pwd").val();
             data['isadmin'] = $("input[type='radio']:checked").val();
+            data['cardNo'] = $("#idNo").val();
             if (!data['tea_name'] || data['tea_name'] == " ") {
                 alert("教师姓名不能为空，请输入正确的教师姓名");
                 return;
@@ -465,6 +609,9 @@
                 return;
             } else if (!data['original_pwd'] || data['original_pwd'] == " ") {
                 alert("初始密码不能为空，请输入正确的密码");
+                return;
+            }else if (!data['cardNo'] || data['cardNo'] == " ") {
+                alert("一卡通卡号不能为空，请输入正确的卡号");
                 return;
             }
 

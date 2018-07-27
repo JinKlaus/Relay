@@ -66,7 +66,7 @@ public class DeviceController extends Controller {
 		try {
 			versionNo = I("post.versionNo").toString();
 			ArrayList<HashMap<String, String>> list = M("user").where("update_time>" + versionNo).field(
-					"id,cardNo,startDate,endDate,create_time,update_time,name,personType,veinData1,veinData2,veinData3,image1,image2,image3,image4,image5,image6,state,passType")
+					"id,cardNo,startDate,endDate,create_time,update_time,name,personType,veinData1,veinData2,veinData3,state,passType")
 					.order("update_time asc").limit(pages + "").select();
 			for (int i = 0; i < list.size(); i++) {
 				list.get(i).put("startDate", TimeUtil.stampToMysqlDate(list.get(i).get("startDate").toString()));

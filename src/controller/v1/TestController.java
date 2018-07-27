@@ -20,4 +20,9 @@ public class TestController extends Controller {
     public void test(){
         toHtml("admin_tpl/HD-100demo");
     }
+
+    @action
+    public void camera(){
+        toHtml("admin_tpl/camera");
+    }
 }

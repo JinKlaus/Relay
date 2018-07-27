@@ -1,0 +1,55 @@
+
+<HTML>
+<HEAD>
+	<meta charset="utf-8">
+	<TITLE>New Page</TITLE>
+	<!--ID="plugin0" WIDTH=391 HEIGHT=259
+        CLASSID="CLSID:6269B716-92DF-4CBD-849F-18153C00CB65">-->
+
+</HEAD>
+<BODY>
+<OBJECT
+		id="plugin0" WIDTH=391 HEIGHT=259 CLASSID="CLSID:6269B716-92DF-4CBD-849F-18153C00CB65" codebase="/PiccRead.CAB">
+	<PARAM NAME="_Version" VALUE="65536">
+	<PARAM NAME="_ExtentX" VALUE="10314">
+	<PARAM NAME="_ExtentY" VALUE="6821">
+	<PARAM NAME="_StockProps" VALUE="0">
+</OBJECT>
+<div>
+	<input type="button" value="读卡" onclick="javascript:readData()" />
+	<input type="text" id="idNo" name="idNo" />
+</div>
+
+
+<script type="text/javascript">
+
+    function plugin()
+    {
+        return document.getElementById('plugin0');
+    }
+    function readData() {
+        var tempPlugin= plugin();
+        var ret=tempPlugin.getCardInfo(1);
+        alert(ret);
+        var infoJson=JSON.parse(ret);
+        //  alert(infoJson.CardType);
+        if(infoJson.CardType=='ID') {
+            alert("0");
+            alert("1");
+        }
+        if(infoJson.CardType=='A') {
+            $('#otherCardNo').val(infoJson.IssuerId);
+            $("#otherCardType").val("2");
+            // alert($('#otherCardType').val()+"==");
+        }
+
+        if(infoJson.CardType=='M1') {
+            $('#otherCardNo').val(infoJson.CardNo);
+            $("#otherCardType").val("3");
+        }
+
+    }
+</script>
+
+</BODY>
+</HTML>

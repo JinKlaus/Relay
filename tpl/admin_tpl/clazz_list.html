@@ -121,7 +121,7 @@
     }
 
     function del(id) {
-        $.getJSON("remove?id=" + id, {}, function (res) {
+        $.getJSON("remove?id=" + id , {}, function (res) {
             if (res.code == "success") {
                 var da = res.data, num = da['clazz_stu'];
                 if (num > 0) {
@@ -140,13 +140,13 @@
         })
     }
 
-
+    var getTimestamp=new Date().getTime();
     function tohtml() {
 
         var d = {"page": current_page}
 
 
-        $.getJSON("getList", d, function (res) {
+        $.getJSON("getList"+"?timestamp="+getTimestamp, d, function (res) {
             if (res.code == "success") {
                 var da = res.data, s = '', data = da['list'], num = da['num'], pi = "";
                 if (current_page == 0) pi += ' <li class="prev disabled"> <a href="#">上一页</a></li>';

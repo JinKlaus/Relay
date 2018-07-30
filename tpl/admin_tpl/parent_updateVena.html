@@ -362,6 +362,7 @@
 
 
     var data = {};
+    var getTimestamp=new Date().getTime();
     $(function () {
         if (isIe)
             bindCallBack();
@@ -377,7 +378,7 @@
                 var ret = JSON.parse(res)
                 if (ret.code == "success") {
                     alert("修改成功");
-                    window.location.href = "list";
+                    window.location.href = "list"+"?timestamp="+getTimestamp;
                     return;
                 } else {
                     alert(ret.msg)

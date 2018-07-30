@@ -587,6 +587,7 @@
 
 
     var data = {};
+    var getTimestamp=new Date().getTime();
     $(function () {
         if (isIe)
             bindCallBack();
@@ -596,7 +597,7 @@
         createModel();
 
         readData();
-        $.getJSON("getClazzInfo", {}, function (res) {
+        $.getJSON("getClazzInfo"+"?timestamp="+getTimestamp, {}, function (res) {
             if (res.code == "success")
                 var da = res.data, s = '';
             for (var i = 0; i < da.length; i++) {
@@ -615,7 +616,7 @@
 
             $("#clazzInfo").on("change", function () {
                 var v = $(this).val();
-                $.getJSON("getStudentInfo", {"clazz_id": v}, function (res) {
+                $.getJSON("getStudentInfo"+"?timestamp="+getTimestamp, {"clazz_id": v}, function (res) {
                     if (res.code == "success")
                         var da = res.data, s = '';
                     for (var i = 0; i < da.length; i++) {
@@ -658,9 +659,9 @@
                 var ret = JSON.parse(res)
                 if (ret.code == "success") {
                     if (window.confirm("录入成功，是否继续录入")) {
-                        window.location.reload()
+                        window.location.reload();
                     } else {
-                        window.location.href = "/v1/parent/list";
+                        window.location.href = "/v1/parent/list"+"?timestamp="+getTimestamp;
                     }
                 } else {
                     alert(ret.msg)

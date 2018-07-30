@@ -53,7 +53,6 @@ public class Controller {
 			res.put("sessionid",sessionID );
 			M("session").save_string(res);
 		}
-		
 	}
 	
 	public<T> T getSession(Class<T> t) {

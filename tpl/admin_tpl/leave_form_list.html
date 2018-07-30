@@ -109,11 +109,12 @@
         tohtml();
     }
 
+    var getTimestamp=new Date().getTime();
     function tohtml() {
 
         var d = {"page": current_page}
 
-        $.getJSON("getList", d, function (res) {
+        $.getJSON("getList"+"?timestamp="+getTimestamp, d, function (res) {
             if (res.code == "success") {
                 var da = res.data, s = '', data = da['list'], num = da['num'], pi = "";
                 $("#example_info").html("共" + num + "条记录");

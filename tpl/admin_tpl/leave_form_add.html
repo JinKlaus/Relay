@@ -124,7 +124,7 @@
 
 <script>
     var d = {};
-
+    var getTimestamp=new Date().getTime();
     $('.input_cxcalendar').each(function () {
         var a = new Calendar({
             targetCls: $(this),
@@ -146,7 +146,7 @@
                 var ret = JSON.parse(res);
                 if (ret.code == "success") {
                     alert("请假申请提交成功");
-                    window.location.href = "list";
+                    window.location.href = "list"+"?timestamp="+getTimestamp;
                 } else {
                     alert(ret.msg);
                 }

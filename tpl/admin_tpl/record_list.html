@@ -153,7 +153,7 @@ l
 
 <script>
     var current_page = 0;
-
+    var getTimestamp=new Date().getTime();
     $(function () {
         tohtml();
     })
@@ -220,7 +220,7 @@ l
 
 
         excel_data = d;
-        $.getJSON(url, d, function (res) {
+        $.getJSON(url+"?timestamp="+getTimestamp, d, function (res) {
             if (res.code == "success") {
                 var da = res.data, s = '', data = da['list'], num = da['num'], pi = "";
                 $("#example_info").html("共" + num + "条记录");

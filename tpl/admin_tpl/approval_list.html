@@ -178,6 +178,7 @@
 
 
     var excel_data = {};
+    var getTimestamp=new Date().getTime();
     $("#out").on("click", function () {
         $.post("do_excel", excel_data, function (res) {
             var ret = JSON.parse(res)
@@ -201,7 +202,7 @@
         url = "getSearchList";
 
         excel_data = d;
-        $.getJSON(url, d, function (res) {
+        $.getJSON(url+"?timestamp="+getTimestamp, d, function (res) {
             if (res.code == "success") {
                 var da = res.data, s = '', data = da['list'], num = da['num'], pi = "";
                 $("#example_info").html("共" + num + "条记录");

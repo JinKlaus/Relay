@@ -514,6 +514,7 @@
     }
 
     var data = {};
+    var getTimestamp=new Date().getTime();
     $(function () {
         if (isIe)
             bindCallBack();
@@ -531,7 +532,7 @@
                 alert("姓名栏不能为空，请输入正确姓名");
                 return;
             }
-            $.post("/v1/student/do_add_vena", data, function (res) {
+            $.post('/v1/student/do_add_vena', data, function (res) {
                 var ret = JSON.parse(res)
                 if (ret.code == "success") {
                     alert("数据提交成功");

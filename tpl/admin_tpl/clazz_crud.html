@@ -140,6 +140,7 @@
   <script>
 
 	  	var data={};
+        var getTimestamp=new Date().getTime();
 		$(function () {
             var clazz =${clazz};
 			if(clazz) {
@@ -169,13 +170,13 @@
                     if (ret.code == "success") {
 							if(clazz){
 							    alert("修改成功");
-								window.location.href("list");
+								window.location.href="list"+"?timestamp="+getTimestamp;
 								return;
 							}
 						   if(window.confirm("添加成功，是否继续添加")){
 							   window.location.reload()
 						   }else {
-							   window.location.href="list";
+							   window.location.href="list"+"?timestamp="+getTimestamp;
 						   }
                     } else {
                         alert(ret.msg);

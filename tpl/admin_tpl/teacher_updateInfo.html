@@ -82,8 +82,8 @@
                         <label class="col-sm-2 control-label">教工权限</label>
                         <div>
                             <input value="0" type="radio" name="isadmin" id="normalstaff" checked="checked">普通教工</input>
-                            <input value="1" type="radio" name="isadmin" id="dutystaff">值班教工</input>
-                            <input value="2" type="radio" name="isadmin" id="adminstaff">审核教工</input>
+                            <input value="1" type="radio" name="isadmin" id="dutystaff">审核教工</input>
+                            <input value="2" type="radio" name="isadmin" id="adminstaff">值班教工</input>
                             <input value="3" type="radio" name="isadmin">管理员</input>
                         </div>
                     </div>
@@ -118,6 +118,8 @@
 
 <script>
     var data = {};
+
+    var getTimestamp=new Date().getTime();
     $(function () {
         var info =${info};
         $("#tea_name").val(info.name);
@@ -132,7 +134,7 @@
         } else if (info.isadmin == "2") {
             $("#adminstaff").attr("checked", "checked");
         }
-        $.getJSON("getClazzInfo", {}, function (res) {
+        $.getJSON("getClazzInfo"+"?timestamp="+getTimestamp, {}, function (res) {
             if (res.code == "success")
                 var da = res.data, s = '';
             for (var i = 0; i < da.length; i++) {
@@ -175,7 +177,7 @@
                 var ret = JSON.parse(res)
                 if (ret.code == "success") {
                     alert("修改成功");
-                    window.location.href = "list";
+                    window.location.href = "list"+"?timestamp="+getTimestamp;
                     return;
                 } else {
                     alert(ret.msg)

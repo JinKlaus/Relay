@@ -68,6 +68,7 @@
 
 
     var data= {};
+    var getTimestamp=new Date().getTime();
     $(function () {
 
         $("#sub").on("click", function () {
@@ -81,9 +82,9 @@
                 var ret = JSON.parse(res)
                 if (ret.code == "success") {
                     if (window.confirm("确认修改您的登录密码吗？")) {
-                        window.location.href = "/v1/absent/list";
+                        window.location.href = "/v1/absent/list"+"?timestamp="+getTimestamp;
                     } else {
-                        window.location.href = "/v1/setup/list";
+                        window.location.href = "/v1/setup/list"+"?timestamp="+getTimestamp;
                     }
                 } else {
                     alert(ret.msg)

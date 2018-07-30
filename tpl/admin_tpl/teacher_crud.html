@@ -146,9 +146,9 @@
                     <div>
                         <label class="col-sm-2 control-label">教工权限</label>
                         <div>
-                            <input value="1" type="radio" name="isadmin" checked="checked">普通教工</input>
-                            <input value="0" type="radio" name="isadmin">值班教工</input>
-                            <input value="2" type="radio" name="isadmin">审核教工</input>
+                            <input value="0" type="radio" name="isadmin" checked="checked">普通教工</input>
+                            <input value="1" type="radio" name="isadmin">审核教工</input>
+                            <input value="2" type="radio" name="isadmin">值班教工</input>
                             <input value="3" type="radio" name="isadmin">管理员</input>
                         </div>
                     </div>
@@ -569,6 +569,7 @@
 
 
     var data = {};
+    var getTimestamp=new Date().getTime();
     $(function () {
         if (isIe)
             bindCallBack();
@@ -578,7 +579,7 @@
         createModel();
 
         readData();
-        $.getJSON("getClazzInfo", {}, function (res) {
+        $.getJSON("getClazzInfo"+"?timestamp="+getTimestamp, {}, function (res) {
             if (res.code == "success")
                 var da = res.data, s = '';
             for (var i = 0; i < da.length; i++) {
@@ -621,7 +622,7 @@
                     if (window.confirm("录入成功，是否继续录入")) {
                         window.location.reload()
                     } else {
-                        window.location.href = "/v1/teacher/list";
+                        window.location.href = "/v1/teacher/list"+"?timestamp="+getTimestamp;
                     }
                 } else {
                     alert(ret.msg)

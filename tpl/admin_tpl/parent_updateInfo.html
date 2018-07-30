@@ -103,12 +103,13 @@
 
 <script>
     var data = {};
+    var getTimestamp=new Date().getTime();
     $(function () {
         var info =${info};
         $("#par_name").val(info.par_name);
         $("#address").val(info.address);
         $("#tel").val(info.tel);
-        $.getJSON("getClazzInfo", {}, function (res) {
+        $.getJSON("getClazzInfo"+"?timestamp="+getTimestamp, {}, function (res) {
             if (res.code == "success")
                 var da = res.data, s = '';
             for (var i = 0; i < da.length; i++) {
@@ -119,7 +120,7 @@
 
             $("#clazzInfo").on("change", function () {
                 var v = $(this).val();
-                $.getJSON("getStudentInfo", {"clazz_id": v}, function (res) {
+                $.getJSON("getStudentInfo"+"?timestamp="+getTimestamp, {"clazz_id": v}, function (res) {
                     if (res.code == "success")
                         var da = res.data, s = '';
                     for (var i = 0; i < da.length; i++) {
@@ -130,7 +131,7 @@
                 })
             })
             $("#clazzInfo").val(info.clazz_id);
-            $.getJSON("getStudentInfo", {"clazz_id": info.clazz_id}, function (res) {
+            $.getJSON("getStudentInfo"+"?timestamp="+getTimestamp, {"clazz_id": info.clazz_id}, function (res) {
                 if (res.code == "success")
                     var da = res.data, s = '';
                 for (var i = 0; i < da.length; i++) {
@@ -167,7 +168,7 @@
                 var ret = JSON.parse(res)
                 if (ret.code == "success") {
                     alert("修改成功");
-                    window.location.href = "list";
+                    window.location.href = "list"+"?timestamp="+getTimestamp;
                     return;
                 } else {
                     alert(ret.msg)

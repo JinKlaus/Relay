@@ -123,7 +123,10 @@ public class StudentController extends AdminController {
 		try {
 			long id = M("user").add(user);
 			data.put("uid", id + "");
-			M("student").add(data);
+			long face_id=M("student").add(data);
+			HashMap<String, String> updateData = new HashMap<>();
+			updateData.put("face_id",face_id+"");
+			M("user").where("id="+id).save_string(updateData);
 			success("1");
 		} catch (Exception e) {
 			error("0");

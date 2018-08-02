@@ -132,7 +132,10 @@ public class ParentController extends AdminController {
 		try {
 			long id = M("user").add(user);
 			par.put("uid", id + "");
-			M("parent").add(par);
+			long face_id=M("parent").add(par);
+			HashMap<String, String> updateData = new HashMap<>();
+			updateData.put("face_id",face_id+"");
+			M("user").where("id="+id).save_string(updateData);
 			success("1");
 		} catch (Exception e) {
 			error("0");

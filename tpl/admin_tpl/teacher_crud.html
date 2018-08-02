@@ -135,12 +135,6 @@
                         <div class="col-sm-4">
                             <input value="" type="text" class="form-control" id="idNo" name="idNo" placeholder="">
                         </div>
-                        <!--<label class="col-sm-2 control-label"></label>-->
-                        <!--<div class="col-sm-5">-->
-                        <!--<p id="getCardNoStatus" style="text-align:left; font-weight:bold;font-size:14px;">-->
-                        <!--请将卡放在识别器上</p>-->
-                        <!--</div>-->
-                        <!--<input type="button" value="读卡" class="btn btn-primary" onclick="javascript:readData()" />-->
                     </div>
 
                     <div>
@@ -154,6 +148,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
+                            <input type="button" value="读卡" class="btn btn-primary" onclick="readData()"/>
                             <button id="sub" type="submit" class="btn btn-primary">提交</button>
                         </div>
                     </div>
@@ -555,14 +550,13 @@
             $("#idNo").val(infoJson.CertNo);
         }
         if (infoJson.CardType == 'A') {
-            $('#otherCardNo').val(infoJson.IssuerId);
-            $("#otherCardType").val("2");
-            // alert($('#otherCardType').val()+"==");
+            alert("姓名-" + infoJson.Name + " 卡号-" + infoJson.IssuerId);
+            $('#idNo').val(infoJson.IssuerId);
         }
 
         if (infoJson.CardType == 'M1') {
-            $('#otherCardNo').val(infoJson.CardNo);
-            $("#otherCardType").val("3");
+            alert("姓名-" + infoJson.Name + " 卡号-" + infoJson.CardNo);
+            $('#idNo').val(infoJson.CardNo);
         }
 
     }
@@ -578,7 +572,7 @@
 
         createModel();
 
-        readData();
+
         $.getJSON("getClazzInfo"+"?timestamp="+getTimestamp, {}, function (res) {
             if (res.code == "success")
                 var da = res.data, s = '';

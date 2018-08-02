@@ -154,7 +154,10 @@ public class TeacherController extends AdminController {
 		try {
 			long id = M("user").add(user);
 			tea.put("uid", id + "");
-			M("teacher").add(tea);
+			long face_id=M("teacher").add(tea);
+			HashMap<String, String> updateData = new HashMap<>();
+			updateData.put("face_id",face_id+"");
+			M("user").where("id="+id).save_string(updateData);
 			success("1");
 		} catch (Exception e) {
 			error("0");

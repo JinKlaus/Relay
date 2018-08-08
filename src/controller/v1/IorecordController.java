@@ -60,6 +60,7 @@ public class IorecordController extends AdminController {
 				s.append(" and b.tel like '%" + tel + "%'");
 				snum.append(" and b.tel like '%" + tel + "%'");
 			}
+			s.append(" order by dateTime desc");
 			s.append(" limit " + limit);
 			String sql = s.toString();
 			String sql1 = snum.toString();

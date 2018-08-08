@@ -82,9 +82,9 @@
                         <label class="col-sm-2 control-label">教工权限</label>
                         <div>
                             <input value="0" type="radio" name="isadmin" id="normalstaff" checked="checked">普通教工</input>
-                            <input value="1" type="radio" name="isadmin" id="dutystaff">审核教工</input>
-                            <input value="2" type="radio" name="isadmin" id="adminstaff">值班教工</input>
-                            <input value="3" type="radio" name="isadmin">管理员</input>
+                            <input value="1" type="radio" name="isadmin" id="approvalstaff">审核教工</input>
+                            <input value="2" type="radio" name="isadmin" id="dutystaff">值班教工</input>
+                            <input value="3" type="radio" name="isadmin" id="adminstaff">管理员</input>
                         </div>
                     </div>
 
@@ -130,8 +130,10 @@
         if (info.isadmin == "0") {
             $("#normalstaff").attr("checked", "checked");
         } else if (info.isadmin == "1") {
-            $("#dutystaff").attr("checked", "checked");
+            $("#approvalstaff").attr("checked", "checked");
         } else if (info.isadmin == "2") {
+            $("#dutystaff").attr("checked", "checked");
+        }else if (info.isadmin == "3") {
             $("#adminstaff").attr("checked", "checked");
         }
         $.getJSON("getClazzInfo"+"?timestamp="+getTimestamp, {}, function (res) {

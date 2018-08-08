@@ -564,16 +564,13 @@
         var ret = tempPlugin.getCardInfo(1);
         var infoJson = JSON.parse(ret);
         if (infoJson.CardType == 'ID') {
-            alert("姓名-" + infoJson.Name + " 卡号-" + infoJson.CertNo);
             $("#idNo").val(infoJson.CertNo);
         }
         if (infoJson.CardType == 'A') {
-            alert("姓名-" + infoJson.Name + " 卡号-" + infoJson.IssuerId);
             $('#idNo').val(infoJson.IssuerId);
         }
 
         if (infoJson.CardType == 'M1') {
-            alert("姓名-" + infoJson.Name + " 卡号-" + infoJson.CardNo);
             $('#idNo').val(infoJson.CardNo);
         }
 
@@ -643,9 +640,6 @@
                 return;
             } else if (!data['original_pwd'] || data['original_pwd'] == " ") {
                 alert("初始密码不能为空，请输入正确的初始密码");
-                return;
-            }else if (!data['cardNo'] || data['cardNo'] == " ") {
-                alert("一卡通卡号不能为空，请输入正确的卡号");
                 return;
             }
 

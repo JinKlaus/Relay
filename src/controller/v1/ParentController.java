@@ -88,17 +88,17 @@ public class ParentController extends AdminController {
 	@action
 	public void do_add() {
 		String veinData1, veinData2, veinData3,stu_id, par_name, address, tel, original_pwd,cardNo,scenePhoto;
+		veinData1 = StringUtil.isEmpty(I("post.image1"))?"":I("post.image1").toString();
+		veinData2 = StringUtil.isEmpty(I("post.image2"))?"":I("post.image2").toString();
+		veinData3 = StringUtil.isEmpty(I("post.image3"))?"":I("post.image3").toString();
+		cardNo=StringUtil.isEmpty(I("post.cardNo"))?"":I("post.cardNo").toString();
+		scenePhoto=StringUtil.isEmpty(I("post.scenePhoto"))?"":I("post.scenePhoto").toString();
 		try {
-			veinData1 = I("post.image1").toString();
-			veinData2 = I("post.image2").toString();
-			veinData3 = I("post.image3").toString();
 			stu_id = I("post.stu_id").toString();
 			par_name = I("post.par_name").toString();
 			address = I("post.address").toString();
 			tel = I("post.tel").toString();
 			original_pwd = I("post.original_pwd").toString();
-			scenePhoto=StringUtil.isEmpty(I("post.scenePhoto"))?"":I("post.scenePhoto").toString();
-			cardNo=I("post.cardNo").toString();
 		} catch (Exception e) {
 			error("0");
 			return;

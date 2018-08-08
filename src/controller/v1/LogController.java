@@ -45,6 +45,7 @@ public class LogController extends AdminController {
 			s.append(" and b.name like '%" + searchname + "%'");
 			snum.append(" and b.name like '%" + searchname + "%'");
 		}
+		s.append(" order by create_time desc");
 		s.append(" limit " + limit);
 		String sql = s.toString();
 		String sql1 = snum.toString();

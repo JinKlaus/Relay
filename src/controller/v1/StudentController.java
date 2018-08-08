@@ -83,15 +83,15 @@ public class StudentController extends AdminController {
 	@action
 	public void do_add() {
 		String name, sid, clazz_id, veinData1, veinData2, veinData3,cardNo,scenePhoto;
+		veinData1 = StringUtil.isEmpty(I("post.image1"))?"":I("post.image1").toString();
+		veinData2 = StringUtil.isEmpty(I("post.image2"))?"":I("post.image2").toString();
+		veinData3 = StringUtil.isEmpty(I("post.image3"))?"":I("post.image3").toString();
+		cardNo=StringUtil.isEmpty(I("post.cardNo"))?"":I("post.cardNo").toString();
+		scenePhoto=StringUtil.isEmpty(I("post.scenePhoto"))?"":I("post.scenePhoto").toString();
 		try {
 			name = I("post.name").toString();
 			sid = I("post.sid").toString();
 			clazz_id = I("post.clazz_id").toString();
-			veinData1 = I("post.image1").toString();
-			veinData2 = I("post.image2").toString();
-			veinData3 = I("post.image3").toString();
-			cardNo=I("post.cardNo").toString();
-			scenePhoto=StringUtil.isEmpty(I("post.scenePhoto"))?"":I("post.scenePhoto").toString();
 		} catch (Exception e) {
 			error("参数提交错误");
 			return;

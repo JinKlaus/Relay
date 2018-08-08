@@ -106,10 +106,12 @@ public class TeacherController extends AdminController {
 	@action
 	public void do_add() {
 		String veinData1, veinData2, veinData3, tea_name, tid, clazz_id, tel, address, original_pwd, isadmin,cardNo,scenePhoto;
+		veinData1 = StringUtil.isEmpty(I("post.image1"))?"":I("post.image1").toString();
+		veinData2 = StringUtil.isEmpty(I("post.image2"))?"":I("post.image2").toString();
+		veinData3 = StringUtil.isEmpty(I("post.image3"))?"":I("post.image3").toString();
+		cardNo=StringUtil.isEmpty(I("post.cardNo"))?"":I("post.cardNo").toString();
+		scenePhoto=StringUtil.isEmpty(I("post.scenePhoto"))?"":I("post.scenePhoto").toString();
 		try {
-			veinData1 = I("post.image1").toString();
-			veinData2 = I("post.image2").toString();
-			veinData3 = I("post.image3").toString();
 			tea_name = I("post.tea_name").toString();
 			tid = I("post.tid").toString();
 			clazz_id = I("post.clazz_id").toString();
@@ -117,8 +119,6 @@ public class TeacherController extends AdminController {
 			address = I("post.address").toString();
 			original_pwd = I("post.original_pwd").toString();
 			isadmin = I("post.isadmin").toString();
-			cardNo=I("post.cardNo").toString();
-			scenePhoto=StringUtil.isEmpty(I("post.scenePhoto"))?"":I("post.scenePhoto").toString();
 		} catch (Exception e) {
 			error("0");
 			return;

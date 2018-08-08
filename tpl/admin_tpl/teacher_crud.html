@@ -75,7 +75,7 @@
                         </div>
                         <div id="show" style="display:none;"><textarea style="width:600px;height:200px"
                                                                        id="consoles"></textarea></div>
-                        <label class="col-sm-2 control-label">家长照片</label>
+                        <label class="col-sm-2 control-label">教师照片</label>
                         <div class="col-sm-10">
                             <object id="My_Cam" align="middle" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
                                     codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0"
@@ -546,16 +546,13 @@
         var ret = tempPlugin.getCardInfo(1);
         var infoJson = JSON.parse(ret);
         if (infoJson.CardType == 'ID') {
-            alert("姓名-" + infoJson.Name + " 卡号-" + infoJson.CertNo);
             $("#idNo").val(infoJson.CertNo);
         }
         if (infoJson.CardType == 'A') {
-            alert("姓名-" + infoJson.Name + " 卡号-" + infoJson.IssuerId);
             $('#idNo').val(infoJson.IssuerId);
         }
 
         if (infoJson.CardType == 'M1') {
-            alert("姓名-" + infoJson.Name + " 卡号-" + infoJson.CardNo);
             $('#idNo').val(infoJson.CardNo);
         }
 
@@ -604,9 +601,6 @@
                 return;
             } else if (!data['original_pwd'] || data['original_pwd'] == " ") {
                 alert("初始密码不能为空，请输入正确的密码");
-                return;
-            }else if (!data['cardNo'] || data['cardNo'] == " ") {
-                alert("一卡通卡号不能为空，请输入正确的卡号");
                 return;
             }
 

@@ -1,0 +1,83 @@
+<component name="ArtifactManager">
+  <artifact name="zhibo:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/zhibo_jar</output-path>
+    <root id="root">
+      <element id="archive" name="zhibo.jar">
+        <element id="module-output" name="zhibo" />
+      </element>
+      <element id="library" level="module" name="jpinyin-1.1.8-sources.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jetty-gcloud-session-manager-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jpush-client-3.3.3.jar" module-name="zhibo" />
+      <element id="library" level="module" name="commons-beanutils-1.8.3.jar" module-name="zhibo" />
+      <element id="library" level="module" name="httpcore-4.4.1.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jetty-schemas-3.1.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jetty-webapp-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="xmlbeans-2.3.0.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jetty-infinispan-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jetty-jndi-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jedis.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jetty-http-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jetty-client-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="commons-lang3-3.6.jar" module-name="zhibo" />
+      <element id="library" level="module" name="bson-3.3.0.jar" module-name="zhibo" />
+      <element id="library" level="module" name="geronimo-jms_1.1_spec-1.1.1.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jetty-gcloud-memcached-session-manager-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="poi-ooxml-3.8-20120326.jar" module-name="zhibo" />
+      <element id="library" level="module" name="poi-scratchpad-3.8-20120326.jar" module-name="zhibo" />
+      <element id="library" level="module" name="mysql-connector-java-5.1.46-bin.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jiguang-common-1.0.8.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jetty-util-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jetty-jaas-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="cdi-websocket-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jetty-rewrite-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="beetl-2.7.12.jar" module-name="zhibo" />
+      <element id="library" level="module" name="slf4j-api-1.7.7.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jetty-proxy-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="c3p0-0.8.4.5.jar" module-name="zhibo" />
+      <element id="library" level="module" name="geronimo-jta_1.0.1B_spec-1.0.1.jar" module-name="zhibo" />
+      <element id="library" level="module" name="gson-2.2.4.jar" module-name="zhibo" />
+      <element id="library" level="module" name="cdi-core-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jetty-continuation-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jetty-annotations-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jetty-alpn-server-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="mongodb-driver-core-3.3.0.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jetty-servlet-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jetty-jaspi-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="alipay-sdk-java20170511115337.jar" module-name="zhibo" />
+      <element id="library" level="module" name="alipay-sdk-java20170511115337-source.jar" module-name="zhibo" />
+      <element id="library" level="module" name="slf4j-log4j12-1.7.7.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jetty-server-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="poi-ooxml-schemas-3.8-20120326.jar" module-name="zhibo" />
+      <element id="library" level="module" name="geronimo-j2ee-management_1.1_spec-1.0.1.jar" module-name="zhibo" />
+      <element id="library" level="module" name="httpclient-4.4.1.jar" module-name="zhibo" />
+      <element id="library" level="module" name="fastjson-1.2.17.jar" module-name="zhibo" />
+      <element id="library" level="module" name="aliyun-java-sdk-dysmsapi-1.0.0.jar" module-name="zhibo" />
+      <element id="library" level="module" name="slf4j-api-1.7.13.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jetty-quickstart-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jetty-nosql-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jetty-io-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="servlet-api-3.1.jar" module-name="zhibo" />
+      <element id="library" level="module" name="mongodb-driver-3.3.0.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jetty-plus-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jetty-jmx-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jetty-deploy-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="poi-ooxml-3.17.jar" module-name="zhibo" />
+      <element id="library" level="module" name="poi-excelant-3.8-20120326.jar" module-name="zhibo" />
+      <element id="library" level="module" name="log4j-1.2.17.jar" module-name="zhibo" />
+      <element id="library" level="module" name="poi-3.17.jar" module-name="zhibo" />
+      <element id="library" level="module" name="commons-collections-3.2.1.jar" module-name="zhibo" />
+      <element id="library" level="module" name="selenium-java-3.2.0.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jetty-servlets-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jpinyin-1.1.8.jar" module-name="zhibo" />
+      <element id="library" level="module" name="commons-logging-1.1.1.jar" module-name="zhibo" />
+      <element id="library" level="module" name="dom4j-1.6.1.jar" module-name="zhibo" />
+      <element id="library" level="module" name="cdi-servlet-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="poi-examples-3.8-20120326.jar" module-name="zhibo" />
+      <element id="library" level="module" name="aliyun-java-sdk-core-3.3.1.jar" module-name="zhibo" />
+      <element id="library" level="module" name="commons-logging-1.2.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jetty-xml-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="jetty-security-9.3.18.v20170406.jar" module-name="zhibo" />
+      <element id="library" level="module" name="commons-pool-1.6.jar" module-name="zhibo" />
+    </root>
+  </artifact>
+</component>

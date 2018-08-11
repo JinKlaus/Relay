@@ -186,14 +186,15 @@ public class TeacherController extends AdminController {
 	@action
 	public void edit_info() {
 		String id = I("get.id").toString();
-		HashMap<String, String> res = M("teacher").where("id=" + id).find();
+		String sql="select a.*,b.cardNo from teacher a left join user b on a.name=b.name where a.id="+id;
+		HashMap<String, String> res=M("teacher").query(sql).get(0);
 		assign("info", JSON.toJSON(res));
 		toHtml("admin_tpl/teacher_updateInfo");
 	}
 
 	@action
 	public void do_edit_info() {
-		String id, tid, tea_name, address, tel, clazz_id, uid, isadmin, origial_pwd;
+		String id, tid, tea_name, address, tel, clazz_id, uid, isadmin, origial_pwd,cardNo;
 		try {
 			id = I("post.id").toString();
 			tid = I("post.tid").toString();
@@ -204,6 +205,7 @@ public class TeacherController extends AdminController {
 			uid = I("post.uid").toString();
 			isadmin = I("post.isadmin").toString();
 			origial_pwd = I("post.original_pwd").toString();
+			cardNo = I("post.cardNo").toString();
 		} catch (Exception e) {
 			error("0");
 			return;
@@ -221,6 +223,7 @@ public class TeacherController extends AdminController {
 		user.put("name", tea_name);
 		user.put("state", "2");
 		user.put("update_time", TimeUtil.getLongTimeStamp() + "");
+		user.put("cardNo",cardNo);
 		try {
 			M("teacher").where("id=" + id).save_string(tea);
 			M("user").where("id=" + uid).save_string(user);

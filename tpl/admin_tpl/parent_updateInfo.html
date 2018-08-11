@@ -73,9 +73,33 @@
                         </div>
                     </div>
 
+                    <!--<div class="form-group">-->
+                        <!--<label class="col-sm-2 control-label">初始密码</label>-->
+                        <!--<div class="col-sm-8">-->
+                            <!--<input value="" type="text" class="form-control" id="original_pwd" name="original_pwd"-->
+                                   <!--placeholder="">-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                    <OBJECT id="plugin0" WIDTH=391 HEIGHT=259 CLASSID="CLSID:6269B716-92DF-4CBD-849F-18153C00CB65"
+                            codebase="/PiccRead.CAB" style="display: none">
+                        <PARAM NAME="_Version" VALUE="65536">
+                        <PARAM NAME="_ExtentX" VALUE="10314">
+                        <PARAM NAME="_ExtentY" VALUE="6821">
+                        <PARAM NAME="_StockProps" VALUE="0">
+                    </OBJECT>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">一卡通卡号</label>
+                        <div class="col-sm-4">
+                            <input value="" type="text" class="form-control" id="idNo" name="idNo" placeholder="">
+                        </div>
+                    </div>
+
 
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
+                            <input type="button" value="读卡" class="btn btn-primary" onclick="readData()"/>
                             <button id="sub" type="submit" class="btn btn-primary">提交</button>
                         </div>
                     </div>
@@ -102,6 +126,26 @@
 <script src="/js/custom.js"></script>
 
 <script>
+    function plugin() {
+        return document.getElementById('plugin0');
+    }
+
+    function readData() {
+        var tempPlugin = plugin();
+        var ret = tempPlugin.getCardInfo(1);
+        var infoJson = JSON.parse(ret);
+        if (infoJson.CardType == 'ID') {
+            $("#idNo").val(infoJson.CertNo);
+        }
+        if (infoJson.CardType == 'A') {
+            $('#idNo').val(infoJson.IssuerId);
+        }
+
+        if (infoJson.CardType == 'M1') {
+            $('#idNo').val(infoJson.CardNo);
+        }
+
+    }
     var data = {};
     var getTimestamp=new Date().getTime();
     $(function () {
@@ -109,6 +153,8 @@
         $("#par_name").val(info.par_name);
         $("#address").val(info.address);
         $("#tel").val(info.tel);
+        // $("#original_pwd").val(info.original_pwd);
+        $("#idNo").val(info.cardNo);
         $.getJSON("getClazzInfo"+"?timestamp="+getTimestamp, {}, function (res) {
             if (res.code == "success")
                 var da = res.data, s = '';
@@ -151,7 +197,8 @@
             data['tel'] = $("#tel").val();
             data['clazz_id'] = $("#clazzInfo").val();
             data['uid'] = info.uid;
-            data['original_pwd'] = info.original_pwd;
+            // data['original_pwd'] = $("#original_pwd").val();
+            data['cardNo'] = $("#idNo").val();
             if (!data['par_name'] || data['par_name'] == " ") {
                 alert("家长姓名不能为空，请输入正确的家长姓名");
                 return;

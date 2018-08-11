@@ -156,22 +156,24 @@ public class StudentController extends AdminController {
 	@action
 	public void edit() {
 		String id = I("get.id").toString();
-		HashMap<String, String> res = M("student").where("id=" + id).find();
+		String sql="select a.*,b.cardNo from student a left join user b on a.name=b.name where a.id="+id;
+		HashMap<String, String> res=M("student").query(sql).get(0);
 		assign("stu", JSON.toJSON(res));
 		toHtml("admin_tpl/student_crud");
 	}
 
 	@action
 	public void do_edit() {
-		String id, name, sid, clazz_id, veinData1, veinData2, veinData3, uid;
+		String id, name, sid, clazz_id, veinData1, veinData2, veinData3, uid,cardNo;
+		veinData1 = StringUtil.isEmpty(I("post.image1"))?"":I("post.image1").toString();
+		veinData2 = StringUtil.isEmpty(I("post.image2"))?"":I("post.image2").toString();
+		veinData3 = StringUtil.isEmpty(I("post.image3"))?"":I("post.image3").toString();
+		cardNo=StringUtil.isEmpty(I("post.cardNo"))?"":I("post.cardNo").toString();
 		try {
 			id = I("post.id").toString();
 			name = I("post.name").toString();
 			sid = I("post.sid").toString();
 			clazz_id = I("post.clazz_id").toString();
-			veinData1 = I("post.image1").toString();
-			veinData2 = I("post.image2").toString();
-			veinData3 = I("post.image3").toString();
 			uid = I("post.uid").toString();
 		} catch (Exception e) {
 			error("参数提交错误");
@@ -185,9 +187,12 @@ public class StudentController extends AdminController {
 		user.put("name", name);
 		user.put("state", "2");
 		user.put("update_time", TimeUtil.getLongTimeStamp() + "");
-		user.put("veinData1", veinData1);
-		user.put("veinData2", veinData2);
-		user.put("veinData3", veinData3);
+		if(veinData1.length()>0 &&veinData2.length()>0 && veinData3.length()>0) {
+			user.put("veinData1", veinData1);
+			user.put("veinData2", veinData2);
+			user.put("veinData3", veinData3);
+		}
+		user.put("cardNo",cardNo);
 		try {
 			M("student").where("id=" + id).save_string(data);
 			M("user").where("id=" + uid).save_string(user);
@@ -197,45 +202,45 @@ public class StudentController extends AdminController {
 		}
 	}
 
-	@action
-	public void add_vena() {
-		toHtml("admin_tpl/student_form");
-	}
-
-	@action
-	public void do_add_vena() {
-		String veinData1, veinData2, veinData3, name, personType, scenePhoto;
-		try {
-			veinData1 = I("post.image1").toString();
-			veinData2 = I("post.image2").toString();
-			veinData3 = I("post.image3").toString();
-			name = I("post.name").toString();
-			personType = I("post.personType").toString();
-			scenePhoto = I("post.scenePhoto").toString();
-		} catch (Exception e) {
-			error("参数提交错误,请进行指静脉建模");
-			return;
-		}
-		HashMap<String, String> user = new HashMap<>();
-		user.put("cardNo", "1");
-		user.put("startDate", TimeUtil.getShortTimeStamp() + "");
-		user.put("endDate", TimeUtil.getShortTimeStamp() + "");
-		user.put("name", name);
-		user.put("personType", personType);
-		user.put("veinData1", veinData1);
-		user.put("veinData2", veinData2);
-		user.put("veinData3", veinData3);
-		user.put("create_time", TimeUtil.getShortTimeStamp() + "");
-		user.put("update_time", TimeUtil.getLongTimeStamp() + "");
-		user.put("state", "1");
-		user.put("scenePhoto", scenePhoto);
-		user.put("passType", "11111");
-		try {
-			M("user").add(user);
-			success("数据库更新成功");
-		} catch (Exception e) {
-			error("数据加载到数据库失败");
-		}
-	}
+//	@action
+//	public void add_vena() {
+//		toHtml("admin_tpl/student_form");
+//	}
+//
+//	@action
+//	public void do_add_vena() {
+//		String veinData1, veinData2, veinData3, name, personType, scenePhoto;
+//		try {
+//			veinData1 = I("post.image1").toString();
+//			veinData2 = I("post.image2").toString();
+//			veinData3 = I("post.image3").toString();
+//			name = I("post.name").toString();
+//			personType = I("post.personType").toString();
+//			scenePhoto = I("post.scenePhoto").toString();
+//		} catch (Exception e) {
+//			error("参数提交错误,请进行指静脉建模");
+//			return;
+//		}
+//		HashMap<String, String> user = new HashMap<>();
+//		user.put("cardNo", "1");
+//		user.put("startDate", TimeUtil.getShortTimeStamp() + "");
+//		user.put("endDate", TimeUtil.getShortTimeStamp() + "");
+//		user.put("name", name);
+//		user.put("personType", personType);
+//		user.put("veinData1", veinData1);
+//		user.put("veinData2", veinData2);
+//		user.put("veinData3", veinData3);
+//		user.put("create_time", TimeUtil.getShortTimeStamp() + "");
+//		user.put("update_time", TimeUtil.getLongTimeStamp() + "");
+//		user.put("state", "1");
+//		user.put("scenePhoto", scenePhoto);
+//		user.put("passType", "11111");
+//		try {
+//			M("user").add(user);
+//			success("数据库更新成功");
+//		} catch (Exception e) {
+//			error("数据加载到数据库失败");
+//		}
+//	}
 
 }

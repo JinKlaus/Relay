@@ -8,6 +8,7 @@ import java.util.HashMap;
 import annotation.action;
 import config.Dictionary;
 import server.ControllerContext;
+import util.StringUtil;
 import util.TimeUtil;
 import util.ExcelUtil.ExcelMap;
 
@@ -42,23 +43,22 @@ public class IorecordController extends AdminController {
 					: TimeUtil.dateToStamp(URLDecoder.decode(I("get.startdate").toString()), "yyyy-MM-dd HH:mm:ss");
 			String enddate = I("get.enddate") == "" ? ""
 					: TimeUtil.dateToStamp(URLDecoder.decode(I("get.enddate").toString()), "yyyy-MM-dd HH:mm:ss");
-			String stu_name = I("get.stu_name") == "" ? "" : URLDecoder.decode(I("get.stu_name").toString());
-			String tel = I("get.tel") == "" ? "" : I("get.tel").toString();
+			String name = I("get.name") == "" ? "" : URLDecoder.decode(I("get.name").toString());
 			StringBuffer s = new StringBuffer(
-					"select a.*,b.tel,c.name as stu_name from reportrecord a LEFT JOIN parent b ON a.name=b.par_name LEFT JOIN student c ON b.stu_id=c.id where 1=1");
+					"select * from reportrecord where 1=1");
 			StringBuffer snum = new StringBuffer(
-					"select count(*),a.*,b.tel,c.name as stu_name from reportrecord a LEFT JOIN parent b ON a.name=b.par_name LEFT JOIN student c ON b.stu_id=c.id where 1=1");
+					"select count(*) from reportrecord where 1=1");
 			if (startdate != null && startdate.length() > 0 && enddate != null && enddate.length() > 0) {
 				s.append(" and dateTime BETWEEN '" + startdate + "' AND '" + enddate + "'");
 				snum.append(" and dateTime BETWEEN '" + startdate + "' AND '" + enddate + "'");
 			}
-			if (stu_name != null && stu_name.length() > 0) {
-				s.append(" and c.name like '%" + stu_name + "%'");
-				snum.append(" and c.name like '%" + stu_name + "%'");
+			if(startdate != null && startdate.length() > 0 && enddate == null && enddate.length() == 0){
+				s.append(" and dateTime > '" + startdate + "'");
+				snum.append(" and dateTime > '" + startdate + "'");
 			}
-			if (tel != null && tel.length() > 0) {
-				s.append(" and b.tel like '%" + tel + "%'");
-				snum.append(" and b.tel like '%" + tel + "%'");
+			if (name != null && name.length() > 0) {
+				s.append(" and name like '%" + name + "%'");
+				snum.append(" and name like '%" + name + "%'");
 			}
 			s.append(" order by dateTime desc");
 			s.append(" limit " + limit);
@@ -132,17 +132,16 @@ public class IorecordController extends AdminController {
 				: TimeUtil.dateToStamp(URLDecoder.decode(I("startdate").toString()), "yyyy-MM-dd HH:mm:ss");
 		String enddate = I("enddate") == null || I("enddate").equals("") ? ""
 				: TimeUtil.dateToStamp(URLDecoder.decode(I("enddate").toString()), "yyyy-MM-dd HH:mm:ss");
-		String stu_name = I("stu_name") == null || I("stu_name").equals("") ? ""
-				: URLDecoder.decode(I("stu_name").toString());
-		String tel = I("tel") == null || I("tel").equals("") ? "" : I("tel").toString();
+		String name = I("name") == null || I("name").equals("") ? ""
+				: URLDecoder.decode(I("name").toString());
 		StringBuffer s = new StringBuffer(
-				"select a.*,b.tel,c.name as stu_name from reportrecord a LEFT JOIN parent b ON a.name=b.par_name LEFT JOIN student c ON b.stu_id=c.id where 1=1");
+				"select * from reportrecord  where 1=1");
+		if(StringUtil.isEmpty(enddate))
+			enddate="9999999999";
 		if (startdate != null && startdate.length() > 0 && enddate != null && enddate.length() > 0)
 			s.append(" and dateTime BETWEEN '" + startdate + "' AND '" + enddate + "'");
-		if (stu_name != null && stu_name.length() > 0)
-			s.append(" and c.name like '%" + stu_name + "%'");
-		if (tel != null && tel.length() > 0)
-			s.append(" and b.tel like '%" + tel + "%'");
+		if (name != null && name.length() > 0)
+			s.append(" and name like '%" + name + "%'");
 		String sql = s.toString();
 		try {
 			ArrayList<HashMap<String, String>> list = M("reportrecord").query(sql);
@@ -192,13 +191,11 @@ public class IorecordController extends AdminController {
 			HashMap<String, String> map = new HashMap<>();
 			map.put("id", "编号");
 			map.put("name", "姓名");
-			map.put("stu_name", "学生姓名");
 			map.put("cardNo", "卡号");
 			map.put("cardType", "卡类型");
 			map.put("personType", "人员类型");
 			map.put("dateTime", "刷卡时间");
 			map.put("inoutType", "进出类型");
-			map.put("tel", "联系方式");
 			try {
 				ExcelMap.exportXls(map, list, "assets/resourses/iorecord.xls");
 				success("/resourses/iorecord.xls");

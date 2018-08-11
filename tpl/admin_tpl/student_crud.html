@@ -580,11 +580,11 @@
         })
 
 
-        var stu =
-        ${stu}
+        var stu =${stu};
         if (stu) {
             $("#name").val(stu.name);
             $("#sid").val(stu.sid);
+            $("#idNo").val(stu.cardNo);
         }
 
         $("#sub").on("click", function () {
@@ -598,6 +598,9 @@
             } else if (!data['sid'] || data['sid'] == " ") {
                 alert("学号栏不能为空，请输入正确的学号");
                 return;
+            } else if(!data['clazz_id'|| data['clazz_id']==""]){
+                alert("请选择学生所在班级");
+                return;
             }
 
             var post_url = stu ? '/v1/student/do_edit' : '/v1/student/do_add';
@@ -606,7 +609,7 @@
                 data['uid'] = stu.uid;
             }
 
-            $.post(post_url + "?timestamp=" + getTimestamp, data, function (res) {
+            $.post(post_url, data, function (res) {
                 var ret = JSON.parse(res)
                 if (ret.code == "success") {
                     if (stu) {

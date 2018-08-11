@@ -26,7 +26,6 @@ public class AccessController extends Controller {
 	}
 
 	public  void test(String s){
-
 	}
 	@action
 	public void do_login() {

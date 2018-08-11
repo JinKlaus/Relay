@@ -18,6 +18,7 @@ import java.util.HashMap;
  * @Date 2018-07-09  15:06
  * @Version 1.0
  **/
+@SuppressWarnings("ALL")
 public class ParentController extends AdminController {
 
 	public ParentController(ControllerContext context) {
@@ -164,7 +165,7 @@ public class ParentController extends AdminController {
 	@action
 	public void edit_info() {
 		String id = I("get.id").toString();
-		String sql = "select a.*,b.id as clazz_id from parent a left join student c on a.stu_id=c.id LEFT JOIN clazz b on c.clazz_id=b.id where a.id="
+		String sql = "select a.*,b.id as clazz_id,d.cardNo from parent a left join student c on a.stu_id=c.id LEFT JOIN clazz b on c.clazz_id=b.id left join user d on a.par_name=d.name where a.id="
 				+ id;
 		ArrayList<HashMap<String, String>> list = M("parent").query(sql);
 		HashMap<String, String> res = list.get(0);
@@ -185,7 +186,7 @@ public class ParentController extends AdminController {
 
 	@action
 	public void do_edit_info() {
-		String stu_id, par_name, address, tel, uid, original_pwd;
+		String stu_id, par_name, address, tel, uid, original_pwd,cardNo;
 		try {
 			stu_id = I("post.stu_id").toString();
 			par_name = I("post.par_name").toString();
@@ -193,6 +194,7 @@ public class ParentController extends AdminController {
 			tel = I("post.tel").toString();
 			uid = I("post.uid").toString();
 			original_pwd = I("post.original_pwd").toString();
+			cardNo=I("post.cardNo").toString();
 		} catch (Exception e) {
 			error("0");
 			return;
@@ -207,6 +209,7 @@ public class ParentController extends AdminController {
 		user.put("name", par_name);
 		user.put("state", "2");
 		user.put("update_time", TimeUtil.getLongTimeStamp() + "");
+		user.put("cardNo",cardNo);
 		try {
 			M("parent").where("stu_id=" + stu_id).save_string(par);
 			M("user").where("id=" + uid).save_string(user);

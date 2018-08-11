@@ -1,0 +1,34 @@
+Manifest-Version: 1.0
+Class-Path: jpinyin-1.1.8-sources.jar jetty-gcloud-session-manager-9.3
+ .18.v20170406.jar jpush-client-3.3.3.jar commons-beanutils-1.8.3.jar 
+ httpcore-4.4.1.jar jetty-schemas-3.1.jar jetty-webapp-9.3.18.v2017040
+ 6.jar xmlbeans-2.3.0.jar jetty-infinispan-9.3.18.v20170406.jar jetty-
+ jndi-9.3.18.v20170406.jar jedis.jar jetty-http-9.3.18.v20170406.jar j
+ etty-client-9.3.18.v20170406.jar commons-lang3-3.6.jar bson-3.3.0.jar
+  geronimo-jms_1.1_spec-1.1.1.jar jetty-gcloud-memcached-session-manag
+ er-9.3.18.v20170406.jar poi-ooxml-3.8-20120326.jar poi-scratchpad-3.8
+ -20120326.jar mysql-connector-java-5.1.46-bin.jar jiguang-common-1.0.
+ 8.jar jetty-util-9.3.18.v20170406.jar jetty-jaas-9.3.18.v20170406.jar
+  cdi-websocket-9.3.18.v20170406.jar jetty-rewrite-9.3.18.v20170406.ja
+ r beetl-2.7.12.jar slf4j-api-1.7.7.jar jetty-proxy-9.3.18.v20170406.j
+ ar c3p0-0.8.4.5.jar geronimo-jta_1.0.1B_spec-1.0.1.jar gson-2.2.4.jar
+  cdi-core-9.3.18.v20170406.jar jetty-continuation-9.3.18.v20170406.ja
+ r jetty-annotations-9.3.18.v20170406.jar jetty-alpn-server-9.3.18.v20
+ 170406.jar mongodb-driver-core-3.3.0.jar jetty-servlet-9.3.18.v201704
+ 06.jar jetty-jaspi-9.3.18.v20170406.jar alipay-sdk-java20170511115337
+ .jar alipay-sdk-java20170511115337-source.jar slf4j-log4j12-1.7.7.jar
+  jetty-server-9.3.18.v20170406.jar poi-ooxml-schemas-3.8-20120326.jar
+  geronimo-j2ee-management_1.1_spec-1.0.1.jar httpclient-4.4.1.jar fas
+ tjson-1.2.17.jar aliyun-java-sdk-dysmsapi-1.0.0.jar slf4j-api-1.7.13.
+ jar jetty-quickstart-9.3.18.v20170406.jar jetty-nosql-9.3.18.v2017040
+ 6.jar jetty-io-9.3.18.v20170406.jar servlet-api-3.1.jar mongodb-drive
+ r-3.3.0.jar jetty-plus-9.3.18.v20170406.jar jetty-jmx-9.3.18.v2017040
+ 6.jar jetty-deploy-9.3.18.v20170406.jar poi-ooxml-3.17.jar poi-excela
+ nt-3.8-20120326.jar log4j-1.2.17.jar poi-3.17.jar commons-collections
+ -3.2.1.jar selenium-java-3.2.0.jar jetty-servlets-9.3.18.v20170406.ja
+ r jpinyin-1.1.8.jar commons-logging-1.1.1.jar dom4j-1.6.1.jar cdi-ser
+ vlet-9.3.18.v20170406.jar poi-examples-3.8-20120326.jar aliyun-java-s
+ dk-core-3.3.1.jar commons-logging-1.2.jar jetty-xml-9.3.18.v20170406.
+ jar jetty-security-9.3.18.v20170406.jar commons-pool-1.6.jar
+Main-Class: server.HttpServer
+

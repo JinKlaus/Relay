@@ -602,6 +602,13 @@
             } else if (!data['original_pwd'] || data['original_pwd'] == " ") {
                 alert("初始密码不能为空，请输入正确的密码");
                 return;
+            } else if(!data['clazz_id'|| data['clazz_id']==""]){
+                alert("请选择教师所属班级");
+                return;
+            }
+            else if(!data['tid'|| data['tid']==""]){
+                alert("职工编号不能为空，请输入职工编号");
+                return;
             }
 
             $.post('/v1/teacher/do_add', data, function (res) {

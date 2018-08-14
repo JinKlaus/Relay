@@ -194,7 +194,7 @@ public class TeacherController extends AdminController {
 
 	@action
 	public void do_edit_info() {
-		String id, tid, tea_name, address, tel, clazz_id, uid, isadmin, origial_pwd,cardNo;
+		String id, tid, tea_name, address, tel, clazz_id, uid, isadmin, cardNo;
 		try {
 			id = I("post.id").toString();
 			tid = I("post.tid").toString();
@@ -204,7 +204,6 @@ public class TeacherController extends AdminController {
 			clazz_id = I("post.clazz_id").toString();
 			uid = I("post.uid").toString();
 			isadmin = I("post.isadmin").toString();
-			origial_pwd = I("post.original_pwd").toString();
 			cardNo = I("post.cardNo").toString();
 		} catch (Exception e) {
 			error("0");
@@ -219,7 +218,6 @@ public class TeacherController extends AdminController {
 		tea.put("clazz_id", clazz_id);
 		tea.put("tid", tid);
 		tea.put("isadmin", isadmin);
-		tea.put("original_pwd", Md5Util.MD5(origial_pwd));
 		user.put("name", tea_name);
 		user.put("state", "2");
 		user.put("update_time", TimeUtil.getLongTimeStamp() + "");

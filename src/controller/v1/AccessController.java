@@ -31,7 +31,7 @@ public class AccessController extends Controller {
 	public void do_login() {
 		String user = I("post.user").toString();
 		String password = Md5Util.MD5(I("post.password").toString());
-		HashMap<String, String> map = M("teacher").where("tid=" + user + " and original_pwd='" + password + "'").find();
+		HashMap<String, String> map = M("teacher").where("tid='" + user + "' and original_pwd='" + password + "'").find();
 		if (map != null) {
 			try {
 				session(map);

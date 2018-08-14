@@ -140,7 +140,6 @@
         if (infoJson.CardType == 'A') {
             $('#idNo').val(infoJson.IssuerId);
         }
-
         if (infoJson.CardType == 'M1') {
             $('#idNo').val(infoJson.CardNo);
         }
@@ -197,6 +196,7 @@
             data['tel'] = $("#tel").val();
             data['clazz_id'] = $("#clazzInfo").val();
             data['uid'] = info.uid;
+            data['id']=info.id;
             // data['original_pwd'] = $("#original_pwd").val();
             data['cardNo'] = $("#idNo").val();
             if (!data['par_name'] || data['par_name'] == " ") {

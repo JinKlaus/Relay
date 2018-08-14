@@ -51,7 +51,7 @@ public class Controller {
 			M("session").add(res);
 		}else {
 			res.put("sessionid",sessionID );
-			M("session").save_string(res);
+			M("session").where("id="+map.get("id")).save_string(res);
 		}
 	}
 	

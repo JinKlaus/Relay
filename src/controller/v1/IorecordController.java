@@ -39,13 +39,13 @@ public class IorecordController extends AdminController {
     @action
     public void getSearchList() {
         try {
-            String page = I("get.page").toString();
+            String page = I("page").toString();
             String limit = Integer.parseInt(page) * 10 + ",10";
-            String startdate = I("get.startdate") == "" ? ""
-                    : TimeUtil.dateToStamp(URLDecoder.decode(I("get.startdate").toString()), "yyyy-MM-dd HH:mm:ss");
-            String enddate = I("get.enddate") == "" ? ""
-                    : TimeUtil.dateToStamp(URLDecoder.decode(I("get.enddate").toString()), "yyyy-MM-dd HH:mm:ss");
-            String name = I("get.name") == "" ? "" : URLDecoder.decode(I("get.name").toString());
+            String startdate = I("startdate") == "" ? ""
+                    : TimeUtil.dateToStamp(URLDecoder.decode(I("startdate").toString()), "yyyy-MM-dd HH:mm:ss");
+            String enddate = I("enddate") == "" ? ""
+                    : TimeUtil.dateToStamp(URLDecoder.decode(I("enddate").toString()), "yyyy-MM-dd HH:mm:ss");
+            String name = I("name") == "" ? "" : URLDecoder.decode(I("name").toString());
             StringBuffer s = new StringBuffer(
                     "select * from reportrecord where 1=1");
             StringBuffer snum = new StringBuffer(

@@ -43,12 +43,12 @@ public class TeacherController extends AdminController {
 
 	@action
 	public void getList() {
-		String page = I("get.page") == "" ? "" : I("get.page").toString();
+		String page = I("page") == "" ? "" : I("page").toString();
 		String limit = Integer.parseInt(page) * 10 + ",10";
 		HashMap<String, Object> res = new HashMap<>();
 		@SuppressWarnings("deprecation")
-		String key = I("get.key") == null || I("get.key").equals("") ? null
-				: URLDecoder.decode(I("get.key").toString());
+		String key = I("key") == null || I("key").equals("") ? ""
+				: URLDecoder.decode(I("key").toString());
 		try {
 			if (key != null) {
 				String sql1 = "SELECT count(*),a.*,b.name as clazz_name from teacher a LEFT JOIN clazz b  ON a.clazz_id=b.id where a.name LIKE '%"

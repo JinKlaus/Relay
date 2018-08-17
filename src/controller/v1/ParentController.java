@@ -36,11 +36,11 @@ public class ParentController extends AdminController {
 
     @action
     public void getList() {
-        String page = I("get.page").toString();
+        String page = I("page").toString();
         String limit = Integer.parseInt(page) * 10 + ",10";
         HashMap<String, Object> res = new HashMap<>();
         @SuppressWarnings("deprecation")
-        String key = StringUtil.isEmpty(I("get.key")) ? "" : URLDecoder.decode(I("get.key").toString());
+        String key = StringUtil.isEmpty(I("key")) ? "" : URLDecoder.decode(I("key").toString());
         try {
             if (key != null) {
                 if (StringUtil.isNumeric(key)) {

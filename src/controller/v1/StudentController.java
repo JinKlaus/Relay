@@ -41,10 +41,10 @@ public class StudentController extends AdminController {
 	@SuppressWarnings("deprecation")
 	@action
 	public void getList() {
-		String page = I("get.page").toString();
+		String page = I("page").toString();
 		String limit = Integer.parseInt(page) * 10 + ",10";
 		HashMap<String, Object> res = new HashMap<>();
-		String key = I("get.key") == null || I("get.key").equals("") ? "" : URLDecoder.decode(I("get.key").toString());
+		String key = I("key") == null || I("key").equals("") ? "" : URLDecoder.decode(I("key").toString());
 		StringBuffer snum = new StringBuffer("SELECT count(*) FROM student where 1=1");
 		StringBuffer s = new StringBuffer(
 				"SELECT a.*,b.name as clazz_name,(select count(*) from parent where a.id=parent.stu_id) as parent_count from student a left join clazz b on a.clazz_id = b.id where 1=1");

@@ -163,7 +163,7 @@ public class ParentController extends AdminController {
     @action
     public void edit_info() {
         String id = I("get.id").toString();
-        String sql = "select a.*,b.id as clazz_id,d.cardNo from parent a left join student c on a.stu_id=c.id LEFT JOIN clazz b on c.clazz_id=b.id left join user d on a.par_name=d.name where a.id="
+        String sql = "select a.*,b.id as clazz_id,d.cardNo from parent a left join student c on a.stu_id=c.id LEFT JOIN clazz b on c.clazz_id=b.id left join user d on a.uid=d.id  where a.id="
                 + id;
         ArrayList<HashMap<String, String>> list = M("parent").query(sql);
         HashMap<String, String> res = list.get(0);

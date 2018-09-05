@@ -53,7 +53,7 @@ public class TeacherController extends AdminController {
 			if (key != null) {
 				String sql1 = "SELECT count(*),a.*,b.name as clazz_name from teacher a LEFT JOIN clazz b  ON a.clazz_id=b.id where a.name LIKE '%"
 						+ key + "%'";
-				String sql = "SELECT count(*),a.*,b.name as clazz_name from teacher a LEFT JOIN clazz b  ON a.clazz_id=b.id where a.name LIKE '%"
+				String sql = "SELECT a.*,b.name as clazz_name from teacher a LEFT JOIN clazz b  ON a.clazz_id=b.id where a.name LIKE '%"
 						+ key + "%' limit " + limit;
 				ArrayList<HashMap<String, String>> list1 = M("teacher").query(sql1);
 				String num = list1.get(0).get("count(*)");
@@ -186,7 +186,7 @@ public class TeacherController extends AdminController {
 	@action
 	public void edit_info() {
 		String id = I("get.id").toString();
-		String sql="select a.*,b.cardNo from teacher a left join user b on a.name=b.name where a.id="+id;
+		String sql="select a.*,b.cardNo from teacher a left join user b on a.uid=b.id where a.id="+id;
 		HashMap<String, String> res=M("teacher").query(sql).get(0);
 		assign("info", JSON.toJSON(res));
 		toHtml("admin_tpl/teacher_updateInfo");

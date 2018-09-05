@@ -156,7 +156,7 @@ public class StudentController extends AdminController {
 	@action
 	public void edit() {
 		String id = I("get.id").toString();
-		String sql="select a.*,b.cardNo from student a left join user b on a.name=b.name where a.id="+id;
+		String sql="select a.*,b.cardNo from student a left join user b on a.uid = b.id where a.id="+id;
 		HashMap<String, String> res=M("student").query(sql).get(0);
 		assign("stu", JSON.toJSON(res));
 		toHtml("admin_tpl/student_crud");

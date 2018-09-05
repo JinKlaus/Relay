@@ -101,8 +101,9 @@ public class Model {
 		LogUtil.log("mysql query sql--"+sql);
 		this.sql = sql;
 		ArrayList<HashMap<String, String>> res = new ArrayList<>();
+		Connection connection = getConnection();
 		try {
-			Connection connection = getConnection();
+
 			java.sql.Statement stmt = connection.createStatement();
 			ResultSet resultset = stmt.executeQuery(sql);
 			ResultSetMetaData rsm = resultset.getMetaData();
@@ -113,15 +114,21 @@ public class Model {
 			        map.put(columnName, resultset.getString(columnName));
 			      }
 				res.add(map);
-				
+
 			}
 			resultset.close();
 			stmt.close();
-			connection.close();
+
 		} catch (SQLException e) {
-			
+
 			e.printStackTrace();
 			System.out.println("mysql execute error:"+e.getMessage());
+		}
+
+		try {
+			connection.close();
+		}catch (SQLException e) {
+			e.printStackTrace();
 		}
 		
 		return res;
@@ -178,9 +185,10 @@ public class Model {
 	
 	public int execute(String sql){
 		LogUtil.log("mysql execute query--"+sql);
+		Connection connection=getConnection();
 		try {
 			
-			Connection connection=getConnection();
+
 			java.sql.Statement stmt = connection.createStatement();
 			int result = stmt.executeUpdate(sql);
 			stmt.close();
@@ -190,34 +198,40 @@ public class Model {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			try {
+				connection.close();
+			}catch (Exception e1){
+
+			}
+
 			return 0;
 		}
 		
 		
 	}
 	
-	public void add_s(HashMap<String, String> data) throws SQLException{
-		ArrayList<String> fields = new ArrayList<>();
-		ArrayList<String> neg = new ArrayList<>();
-
-		ArrayList<Object> values = new ArrayList<>();
-
-		for(String key:data.keySet()){
-			fields.add(key);
-			neg.add("?");
-			values.add(data.get(key));
-		}
-		String sql = "INSERT INTO "+table+" ("+StringUtil.listToString(fields)+") VALUES ("+StringUtil.listToString(values)+");";
-		
-		LogUtil.log("mysql insert query--"+sql);
-		
-		  Connection connection=getConnection();
-		PreparedStatement pstmt =   (PreparedStatement) connection.createStatement();
-		 pstmt.executeQuery(sql);
-		  pstmt.close();
-		  connection.close();
-
-	}
+//	public void add_s(HashMap<String, String> data) throws SQLException{
+//		ArrayList<String> fields = new ArrayList<>();
+//		ArrayList<String> neg = new ArrayList<>();
+//
+//		ArrayList<Object> values = new ArrayList<>();
+//
+//		for(String key:data.keySet()){
+//			fields.add(key);
+//			neg.add("?");
+//			values.add(data.get(key));
+//		}
+//		String sql = "INSERT INTO "+table+" ("+StringUtil.listToString(fields)+") VALUES ("+StringUtil.listToString(values)+");";
+//
+//		LogUtil.log("mysql insert query--"+sql);
+//
+//		  Connection connection=getConnection();
+//		PreparedStatement pstmt =   (PreparedStatement) connection.createStatement();
+//		 pstmt.executeQuery(sql);
+//		  pstmt.close();
+//		  connection.close();
+//
+//	}
 	
 	public long add(HashMap<String, String> data) throws Exception{
 		ArrayList<String> fields = new ArrayList<>();
@@ -233,23 +247,30 @@ public class Model {
 		String sql = "INSERT INTO "+table+" ("+StringUtil.listToString(fields)+") VALUES ("+StringUtil.listToString(neg)+");";
 		
 		LogUtil.log("mysql insert query--"+sql);
-		
-		  Connection connection=getConnection();
-		PreparedStatement pstmt = (PreparedStatement) connection.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
-		  
-		  for(int j=0;j<values.size();j++){
-			  pstmt.setString(j+1,(String) values.get(j)); 
-		  }
-		  pstmt.executeUpdate();
-		   long autoInckey = -1;
-		  ResultSet rs = pstmt.getGeneratedKeys(); 
-		  if (rs.next()) {
-		  autoInckey= rs.getLong(1);// 取得ID
-		  } 
-		  rs.close();
-		  pstmt.close();
-		  connection.close();
-		return  autoInckey;
+		Connection connection=getConnection();
+		try {
+
+			PreparedStatement pstmt = (PreparedStatement) connection.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
+
+			for(int j=0;j<values.size();j++){
+				pstmt.setString(j+1,(String) values.get(j));
+			}
+			pstmt.executeUpdate();
+			long autoInckey = -1;
+			ResultSet rs = pstmt.getGeneratedKeys();
+			if (rs.next()) {
+				autoInckey= rs.getLong(1);// 取得ID
+			}
+			rs.close();
+			pstmt.close();
+			connection.close();
+			return  autoInckey;
+		}catch (Exception e){
+			connection.close();
+			throw  new Exception(e.getMessage());
+		}
+
+
 		
 	}
 

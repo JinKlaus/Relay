@@ -4,6 +4,8 @@ import annotation.action;
 import server.Controller;
 import server.ControllerContext;
 
+import java.util.HashMap;
+
 
 /**
  * @Description TODO
@@ -24,5 +26,21 @@ public class TestController extends Controller {
     @action
     public void camera(){
         toHtml("admin_tpl/camera");
+    }
+
+    @action
+    public void test1(){
+        try {
+            success(M("ss").execute("select * from sss"));
+        } catch (Exception e) {
+            e.printStackTrace();
+            success(1);
+        }
+
+    }
+
+    @action
+    public void test2(){
+        success(M("teacher").select());
     }
 }
